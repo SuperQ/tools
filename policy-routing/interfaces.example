@@ -1,0 +1,22 @@
+# This is an example of what you need in /etc/network/interfaces on Debian
+# based systems
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+  address 192.168.0.1
+  netmask 255.255.255.0
+  gateway 192.168.0.254
+
+# A second interface with it's own gateway
+auto eth1
+iface eth1 inet static
+  address 192.168.1.1
+  netmask 255.255.255.0
+  up /etc/network/policy-route.sh othernet 192.168.1.254 eth1
+  down /etc/network/policy-route.sh -d othernet
+
