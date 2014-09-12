@@ -9,6 +9,7 @@ import datetime
 import time
 import gzip
 import platform
+import os
 import re
 
 log_dir = "/test-data/innodb-engine-status/"
@@ -39,7 +40,11 @@ while True:
   log_line = log_line_tmpl % (logfile, trx_counter, purge_done, history_length)
   print log_line
   run_log.write(log_line + "\n")
-  f = gzip.open(log_dir + logfile, "w")
+  date_ds_dir = os.path.join(log_dir, now.strftime("%Y-%m-%d"))
+  if not os.path.exists(date_ds_dir):
+    os.mkdir(date_ds_dir)
+  logpath = os.path.join(date_ds_dir, logfile)
+  f = gzip.open(logpath, "w")
   f.write(innodb_status)
   f.close()
   time.sleep(wait_time)
