@@ -1,0 +1,12 @@
+/srv/ipfixcat/log/flows-*.log {
+  hourly
+  rotate 72
+  dateext
+  missingok
+  compress
+  delaycompress
+  nocreate
+  postrotate
+    systemctl restart ipfixcat-PORT
+  endscript
+}

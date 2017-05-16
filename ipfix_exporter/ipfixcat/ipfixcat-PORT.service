@@ -1,0 +1,13 @@
+[Unit]
+Description=IPFIX Netflow Capture
+Documentation=https://github.com/calmh/ipfixcat
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/srv/ipfixcat
+ExecStart=/srv/ipfixcat/capture.sh PORT
+
+[Install]
+WantedBy=multi-user.target

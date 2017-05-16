@@ -1,0 +1,19 @@
+counter flows_total
+counter flow_packets_total by direction, address
+counter flow_bytes_total by direction, address
+
+/^(?P<direction>\d+) (?P<src>.*):\d+ (?P<dst>.*):\d+ (?P<packets>\d+) (?P<bytes>\d+)$/ {
+  flows_total++
+
+  # Match source
+  / 192\.168\.0\.\d+:\d+ [0-9\.]+:\d+ / {
+    flow_packets_total[$direction][$src] += $packets
+    flow_bytes_total[$direction][$src] += $bytes
+  }
+
+  # Match destination
+  / [0-9\.]+:\d+ 192\.168\.0\.\d+:\d+ / {
+    flow_packets_total[$direction][$dst] += $packets
+    flow_bytes_total[$direction][$dst] += $bytes
+  }
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=mtail
+Documentation=https://github.com/google/mtail
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/srv/mtail
+ExecStart=/srv/mtail/mtail -alsologtostderr -progs /srv/mtail/config -logs /srv/ipfixcat/log/flows-PORT.log
+
+[Install]
+WantedBy=multi-user.target
