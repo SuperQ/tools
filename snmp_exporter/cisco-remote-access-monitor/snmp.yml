@@ -1,0 +1,276 @@
+cisco-remote-access-monitor:
+  walk:
+  - 1.3.6.1.4.1.9.9.392.1.3.21
+  metrics:
+  - name: crasGroup
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.2
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasAuthenMethod
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.4
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasAuthorMethod
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.5
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionDuration
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.6
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasLocalAddressType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.7
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasLocalAddress
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.8
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasISPAddressType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.9
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasISPAddress
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.10
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionProtocol
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.11
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionEncryptionAlgo
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.13
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionPktAuthenAlgo
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.14
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionCompressionAlgo
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.15
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasHeartbeatInterval
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.16
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasClientVendorString
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.17
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasClientVersionString
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.18
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasClientOSVendorString
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.19
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasClientOSVersionString
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.20
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasPrimWINSServerAddrType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.21
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasPrimWINSServer
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.22
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSecWINSServerAddrType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.23
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSecWINSServer
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.24
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasPrimDNSServerAddrType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.25
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasPrimDNSServer
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.26
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSecDNSServerAddrType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.27
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSecDNSServer
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.28
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasDHCPServerAddrType
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.29
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasDHCPServer
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.30
+    type: OctetString
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionInPkts
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.31
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionOutPkts
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.32
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionInDropPkts
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.33
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionOutDropPkts
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.34
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionInOctets
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.35
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionOutOctets
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.36
+    type: counter
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge
+  - name: crasSessionState
+    oid: 1.3.6.1.4.1.9.9.392.1.3.21.1.37
+    type: gauge
+    indexes:
+    - labelname: crasUsername
+      type: OctetString
+    - labelname: crasSessionIndex
+      type: gauge

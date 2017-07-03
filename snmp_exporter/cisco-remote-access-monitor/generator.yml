@@ -1,0 +1,4 @@
+modules:
+  cisco-remote-access-monitor:
+    walk:
+      - crasSessionTable
