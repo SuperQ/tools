@@ -1,0 +1,297 @@
+edgeswitch:
+  walk:
+  - 1.3.6.1.4.1.4413.1.1.15.1.1
+  - 1.3.6.1.4.1.4413.1.1.43.1
+  metrics:
+  - name: agentPethPowerLimit
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.1
+    type: gauge
+    help: The configured maximum power this port can provide to an attached device
+      measured in Milliwatts. - 1.3.6.1.4.1.4413.1.1.15.1.1.1.1
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethOutputPower
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.2
+    type: gauge
+    help: The power this port is supplying to an attached device measured in Milliwatts.
+      - 1.3.6.1.4.1.4413.1.1.15.1.1.1.2
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethOutputCurrent
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.3
+    type: gauge
+    help: The current this port is supplying to an attached device measured in Milliamps.
+      - 1.3.6.1.4.1.4413.1.1.15.1.1.1.3
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethOutputVolts
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.4
+    type: gauge
+    help: The voltage this port is supplying to an attached device measured in Volts.
+      - 1.3.6.1.4.1.4413.1.1.15.1.1.1.4
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethTemperature
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.5
+    type: gauge
+    help: The temperature measured at this port of the PoE Controller - 1.3.6.1.4.1.4413.1.1.15.1.1.1.5
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethPowerLimitType
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.6
+    type: gauge
+    help: Describes or controls the maximum power that a port can deliver - 1.3.6.1.4.1.4413.1.1.15.1.1.1.6
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethHighPowerEnable
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.7
+    type: gauge
+    help: true (1) The PSE port can deliver power up to 32Watts - 1.3.6.1.4.1.4413.1.1.15.1.1.1.7
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethPowerDetectionType
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.8
+    type: gauge
+    help: Describes PD detection mechanism performed by the PSE port - 1.3.6.1.4.1.4413.1.1.15.1.1.1.8
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethFaultStatus
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.9
+    type: gauge
+    help: Describes the error description when the pse port is in fault status - 1.3.6.1.4.1.4413.1.1.15.1.1.1.9
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethPortReset
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.10
+    type: gauge
+    help: A value of reset(1) is used to move the pse port dot3af state to idle -
+      1.3.6.1.4.1.4413.1.1.15.1.1.1.10
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethPowerLimitMin
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.11
+    type: gauge
+    help: The minimum power this port can be configured to provide, measured in Milliwatts.
+      - 1.3.6.1.4.1.4413.1.1.15.1.1.1.11
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: agentPethPowerLimitMax
+    oid: 1.3.6.1.4.1.4413.1.1.15.1.1.1.12
+    type: gauge
+    help: The maximum power this port can be configured to provide, measured in Milliwatts.
+      - 1.3.6.1.4.1.4413.1.1.15.1.1.1.12
+    indexes:
+    - labelname: pethPsePortGroupIndex
+      type: gauge
+    - labelname: pethPsePortIndex
+      type: gauge
+  - name: boxServicesNormalTempRangeMin
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.1
+    type: gauge
+    help: Lower boundary of normal temperature range. - 1.3.6.1.4.1.4413.1.1.43.1.1
+  - name: boxServicesNormalTempRangeMax
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.2
+    type: gauge
+    help: Upper boundary of normal temperature range. - 1.3.6.1.4.1.4413.1.1.43.1.2
+  - name: boxServicesTemperatureTrapEnable
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.3
+    type: gauge
+    help: Enable or disable temperature change event trap, raised when temperature
+      crosses boundaries of normal range - 1.3.6.1.4.1.4413.1.1.43.1.3
+  - name: boxServicesPSMStateTrapEnable
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.4
+    type: gauge
+    help: Enable or disable Power Supply Module state change trap. - 1.3.6.1.4.1.4413.1.1.43.1.4
+  - name: boxServicesFanStateTrapEnable
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.5
+    type: gauge
+    help: Enable or disable Fan state change trap. - 1.3.6.1.4.1.4413.1.1.43.1.5
+  - name: boxServicesFanUnitIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.6
+    type: gauge
+    help: Unit index for an entry in the Box Services Fan Table - 1.3.6.1.4.1.4413.1.1.43.1.6.1.6
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesFansIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.1
+    type: gauge
+    help: Unique index of fan table entry - 1.3.6.1.4.1.4413.1.1.43.1.6.1.1
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesFanItemType
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.2
+    type: gauge
+    help: The type of fan - 1.3.6.1.4.1.4413.1.1.43.1.6.1.2
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesFanItemState
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.3
+    type: gauge
+    help: The status of fan - 1.3.6.1.4.1.4413.1.1.43.1.6.1.3
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesFanSpeed
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.4
+    type: OctetString
+    help: The speed of fan - 1.3.6.1.4.1.4413.1.1.43.1.6.1.4
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesFanDutyLevel
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.6.1.5
+    type: OctetString
+    help: The duty level of fan, in percents - 1.3.6.1.4.1.4413.1.1.43.1.6.1.5
+    indexes:
+    - labelname: boxServicesFanUnitIndex
+      type: gauge
+    - labelname: boxServicesFansIndex
+      type: gauge
+  - name: boxServicesPowerSuppUnitIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.7.1.4
+    type: gauge
+    help: Unit index for an entry in the Box Services Power Supply Table - 1.3.6.1.4.1.4413.1.1.43.1.7.1.4
+    indexes:
+    - labelname: boxServicesPowerSuppUnitIndex
+      type: gauge
+    - labelname: boxServicesPowSupplyIndex
+      type: gauge
+  - name: boxServicesPowSupplyIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.7.1.1
+    type: gauge
+    help: Unique index of power supply table entry - 1.3.6.1.4.1.4413.1.1.43.1.7.1.1
+    indexes:
+    - labelname: boxServicesPowerSuppUnitIndex
+      type: gauge
+    - labelname: boxServicesPowSupplyIndex
+      type: gauge
+  - name: boxServicesPowSupplyItemType
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.7.1.2
+    type: gauge
+    help: The type of power supply - 1.3.6.1.4.1.4413.1.1.43.1.7.1.2
+    indexes:
+    - labelname: boxServicesPowerSuppUnitIndex
+      type: gauge
+    - labelname: boxServicesPowSupplyIndex
+      type: gauge
+  - name: boxServicesPowSupplyItemState
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.7.1.3
+    type: gauge
+    help: The status of power supply - 1.3.6.1.4.1.4413.1.1.43.1.7.1.3
+    indexes:
+    - labelname: boxServicesPowerSuppUnitIndex
+      type: gauge
+    - labelname: boxServicesPowSupplyIndex
+      type: gauge
+  - name: boxServicesUnitIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.8.1.1
+    type: gauge
+    help: Unit index for an entry in the Box Services Temperature Sensor Table - 1.3.6.1.4.1.4413.1.1.43.1.8.1.1
+    indexes:
+    - labelname: boxServicesUnitIndex
+      type: gauge
+    - labelname: boxServicesTempSensorIndex
+      type: gauge
+  - name: boxServicesTempSensorIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.8.1.2
+    type: gauge
+    help: Unique index of temperature sensor table entry - 1.3.6.1.4.1.4413.1.1.43.1.8.1.2
+    indexes:
+    - labelname: boxServicesUnitIndex
+      type: gauge
+    - labelname: boxServicesTempSensorIndex
+      type: gauge
+  - name: boxServicesTempSensorType
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.8.1.3
+    type: gauge
+    help: The type of temperature sensor - 1.3.6.1.4.1.4413.1.1.43.1.8.1.3
+    indexes:
+    - labelname: boxServicesUnitIndex
+      type: gauge
+    - labelname: boxServicesTempSensorIndex
+      type: gauge
+  - name: boxServicesTempSensorState
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.8.1.4
+    type: gauge
+    help: The state of temperature sensor - 1.3.6.1.4.1.4413.1.1.43.1.8.1.4
+    indexes:
+    - labelname: boxServicesUnitIndex
+      type: gauge
+    - labelname: boxServicesTempSensorIndex
+      type: gauge
+  - name: boxServicesTempSensorTemperature
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.8.1.5
+    type: gauge
+    help: The temperature value reported by sensor - 1.3.6.1.4.1.4413.1.1.43.1.8.1.5
+    indexes:
+    - labelname: boxServicesUnitIndex
+      type: gauge
+    - labelname: boxServicesTempSensorIndex
+      type: gauge
+  - name: boxServicesTempUnitIndex
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.15.1.1
+    type: gauge
+    help: Unit index for an entry in the Box Services Temperature Unit Table - 1.3.6.1.4.1.4413.1.1.43.1.15.1.1
+    indexes:
+    - labelname: boxServicesTempUnitIndex
+      type: gauge
+  - name: boxServicesTempUnitState
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.15.1.2
+    type: gauge
+    help: The temperature state of the unit - 1.3.6.1.4.1.4413.1.1.43.1.15.1.2
+    indexes:
+    - labelname: boxServicesTempUnitIndex
+      type: gauge
+  - name: boxServicesTempUnitTemperature
+    oid: 1.3.6.1.4.1.4413.1.1.43.1.15.1.3
+    type: gauge
+    help: The highest temperature currently reported by any sensor on the unit - 1.3.6.1.4.1.4413.1.1.43.1.15.1.3
+    indexes:
+    - labelname: boxServicesTempUnitIndex
+      type: gauge
