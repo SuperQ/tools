@@ -1,0 +1,1315 @@
+ruckus_zonedirector:
+  walk:
+  - 1.3.6.1.4.1.25053.1.2.1.1.1.1
+  - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1
+  - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1
+  - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2
+  metrics:
+  - name: ruckusZDSystemName
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.1
+    type: DisplayString
+    help: System name - 1.3.6.1.4.1.25053.1.2.1.1.1.1.1
+  - name: ruckusZDSystemIPAddr
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.2
+    type: IpAddr
+    help: IP Address - 1.3.6.1.4.1.25053.1.2.1.1.1.1.2
+  - name: ruckusZDSystemMacAddr
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.3
+    type: PhysAddress48
+    help: MAC Address - 1.3.6.1.4.1.25053.1.2.1.1.1.1.3
+  - name: ruckusZDSystemUptime
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.8
+    type: gauge
+    help: Up time - 1.3.6.1.4.1.25053.1.2.1.1.1.1.8
+  - name: ruckusZDSystemModel
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.9
+    type: DisplayString
+    help: Model - 1.3.6.1.4.1.25053.1.2.1.1.1.1.9
+  - name: ruckusZDSystemLicensedAPs
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.12
+    type: gauge
+    help: Licensed APs - 1.3.6.1.4.1.25053.1.2.1.1.1.1.12
+  - name: ruckusZDSystemMaxSta
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.13
+    type: gauge
+    help: Number of max stations allowed. - 1.3.6.1.4.1.25053.1.2.1.1.1.1.13
+  - name: ruckusZDSystemSerialNumber
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.15
+    type: DisplayString
+    help: Serial number - 1.3.6.1.4.1.25053.1.2.1.1.1.1.15
+  - name: ruckusZDSystemVersion
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.18
+    type: DisplayString
+    help: Software version - 1.3.6.1.4.1.25053.1.2.1.1.1.1.18
+  - name: ruckusZDSystemCountryCode
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.20
+    type: OctetString
+    help: Country code - 1.3.6.1.4.1.25053.1.2.1.1.1.1.20
+  - name: ruckusZDSystemStatus
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.30
+    type: gauge
+    help: 'current zd system status: if enable smart redundancy, the status is master
+      or standby, if disable smart redundancy,the status is noredundancy - 1.3.6.1.4.1.25053.1.2.1.1.1.1.30'
+  - name: ruckusZDSystemPeerConnectedStatus
+    oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.31
+    type: gauge
+    help: peer zd connected status - 1.3.6.1.4.1.25053.1.2.1.1.1.1.31
+  - name: ruckusZDWLANIndex
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.200
+    type: gauge
+    help: The index. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.200
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANSSID
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.1
+    type: OctetString
+    help: SSID. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.1
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDescription
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.2
+    type: DisplayString
+    help: WLAN description. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.2
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAuthentication
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.3
+    type: DisplayString
+    help: Authentication method. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.3
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANEncryption
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.4
+    type: DisplayString
+    help: Encryption method. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.4
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANIsGuest
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.5
+    type: gauge
+    help: This WLAN is for guest access. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.5
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANSSIDBcastDisable
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.6
+    type: gauge
+    help: Hide SSID. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.6
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANVlanID
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.7
+    type: gauge
+    help: Specifies the VLAN ID of the WLAN - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.7
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRateLimitingUp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.8
+    type: OctetString
+    help: Rate limiting of uplink. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.8
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRateLimitingDown
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.9
+    type: OctetString
+    help: Rate limiting of downlink. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.9
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANTunnelWLAN
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.10
+    type: gauge
+    help: Tunnel WLAN. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.10
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANNumVAP
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.11
+    type: gauge
+    help: Number of APs. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.11
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANNumSta
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.12
+    type: gauge
+    help: Number of client devices. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.12
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRxPkts
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.13
+    type: counter
+    help: Received packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.13
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.14
+    type: counter
+    help: Received bytes. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.14
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANTxPkts
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.15
+    type: counter
+    help: Transmitted packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.15
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANTxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.16
+    type: counter
+    help: Transmitted bytes. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.16
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAuthTotal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.26
+    type: counter
+    help: Accumulated total number of attempt to authenticate by wireless terminals
+      on this WLAN, or Authentication request. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.26
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAuthResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.27
+    type: counter
+    help: Authentication response. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.27
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAuthSuccessTotal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.28
+    type: counter
+    help: Accumulated total number of success out of Wireless authentication attempts.
+      - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.28
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAuthFail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.29
+    type: counter
+    help: Authentication fail. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.29
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocTotal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.30
+    type: counter
+    help: Accumulated total number of access of wireless terminal on this WLAN, or
+      Association request. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.30
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.31
+    type: counter
+    help: Association response. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.31
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANReassocReq
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.32
+    type: counter
+    help: Reassociation request. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.32
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANReassocResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.33
+    type: counter
+    help: Reassociation response. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.33
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocSuccess
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.34
+    type: counter
+    help: Association success. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.34
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocFail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.35
+    type: counter
+    help: Association fail. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.35
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocDenied
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.36
+    type: counter
+    help: Association denied. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.36
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDiassocAbnormal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.37
+    type: counter
+    help: Disassociation request due to abnormal causes. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.37
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDiassocCapacity
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.38
+    type: counter
+    help: Disassociation request due to device capacity. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.38
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDiassocLeave
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.39
+    type: counter
+    help: Disassociation request due to client leave. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.39
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDiassocMisc
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.40
+    type: counter
+    help: Disassociation request due to other reasons. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.40
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRxByteRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.41
+    type: gauge
+    help: Received rate byte/s in last 5 minutes . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.41
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANTxByteRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.42
+    type: gauge
+    help: Transmitted rate byte/s in last 5 minutes . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.42
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRxDataFrameOnLan
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.43
+    type: counter
+    help: Received Data Frame Number on Lan interface . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.43
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANRxByteOnLan
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.44
+    type: counter
+    help: Received Data Bytes on Lan interface . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.44
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANTxByteOnLan
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.45
+    type: counter
+    help: Transmitted Data Bytes on Lan interface . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.45
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDownDropFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.46
+    type: counter
+    help: Drop Frame Number on Downlink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.46
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDownRetxFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.47
+    type: counter
+    help: Retransmitted Frame Number on Downlink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.47
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDownTotalFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.48
+    type: counter
+    help: Total Frame Number on Downlink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.48
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANDownTotalErrFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.49
+    type: counter
+    help: Total Error Frame Number on Downlink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.49
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANUpTotalFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.50
+    type: counter
+    help: Total Frame Number on Uplink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.50
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANUpDropFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.51
+    type: counter
+    help: Drop Frame Number on Uplink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.51
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANUpRetxFrame
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.52
+    type: counter
+    help: Retransmitted Frame Number on Uplink of Wireless. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.52
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANNAME
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.108
+    type: OctetString
+    help: WLAN NAME. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.108
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAPMacAddr
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.1
+    type: PhysAddress48
+    help: MAC address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.1
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPDescription
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.2
+    type: DisplayString
+    help: Description. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.2
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPStatus
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.3
+    type: gauge
+    help: The connection status with ZD. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.3
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPModel
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.4
+    type: DisplayString
+    help: Model name. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.4
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPSerialNumber
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.5
+    type: DisplayString
+    help: Serial number. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.5
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPUptime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.6
+    type: gauge
+    help: Up time. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.6
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPSWversion
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.7
+    type: DisplayString
+    help: Software version. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.7
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPHWversion
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.8
+    type: DisplayString
+    help: Hardware version. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.8
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPIPAddr
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.10
+    type: IpAddr
+    help: IP address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.10
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPNumRadios
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.13
+    type: gauge
+    help: Number of radios. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.13
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPNumVAP
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.14
+    type: gauge
+    help: Number of APs. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.14
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPNumSta
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.15
+    type: gauge
+    help: Total number of authenticated terminal which is using currently on this
+      AP. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.15
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPNumRogues
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.16
+    type: gauge
+    help: Number of rogue devices. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.16
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPConnectionMode
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.17
+    type: gauge
+    help: The connection mode with ZD. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.17
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMeshEnable
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.18
+    type: gauge
+    help: Mesh enable. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.18
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMeshHops
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.19
+    type: gauge
+    help: Number of mesh hops. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.19
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMeshType
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.20
+    type: gauge
+    help: Mesh type. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.20
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXByte
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.21
+    type: counter
+    help: Bytes received on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.21
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPkt
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.22
+    type: counter
+    help: Packets received on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.22
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPktErr
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.23
+    type: counter
+    help: Packets received erroneously on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.23
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPKTSucc
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.24
+    type: counter
+    help: Packets received successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.24
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXByte
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.25
+    type: counter
+    help: Bytes transmitted on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.25
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXPkt
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.26
+    type: counter
+    help: Packets transmitted on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.26
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMemUtil
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.27
+    type: gauge
+    help: Memory utilization percentage. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.27
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMemTotal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.28
+    type: gauge
+    help: Total memory in KB. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.28
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPCPUUtil
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.29
+    type: gauge
+    help: CPU utilization percentage. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.29
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPFWSize
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.30
+    type: gauge
+    help: Firmware partition size in byte. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.30
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPFWAvail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.31
+    type: gauge
+    help: Firmware partition available size in byte. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.31
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMultipleVlanCapability
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.32
+    type: gauge
+    help: AP support multiple vlan capability. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.32
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAP11bCapable
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.36
+    type: gauge
+    help: Support 802.11b. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.36
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAP11gCapable
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.37
+    type: gauge
+    help: Support 802.11g. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.37
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMultiModeAccessStatus
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.38
+    type: gauge
+    help: Support simutaneously connections from 11a/b/g clients. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.38
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPEthStateChange
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.39
+    type: counter
+    help: Ethernet port up/down count. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.39
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPSyncConf
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.41
+    type: gauge
+    help: Manually push configuration to this AP. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.41
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPUpgrade
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.42
+    type: gauge
+    help: Upgrade this AP. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.42
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPFirstJoinTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.43
+    type: DisplayString
+    help: Time of first join. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.43
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLastBootTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.44
+    type: DisplayString
+    help: Time of last boot. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.44
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLastUpgradeTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.45
+    type: DisplayString
+    help: Time of last firmware upgrade. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.45
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLastConfSyncTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.46
+    type: DisplayString
+    help: Time of last configuration synchronization. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.46
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPKTBcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.47
+    type: counter
+    help: Broadcast packets received successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.47
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPKTMcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.48
+    type: counter
+    help: Multicast packets received successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.48
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXPKTUcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.49
+    type: counter
+    help: Unicast packets received successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.49
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXPKTBcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.50
+    type: counter
+    help: Broadcast packets transmitted successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.50
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXPKTMcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.51
+    type: counter
+    help: Multicast packets transmitted successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.51
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXPKTUcast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.52
+    type: counter
+    help: Unicast packets transmitted successfully on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.52
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsDropped
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.53
+    type: counter
+    help: Number of packets dropped on LAN port. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.53
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMeshUpPortCntUpdown
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.54
+    type: counter
+    help: updown count of AP as a up port node in mesh mode. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.54
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPMeshDownPortCntUpdown
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.55
+    type: counter
+    help: updown count of AP as a down port node in mesh mode. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.55
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPTxFrameDropped
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.57
+    type: counter
+    help: Droped Frame count of AP wireless transmitted. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.57
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPTxFrameError
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.58
+    type: counter
+    help: Error Frame count of AP wireless transmitted. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.58
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPCoverageTech
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.59
+    type: gauge
+    help: AP's coverage technology. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.59
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPStaTxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.61
+    type: counter
+    help: Client send data to this AP.(kbytes) - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.61
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPStaRxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.62
+    type: counter
+    help: Client receive data from this AP.(kbytes) - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.62
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPNetmask
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.100
+    type: IpAddr
+    help: Netmask address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.100
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPGateway
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.101
+    type: IpAddr
+    help: Gateway address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.101
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPDNS1
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.105
+    type: IpAddr
+    help: Primary DNS address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.105
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPDNS2
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.106
+    type: IpAddr
+    help: Sencond DNS address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.106
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPTotalUser
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.110
+    type: gauge
+    help: Total number of client AP can support. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.110
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsRXByteRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.111
+    type: counter
+    help: Bytes rate received on LAN port each 90s. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.111
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPLANStatsTXByteRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.112
+    type: counter
+    help: Bytes rate transmitted on LAN port each 90s. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.112
+    indexes:
+    - labelname: ruckusZDWLANAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+  - name: ruckusZDWLANAPRadioStatsAPMacAddr
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.1
+    type: PhysAddress48
+    help: AP MAC address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.1
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRadioIndex
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.2
+    type: gauge
+    help: Radio index of the AP. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.2
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRadioType
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.3
+    type: gauge
+    help: Radio type. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.3
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsChannel
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.4
+    type: gauge
+    help: Radio channel. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.4
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxPower
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.5
+    type: gauge
+    help: Transmit power of radio. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.5
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsMeshEnable
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.6
+    type: gauge
+    help: Mesh enable. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.6
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsNumVAP
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.7
+    type: gauge
+    help: Number of APs. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.7
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsNumSta
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.8
+    type: gauge
+    help: Number of stations. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.8
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAvgStaRSSI
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.9
+    type: gauge
+    help: Average client RSSI. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.9
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRxPkts
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.10
+    type: counter
+    help: Received packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.10
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.11
+    type: counter
+    help: Received bytes. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.11
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRxMulticast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.12
+    type: counter
+    help: Received multicast packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.12
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxPkts
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.13
+    type: counter
+    help: Transmitted packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.13
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxBytes
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.14
+    type: counter
+    help: Transmitted bytes. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.14
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxMulticast
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.15
+    type: counter
+    help: Transmitted multicast packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.15
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxFail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.16
+    type: counter
+    help: Transmitted fail packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.16
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxRetries
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.17
+    type: counter
+    help: Transmitted retry packets. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.17
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsPowerMgmt
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.18
+    type: gauge
+    help: Power management enable. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.18
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsMaxSta
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.19
+    type: gauge
+    help: Number of max stations allowed. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.19
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsFrameErrorRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.20
+    type: gauge
+    help: Frame error rate. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.20
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsFrameRetryRate
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.21
+    type: gauge
+    help: Frame retry rate. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.21
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsMonitoredTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.22
+    type: gauge
+    help: Monitored time. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.22
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTotalAssocTime
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.24
+    type: counter
+    help: Client total association time. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.24
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAuthReq
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.25
+    type: counter
+    help: Authentication request. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.25
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAuthResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.26
+    type: counter
+    help: Authentication response. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.26
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAuthSuccess
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.27
+    type: counter
+    help: Authentication success. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.27
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAuthFail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.28
+    type: counter
+    help: Authentication fail. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.28
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAssocReq
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.29
+    type: counter
+    help: Association request. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.29
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAssocResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.30
+    type: counter
+    help: Association response. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.30
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsReassocReq
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.31
+    type: counter
+    help: Reassociation request. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.31
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsReassocResp
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.32
+    type: counter
+    help: Reassociation response. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.32
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAssocSuccess
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.33
+    type: counter
+    help: Association success. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.33
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAssocFail
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.34
+    type: counter
+    help: Association fail. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.34
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAssocDenied
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.35
+    type: counter
+    help: Association denied. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.35
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsDiassocAbnormal
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.36
+    type: counter
+    help: Disassociation request due to abnormal causes. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.36
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsDiassocCapacity
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.37
+    type: counter
+    help: Disassociation request due to device capacity. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.37
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsDiassocLeave
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.38
+    type: counter
+    help: Disassociation request due to client leave. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.38
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsDiassocMisc
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.39
+    type: counter
+    help: Disassociation request due to other reasons. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.39
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsResourceUtil
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.40
+    type: gauge
+    help: Resource utilization. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.40
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRxSignalFrm
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.41
+    type: counter
+    help: Received signal frames. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.41
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTxSignalFrm
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.42
+    type: counter
+    help: Transmitted signal frames. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.42
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsTotalSignalFrm
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.43
+    type: counter
+    help: Total signal frames. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.43
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsAntennaGain
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.44
+    type: gauge
+    help: Get antenna gain. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.44
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsBeaconPeriod
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.45
+    type: gauge
+    help: Get beacon period. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.45
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsRTSThreshold
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.46
+    type: gauge
+    help: Get RTS threshold. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.46
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
+  - name: ruckusZDWLANAPRadioStatsFragThreshold
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.47
+    type: gauge
+    help: Get fragment threshold. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.47
+    indexes:
+    - labelname: ruckusZDWLANAPRadioStatsAPMacAddr
+      type: PhysAddress48
+      fixed_size: 6
+    - labelname: ruckusZDWLANAPRadioStatsRadioIndex
+      type: gauge
