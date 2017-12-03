@@ -1,0 +1,43 @@
+asyncos-mail:
+  walk:
+  - 1.3.6.1.4.1.15497.1.1.1.10
+  metrics:
+  - name: fanIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.10.1.1
+    type: gauge
+    help: Unique index of the chassis fan being instrumented - 1.3.6.1.4.1.15497.1.1.1.10.1.1
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanName
+      oid: 1.3.6.1.4.1.15497.1.1.1.10.1.3
+      type: DisplayString
+  - name: fanRPMs
+    oid: 1.3.6.1.4.1.15497.1.1.1.10.1.2
+    type: gauge
+    help: Speed in RPMs of a chassis fan being instrumented - 1.3.6.1.4.1.15497.1.1.1.10.1.2
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanName
+      oid: 1.3.6.1.4.1.15497.1.1.1.10.1.3
+      type: DisplayString
+  - name: fanName
+    oid: 1.3.6.1.4.1.15497.1.1.1.10.1.3
+    type: DisplayString
+    help: A textual name of the chassis fan being instrumented. - 1.3.6.1.4.1.15497.1.1.1.10.1.3
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanName
+      oid: 1.3.6.1.4.1.15497.1.1.1.10.1.3
+      type: DisplayString

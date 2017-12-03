@@ -1,0 +1,7 @@
+modules:
+  asyncos-mail:
+    walk:
+      - fanTable
+    lookups:
+      - old_index: fanIndex
+        new_index: fanName
