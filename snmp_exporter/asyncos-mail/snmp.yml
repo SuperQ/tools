@@ -1,7 +1,88 @@
 asyncos-mail:
   walk:
-  - 1.3.6.1.4.1.15497.1.1.1.10
+  - 1.3.6.1.4.1.15497.1.1.1
   metrics:
+  - name: perCentMemoryUtilization
+    oid: 1.3.6.1.4.1.15497.1.1.1.1
+    type: gauge
+    help: This object provides a general idea of how much memory is being consumed
+      by the appliance software. - 1.3.6.1.4.1.15497.1.1.1.1
+  - name: perCentCPUUtilization
+    oid: 1.3.6.1.4.1.15497.1.1.1.2
+    type: gauge
+    help: This object provides a general idea of how busy the CPU is according to
+      the appliance software, within the last 5 seconds of utilization - 1.3.6.1.4.1.15497.1.1.1.2
+  - name: perCentDiskIOUtilization
+    oid: 1.3.6.1.4.1.15497.1.1.1.3
+    type: gauge
+    help: This object provides a general idea of how much disk I/O has been generated
+      within the last 5-15 seconds. - 1.3.6.1.4.1.15497.1.1.1.3
+  - name: perCentQueueUtilization
+    oid: 1.3.6.1.4.1.15497.1.1.1.4
+    type: gauge
+    help: Percent of total queue capacity used. - 1.3.6.1.4.1.15497.1.1.1.4
+  - name: queueAvailabilityStatus
+    oid: 1.3.6.1.4.1.15497.1.1.1.5
+    type: gauge
+    help: 'Queue space status: enough space, queue near full or queue full. - 1.3.6.1.4.1.15497.1.1.1.5'
+  - name: resourceConservationReason
+    oid: 1.3.6.1.4.1.15497.1.1.1.6
+    type: gauge
+    help: Reason system is in Resource Conservation Mode. - 1.3.6.1.4.1.15497.1.1.1.6
+  - name: memoryAvailabilityStatus
+    oid: 1.3.6.1.4.1.15497.1.1.1.7
+    type: gauge
+    help: Mail Transfer process's memory availability status. - 1.3.6.1.4.1.15497.1.1.1.7
+  - name: powerSupplyIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.8.1.1
+    type: gauge
+    help: Unique index for a power supply source - 1.3.6.1.4.1.15497.1.1.1.8.1.1
+    indexes:
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyStatus
+    oid: 1.3.6.1.4.1.15497.1.1.1.8.1.2
+    type: gauge
+    help: Represents the status of a power supply - 1.3.6.1.4.1.15497.1.1.1.8.1.2
+    indexes:
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyRedundancy
+    oid: 1.3.6.1.4.1.15497.1.1.1.8.1.3
+    type: gauge
+    help: Represents the status of a collection of one or more power supplies - 1.3.6.1.4.1.15497.1.1.1.8.1.3
+    indexes:
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: powerSupplyName
+    oid: 1.3.6.1.4.1.15497.1.1.1.8.1.4
+    type: DisplayString
+    help: A textual name for a power supply. - 1.3.6.1.4.1.15497.1.1.1.8.1.4
+    indexes:
+    - labelname: powerSupplyIndex
+      type: gauge
+  - name: temperatureIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.9.1.1
+    type: gauge
+    help: Unique index for the temperature sensor being instrumented - 1.3.6.1.4.1.15497.1.1.1.9.1.1
+    indexes:
+    - labelname: temperatureIndex
+      type: gauge
+  - name: degreesCelsius
+    oid: 1.3.6.1.4.1.15497.1.1.1.9.1.2
+    type: gauge
+    help: Temperature reading for the sensor being instrumented in Centrigrade units
+      - 1.3.6.1.4.1.15497.1.1.1.9.1.2
+    indexes:
+    - labelname: temperatureIndex
+      type: gauge
+  - name: temperatureName
+    oid: 1.3.6.1.4.1.15497.1.1.1.9.1.3
+    type: DisplayString
+    help: Textual description for sensor being instrumented - 1.3.6.1.4.1.15497.1.1.1.9.1.3
+    indexes:
+    - labelname: temperatureIndex
+      type: gauge
   - name: fanIndex
     oid: 1.3.6.1.4.1.15497.1.1.1.10.1.1
     type: gauge
@@ -41,3 +122,130 @@ asyncos-mail:
       labelname: fanName
       oid: 1.3.6.1.4.1.15497.1.1.1.10.1.3
       type: DisplayString
+  - name: workQueueMessages
+    oid: 1.3.6.1.4.1.15497.1.1.1.11
+    type: gauge
+    help: Number of messages in the work queue. - 1.3.6.1.4.1.15497.1.1.1.11
+  - name: keyExpirationIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.12.1.1
+    type: gauge
+    help: Unique index for a Feature Key applicable to the appliance - 1.3.6.1.4.1.15497.1.1.1.12.1.1
+    indexes:
+    - labelname: keyExpirationIndex
+      type: gauge
+  - name: keyDescription
+    oid: 1.3.6.1.4.1.15497.1.1.1.12.1.2
+    type: DisplayString
+    help: Textual description for a Feature Key applicable to the appliance. - 1.3.6.1.4.1.15497.1.1.1.12.1.2
+    indexes:
+    - labelname: keyExpirationIndex
+      type: gauge
+  - name: keyIsPerpetual
+    oid: 1.3.6.1.4.1.15497.1.1.1.12.1.3
+    type: gauge
+    help: Boolean value represented by True if Feature Key is perpetual, or False
+      if the Feature Key is normal or expired. - 1.3.6.1.4.1.15497.1.1.1.12.1.3
+    indexes:
+    - labelname: keyExpirationIndex
+      type: gauge
+  - name: keySecondsUntilExpire
+    oid: 1.3.6.1.4.1.15497.1.1.1.12.1.4
+    type: gauge
+    help: Seconds until the valid Feature Key expires - 1.3.6.1.4.1.15497.1.1.1.12.1.4
+    indexes:
+    - labelname: keyExpirationIndex
+      type: gauge
+  - name: updateIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.13.1.1
+    type: gauge
+    help: Unique index for an update service - 1.3.6.1.4.1.15497.1.1.1.13.1.1
+    indexes:
+    - labelname: updateIndex
+      type: gauge
+  - name: updateServiceName
+    oid: 1.3.6.1.4.1.15497.1.1.1.13.1.2
+    type: DisplayString
+    help: A textual name for an update entry. - 1.3.6.1.4.1.15497.1.1.1.13.1.2
+    indexes:
+    - labelname: updateIndex
+      type: gauge
+  - name: updates
+    oid: 1.3.6.1.4.1.15497.1.1.1.13.1.3
+    type: counter
+    help: The number of successful attempts that have occurred when updating a service.
+      - 1.3.6.1.4.1.15497.1.1.1.13.1.3
+    indexes:
+    - labelname: updateIndex
+      type: gauge
+  - name: updateFailures
+    oid: 1.3.6.1.4.1.15497.1.1.1.13.1.4
+    type: counter
+    help: The number of failed attempts that have occurred when updating a service.
+      - 1.3.6.1.4.1.15497.1.1.1.13.1.4
+    indexes:
+    - labelname: updateIndex
+      type: gauge
+  - name: oldestMessageAge
+    oid: 1.3.6.1.4.1.15497.1.1.1.14
+    type: gauge
+    help: The number of seconds the oldest message has been in queue - 1.3.6.1.4.1.15497.1.1.1.14
+  - name: outstandingDNSRequests
+    oid: 1.3.6.1.4.1.15497.1.1.1.15
+    type: gauge
+    help: Number of DNS requests that have been sent but for which no reply has been
+      received. - 1.3.6.1.4.1.15497.1.1.1.15
+  - name: pendingDNSRequests
+    oid: 1.3.6.1.4.1.15497.1.1.1.16
+    type: gauge
+    help: Number of DNS requests waiting to be sent. - 1.3.6.1.4.1.15497.1.1.1.16
+  - name: raidEvents
+    oid: 1.3.6.1.4.1.15497.1.1.1.17
+    type: counter
+    help: The total number of RAID events that have occurred since the last appliance
+      power on event. - 1.3.6.1.4.1.15497.1.1.1.17
+  - name: raidIndex
+    oid: 1.3.6.1.4.1.15497.1.1.1.18.1.1
+    type: gauge
+    help: Unique index for a drive attached to a RAID controller in the appliance
+      - 1.3.6.1.4.1.15497.1.1.1.18.1.1
+    indexes:
+    - labelname: raidIndex
+      type: gauge
+  - name: raidStatus
+    oid: 1.3.6.1.4.1.15497.1.1.1.18.1.2
+    type: gauge
+    help: Represents the status of a a drive attached to a RAID controller in the
+      appliance - 1.3.6.1.4.1.15497.1.1.1.18.1.2
+    indexes:
+    - labelname: raidIndex
+      type: gauge
+  - name: raidID
+    oid: 1.3.6.1.4.1.15497.1.1.1.18.1.3
+    type: DisplayString
+    help: A textual name for a drive attached to a RAID controller in the appliance.
+      - 1.3.6.1.4.1.15497.1.1.1.18.1.3
+    indexes:
+    - labelname: raidIndex
+      type: gauge
+  - name: raidLastError
+    oid: 1.3.6.1.4.1.15497.1.1.1.18.1.4
+    type: DisplayString
+    help: The textual description of the last error message reported by the RAID controller
+      or corresponding driver if one has occurred - 1.3.6.1.4.1.15497.1.1.1.18.1.4
+    indexes:
+    - labelname: raidIndex
+      type: gauge
+  - name: openFilesOrSockets
+    oid: 1.3.6.1.4.1.15497.1.1.1.19
+    type: gauge
+    help: This object notes how many files or sockets are open on the appliance -
+      1.3.6.1.4.1.15497.1.1.1.19
+  - name: mailTransferThreads
+    oid: 1.3.6.1.4.1.15497.1.1.1.20
+    type: gauge
+    help: Number of threads that perform some task related to transferring mail. -
+      1.3.6.1.4.1.15497.1.1.1.20
+  - name: hsmErrorReason
+    oid: 1.3.6.1.4.1.15497.1.1.1.22
+    type: DisplayString
+    help: A textual reason describing the last HSM authentication error. - 1.3.6.1.4.1.15497.1.1.1.22

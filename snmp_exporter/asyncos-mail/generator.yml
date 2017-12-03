@@ -1,7 +1,7 @@
 modules:
   asyncos-mail:
     walk:
-      - fanTable
+      - asyncOSMailObjects
     lookups:
       - old_index: fanIndex
         new_index: fanName
