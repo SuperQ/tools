@@ -1,0 +1,15 @@
+modules:
+  ucd_snmp_mib:
+    walk:
+      - laTable
+    overrides:
+      laLoad:
+        regex_extracts:
+          Level:
+            - regex: '(.*)'
+              value: '$1'
+      laConfig:
+        regex_extracts:
+          Level:
+            - regex: '(.*)'
+              value: '$1'
