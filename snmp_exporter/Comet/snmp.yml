@@ -1,0 +1,168 @@
+comet:
+  walk:
+  - 1.3.6.1.4.1.22626.1.5
+  metrics:
+  - name: sensorName
+    oid: 1.3.6.1.4.1.22626.1.5.1.1
+    type: OctetString
+    help: Sensor name. - 1.3.6.1.4.1.22626.1.5.1.1
+  - name: ch1Name
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.1
+    type: OctetString
+    help: Channel 1 name. - 1.3.6.1.4.1.22626.1.5.2.1.1
+  - name: ch1Val
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.2
+    type: OctetString
+    help: Channel 1 temperature. - 1.3.6.1.4.1.22626.1.5.2.1.2
+  - name: ch1IntVal
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.3
+    type: gauge
+    help: Channel 1 temperature * 10 (12,5 dgr C = 125). - 1.3.6.1.4.1.22626.1.5.2.1.3
+  - name: ch1Alarm
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.4
+    type: gauge
+    help: Alarm on channel 1; 0 - No alarm, 1 - Alarm Hi, 2- Alarm Lo. - 1.3.6.1.4.1.22626.1.5.2.1.4
+  - name: ch1LimHi
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.5
+    type: OctetString
+    help: Channel 1 temperature upper alarm limit. - 1.3.6.1.4.1.22626.1.5.2.1.5
+  - name: ch1LimLo
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.6
+    type: OctetString
+    help: Channel 1 temperature low alarm limit. - 1.3.6.1.4.1.22626.1.5.2.1.6
+  - name: ch1LimHyst
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.7
+    type: OctetString
+    help: Channel 1 temperature hysteressis. - 1.3.6.1.4.1.22626.1.5.2.1.7
+  - name: ch1Delay
+    oid: 1.3.6.1.4.1.22626.1.5.2.1.8
+    type: gauge
+    help: Channel 1 temperature alarm delay [s]. - 1.3.6.1.4.1.22626.1.5.2.1.8
+  - name: ch2Name
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.1
+    type: OctetString
+    help: Channel 2 name. - 1.3.6.1.4.1.22626.1.5.2.2.1
+  - name: ch2Val
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.2
+    type: OctetString
+    help: Channel 2 temperature. - 1.3.6.1.4.1.22626.1.5.2.2.2
+  - name: ch2IntVal
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.3
+    type: gauge
+    help: Channel 2 temperature * 10 (12,5 dgr C = 125). - 1.3.6.1.4.1.22626.1.5.2.2.3
+  - name: ch2Alarm
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.4
+    type: gauge
+    help: Alarm on channel 2; 0 - No alarm, 1 - Alarm Hi, 2- Alarm Lo. - 1.3.6.1.4.1.22626.1.5.2.2.4
+  - name: ch2LimHi
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.5
+    type: OctetString
+    help: Channel 2 temperature upper alarm limit. - 1.3.6.1.4.1.22626.1.5.2.2.5
+  - name: ch2LimLo
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.6
+    type: OctetString
+    help: Channel 2 temperature low alarm limit. - 1.3.6.1.4.1.22626.1.5.2.2.6
+  - name: ch2LimHyst
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.7
+    type: OctetString
+    help: Channel 2 temperature hysteressis. - 1.3.6.1.4.1.22626.1.5.2.2.7
+  - name: ch2Delay
+    oid: 1.3.6.1.4.1.22626.1.5.2.2.8
+    type: gauge
+    help: Channel 2 temperature alarm delay [s]. - 1.3.6.1.4.1.22626.1.5.2.2.8
+  - name: ch3Name
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.1
+    type: OctetString
+    help: Channel 3 name. - 1.3.6.1.4.1.22626.1.5.2.3.1
+  - name: ch3Val
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.2
+    type: OctetString
+    help: Channel 3 temperature. - 1.3.6.1.4.1.22626.1.5.2.3.2
+  - name: ch3IntVal
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.3
+    type: gauge
+    help: Channel 3 temperature * 10 (12,5 dgr C = 125). - 1.3.6.1.4.1.22626.1.5.2.3.3
+  - name: ch3Alarm
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.4
+    type: gauge
+    help: Alarm on channel 3; 0 - No alarm, 1 - Alarm Hi, 2- Alarm Lo. - 1.3.6.1.4.1.22626.1.5.2.3.4
+  - name: ch3LimHi
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.5
+    type: OctetString
+    help: Channel 3 temperature upper alarm limit. - 1.3.6.1.4.1.22626.1.5.2.3.5
+  - name: ch3LimLo
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.6
+    type: OctetString
+    help: Channel 3 temperature low alarm limit. - 1.3.6.1.4.1.22626.1.5.2.3.6
+  - name: ch3LimHyst
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.7
+    type: OctetString
+    help: Channel 3 temperature hysteressis. - 1.3.6.1.4.1.22626.1.5.2.3.7
+  - name: ch3Delay
+    oid: 1.3.6.1.4.1.22626.1.5.2.3.8
+    type: gauge
+    help: Channel 3 temperature alarm delay [s]. - 1.3.6.1.4.1.22626.1.5.2.3.8
+  - name: ch4Name
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.1
+    type: OctetString
+    help: Channel 4 name. - 1.3.6.1.4.1.22626.1.5.2.4.1
+  - name: ch4Val
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.2
+    type: OctetString
+    help: Channel 4 temperature. - 1.3.6.1.4.1.22626.1.5.2.4.2
+  - name: ch4IntVal
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.3
+    type: gauge
+    help: Channel 4 temperature * 10 (12,5 dgr C = 125). - 1.3.6.1.4.1.22626.1.5.2.4.3
+  - name: ch4Alarm
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.4
+    type: gauge
+    help: Alarm on channel 4; 0 - No alarm, 1 - Alarm Hi, 2- Alarm Lo. - 1.3.6.1.4.1.22626.1.5.2.4.4
+  - name: ch4LimHi
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.5
+    type: OctetString
+    help: Channel 4 temperature upper alarm limit. - 1.3.6.1.4.1.22626.1.5.2.4.5
+  - name: ch4LimLo
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.6
+    type: OctetString
+    help: Channel 4 temperature low alarm limit. - 1.3.6.1.4.1.22626.1.5.2.4.6
+  - name: ch4LimHyst
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.7
+    type: OctetString
+    help: Channel 4 temperature hysteressis. - 1.3.6.1.4.1.22626.1.5.2.4.7
+  - name: ch4Delay
+    oid: 1.3.6.1.4.1.22626.1.5.2.4.8
+    type: gauge
+    help: Channel 4 temperature alarm delay [s]. - 1.3.6.1.4.1.22626.1.5.2.4.8
+  - name: messageString
+    oid: 1.3.6.1.4.1.22626.1.5.3.1
+    type: OctetString
+    help: Message giving more detailed information on alarms. - 1.3.6.1.4.1.22626.1.5.3.1
+  - name: ch1temperature
+    oid: 1.3.6.1.4.1.22626.1.5.4.1.1.1
+    type: gauge
+    help: Temperature channel 1 reading. - 1.3.6.1.4.1.22626.1.5.4.1.1.1
+    indexes:
+    - labelname: ch1temperature
+      type: gauge
+  - name: ch2temperature
+    oid: 1.3.6.1.4.1.22626.1.5.4.1.1.2
+    type: gauge
+    help: Temperature channel 2 reading. - 1.3.6.1.4.1.22626.1.5.4.1.1.2
+    indexes:
+    - labelname: ch1temperature
+      type: gauge
+  - name: ch3temperature
+    oid: 1.3.6.1.4.1.22626.1.5.4.1.1.3
+    type: gauge
+    help: Temperature channel 3 reading. - 1.3.6.1.4.1.22626.1.5.4.1.1.3
+    indexes:
+    - labelname: ch1temperature
+      type: gauge
+  - name: ch4temperature
+    oid: 1.3.6.1.4.1.22626.1.5.4.1.1.4
+    type: gauge
+    help: Temperature channel 4 reading. - 1.3.6.1.4.1.22626.1.5.4.1.1.4
+    indexes:
+    - labelname: ch1temperature
+      type: gauge

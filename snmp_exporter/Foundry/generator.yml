@@ -1,0 +1,4 @@
+modules:
+  FOUNDRY-SN-SW-L4-SWITCH-GROUP-MIB:
+    walk:
+      - snL4VirtualServerStatisticName
