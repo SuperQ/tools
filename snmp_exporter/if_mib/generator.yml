@@ -1,7 +1,7 @@
 modules:
   if_mib:
     walk:
-    - sysUpTime
+    - system
     - ifTable
     - etherStatsTable
     - ifXTable
