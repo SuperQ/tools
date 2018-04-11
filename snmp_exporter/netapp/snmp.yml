@@ -1,0 +1,1521 @@
+netapp:
+  walk:
+  - 1.3.6.1.4.1.789.1.2.4
+  - 1.3.6.1.4.1.789.1.21.1.2
+  - 1.3.6.1.4.1.789.1.6.2
+  - 1.3.6.1.4.1.789.1.6.3
+  metrics:
+  - name: envOverTemperature
+    oid: 1.3.6.1.4.1.789.1.2.4.1
+    type: gauge
+    help: An indication of whether the hardware is currently operating outside of
+      its recommended temperature range - 1.3.6.1.4.1.789.1.2.4.1
+  - name: envFailedFanCount
+    oid: 1.3.6.1.4.1.789.1.2.4.2
+    type: gauge
+    help: Count of the number of chassis fans which are not operating within the recommended
+      RPM range. - 1.3.6.1.4.1.789.1.2.4.2
+  - name: envFailedFanMessage
+    oid: 1.3.6.1.4.1.789.1.2.4.3
+    type: DisplayString
+    help: Text message describing the current condition of chassis fans - 1.3.6.1.4.1.789.1.2.4.3
+  - name: envFailedPowerSupplyCount
+    oid: 1.3.6.1.4.1.789.1.2.4.4
+    type: gauge
+    help: Count of the number of power supplies which are in degraded mode. - 1.3.6.1.4.1.789.1.2.4.4
+  - name: envFailedPowerSupplyMessage
+    oid: 1.3.6.1.4.1.789.1.2.4.5
+    type: DisplayString
+    help: Text message describing the state of any power supplies which are currently
+      degraded - 1.3.6.1.4.1.789.1.2.4.5
+  - name: enclIndex
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.1
+    type: gauge
+    help: A number that identifies this enclosure among the possible monitored enclosures
+      - 1.3.6.1.4.1.789.1.21.1.2.1.1
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclContactState
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.2
+    type: gauge
+    help: The state of the communication between the filer or storage engine and the
+      enclosure monitoring device in the enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.2
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclChannelShelfAddr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.3
+    type: DisplayString
+    help: The adapter number or switch name and the port number (together, called
+      the channel), and shelf ID of this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.3
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductLogicalID
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.4
+    type: DisplayString
+    help: The logical identifier of this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.4
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductID
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.5
+    type: DisplayString
+    help: The product ID of the shelf hardware module that provides the enclosure
+      monitoring function - 1.3.6.1.4.1.789.1.21.1.2.1.5
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductVendor
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.6
+    type: DisplayString
+    help: The name of the vendor of this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.6
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductModel
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.7
+    type: DisplayString
+    help: The model name of this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.7
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductRevision
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.8
+    type: DisplayString
+    help: The revision number of this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.8
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclProductSerialNo
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.9
+    type: DisplayString
+    help: The serial number of this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.9
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclNumberDiskBays
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.10
+    type: gauge
+    help: The number of disk bays in this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.10
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclDisksPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.11
+    type: DisplayString
+    help: The list of disks present by bay number in this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.11
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclPowerSuppliesMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.12
+    type: gauge
+    help: The maximum number of power supplies in this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.12
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclPowerSuppliesPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.13
+    type: DisplayString
+    help: The list of power supplies present in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.13
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclPowerSuppliesSerialNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.14
+    type: DisplayString
+    help: The list of serial numbers of power supplies present in the enclosure -
+      1.3.6.1.4.1.789.1.21.1.2.1.14
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclPowerSuppliesFailed
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.15
+    type: DisplayString
+    help: The list of failed power supplies in this enclosure, numbered as in enclPowerSuppliesPresent.
+      - 1.3.6.1.4.1.789.1.21.1.2.1.15
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclFansMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.16
+    type: gauge
+    help: The maximum number of fans or fan modules monitored by this enclosure -
+      1.3.6.1.4.1.789.1.21.1.2.1.16
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclFansPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.17
+    type: DisplayString
+    help: The list of fans or fan modules present and for which status is known in
+      this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.17
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclFansFailed
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.18
+    type: DisplayString
+    help: The list of failed fans or fan modules in this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.18
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.19
+    type: gauge
+    help: The maximum number of temperature sensors monitored by this enclosure. -
+      1.3.6.1.4.1.789.1.21.1.2.1.19
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.20
+    type: DisplayString
+    help: The list of temperature sensors present and for which status is known in
+      this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.20
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsOverTempFail
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.21
+    type: DisplayString
+    help: The list of temperature sensors reporting overtemperature failure in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.21
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsOverTempWarn
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.22
+    type: DisplayString
+    help: The list of temperature sensors reporting overtemperature warning in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.22
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsUnderTempFail
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.23
+    type: DisplayString
+    help: The list of temperature sensors reporting undertemperature failure in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.23
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsUnderTempWarn
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.24
+    type: DisplayString
+    help: The list of temperature sensors reporting undertemperature warning in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.24
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsCurrentTemp
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.25
+    type: DisplayString
+    help: The list of temperatures reported by all temperature sensors in the enclosure,
+      including the ambient temperature - 1.3.6.1.4.1.789.1.21.1.2.1.25
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsOverTempFailThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.26
+    type: DisplayString
+    help: The list of overtemperature failure thresholds for all temperature sensors
+      in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.26
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsOverTempWarnThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.27
+    type: DisplayString
+    help: The list of overtemperature warning thresholds for all temperature sensors
+      in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.27
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsUnderTempFailThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.28
+    type: DisplayString
+    help: The list of undertemperature failure thresholds for all temperature sensors
+      in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.28
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclTempSensorsUnderTempWarnThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.29
+    type: DisplayString
+    help: The list of undertemperature warning thresholds for all temperature sensors
+      in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.29
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.30
+    type: gauge
+    help: The number of enclosure services electronics modules that it is possible
+      for this enclosure to detect and/or monitor. - 1.3.6.1.4.1.789.1.21.1.2.1.30
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.31
+    type: DisplayString
+    help: The list those enclosure services electronics modules present in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.31
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsSerialNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.32
+    type: DisplayString
+    help: The list of serial numbers of the enclosure services electronics modules
+      present in this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.32
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsFailed
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.33
+    type: DisplayString
+    help: The list of failed electronics elements - 1.3.6.1.4.1.789.1.21.1.2.1.33
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.34
+    type: gauge
+    help: The number of voltage sensors monitored by this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.34
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.35
+    type: DisplayString
+    help: The list of voltage sensors present and for which status is known in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.35
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsOverVoltFail
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.36
+    type: DisplayString
+    help: The list of voltage sensors reporting overvoltage failure in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.36
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsOverVoltWarn
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.37
+    type: DisplayString
+    help: The list of voltage sensors reporting overvoltage warning in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.37
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsUnderVoltFail
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.38
+    type: DisplayString
+    help: The list of voltage sensors reporting undervoltage failure in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.38
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsUnderVoltWarn
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.39
+    type: DisplayString
+    help: The list of voltage sensors reporting undervoltage warning in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.39
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsCurrentVolt
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.40
+    type: DisplayString
+    help: The list of voltages reported by all voltage sensors in the enclosure, Sensors
+      are numbered as in VoltSensorsPresent. - 1.3.6.1.4.1.789.1.21.1.2.1.40
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsOverVoltFailThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.41
+    type: DisplayString
+    help: The list of overvoltage failure thresholds for all voltage sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.41
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsOverVoltWarnThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.42
+    type: DisplayString
+    help: The list of overvoltage warning thresholds for all voltage sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.42
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsUnderVoltFailThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.43
+    type: DisplayString
+    help: The list of undervoltage failure thresholds for all voltage sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.43
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclVoltSensorsUnderVoltWarnThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.44
+    type: DisplayString
+    help: The list of undervoltage warning thresholds for all voltage sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.44
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.45
+    type: gauge
+    help: The number of current sensors monitored by this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.45
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.46
+    type: DisplayString
+    help: The list of current sensors present and for which status is known in this
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.46
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsOverCurFail
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.47
+    type: DisplayString
+    help: The list of current sensors reporting overcurrent failure in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.47
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsOverCurWarn
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.48
+    type: DisplayString
+    help: The list of current sensors reporting overcurrent warning in this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.48
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsCurrentCur
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.49
+    type: DisplayString
+    help: The list of currents reported by all current sensors in the enclosure, Sensors
+      are numbered as in CurSensorsPresent. - 1.3.6.1.4.1.789.1.21.1.2.1.49
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsOverCurFailThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.50
+    type: DisplayString
+    help: The list of overcurrent failure thresholds for all current sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.50
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclCurSensorsOverCurWarnThr
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.51
+    type: DisplayString
+    help: The list of overcurrent warning thresholds for all current sensors in the
+      enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.51
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectMaximum
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.52
+    type: gauge
+    help: The number of possible SAS connectors monitored by this enclosure. - 1.3.6.1.4.1.789.1.21.1.2.1.52
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectPresent
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.53
+    type: DisplayString
+    help: The list of SAS connector numbers in this enclosure that have cables attached
+      - 1.3.6.1.4.1.789.1.21.1.2.1.53
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectVendor
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.54
+    type: DisplayString
+    help: The list of vendors of cables attached to the SES connectors of the enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.54
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectType
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.55
+    type: DisplayString
+    help: The list of connector types of connectors attached to the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.55
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectCableLen
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.56
+    type: DisplayString
+    help: The list of lengths (in meters) of cables attached to the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.56
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectCableTech
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.57
+    type: DisplayString
+    help: The list of cable technologies of connectors attached to the enclosure -
+      1.3.6.1.4.1.789.1.21.1.2.1.57
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectCableEnd
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.58
+    type: DisplayString
+    help: The list of identifiers of which end of the cable is attached to the enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.58
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectSerialNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.59
+    type: DisplayString
+    help: The list of serial numbers of the SAS cables attached to this enclosure
+      - 1.3.6.1.4.1.789.1.21.1.2.1.59
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclSASConnectPartNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.60
+    type: DisplayString
+    help: The list of part numbers of the SAS cables attached to this enclosure -
+      1.3.6.1.4.1.789.1.21.1.2.1.60
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclPowerSuppliesPartNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.61
+    type: DisplayString
+    help: The list of part numbers of power supplies present in the enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.61
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclFansSpeed
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.62
+    type: DisplayString
+    help: The list of fan speeds in revolutions per minute (RPM) for fans or fan modules
+      present and for which speed status is known in this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.62
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsPartNos
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.63
+    type: DisplayString
+    help: The list of part numbers of the enclosure services electronics modules present
+      in this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.63
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclElectronicsCPLDVers
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.64
+    type: DisplayString
+    help: The list of CPLDs ('complex programmable logic devices') of the enclosure
+      services electronics modules present in this enclosure - 1.3.6.1.4.1.789.1.21.1.2.1.64
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: enclNodeName
+    oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+    type: DisplayString
+    help: Node to which this enclosure belongs. - 1.3.6.1.4.1.789.1.21.1.2.1.65
+    indexes:
+    - labelname: enclIndex
+      type: gauge
+    lookups:
+    - labels:
+      - enclIndex
+      labelname: enclNodeName
+      oid: 1.3.6.1.4.1.789.1.21.1.2.1.65
+      type: DisplayString
+  - name: raidVIndex
+    oid: 1.3.6.1.4.1.789.1.6.2.1.1
+    type: gauge
+    help: A number that identifies this disk drive within the given aggregate and
+      RAID group. - 1.3.6.1.4.1.789.1.6.2.1.1
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskName
+    oid: 1.3.6.1.4.1.789.1.6.2.1.2
+    type: DisplayString
+    help: The name identifying the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.2
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVStatus
+    oid: 1.3.6.1.4.1.789.1.6.2.1.3
+    type: gauge
+    help: The status of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.3
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskId
+    oid: 1.3.6.1.4.1.789.1.6.2.1.4
+    type: gauge
+    help: The disk identifier for the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.4
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVScsiAdapter
+    oid: 1.3.6.1.4.1.789.1.6.2.1.5
+    type: DisplayString
+    help: The identifier of the SCSI adapter for the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.5
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVScsiId
+    oid: 1.3.6.1.4.1.789.1.6.2.1.6
+    type: gauge
+    help: The identifier for the referenced disk drive on the referenced SCSI adapter
+      - 1.3.6.1.4.1.789.1.6.2.1.6
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVUsedMb
+    oid: 1.3.6.1.4.1.789.1.6.2.1.7
+    type: gauge
+    help: The number of MBytes currently in use on the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.7
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVUsedBlocks
+    oid: 1.3.6.1.4.1.789.1.6.2.1.8
+    type: gauge
+    help: The number of Blocks currently in use on the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.8
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVTotalMb
+    oid: 1.3.6.1.4.1.789.1.6.2.1.9
+    type: gauge
+    help: The number of MBytes physically available on the referenced disk drive.
+      - 1.3.6.1.4.1.789.1.6.2.1.9
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVTotalBlocks
+    oid: 1.3.6.1.4.1.789.1.6.2.1.10
+    type: gauge
+    help: The number of Blocks physically available on the referenced disk drive -
+      1.3.6.1.4.1.789.1.6.2.1.10
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVCompletionPerCent
+    oid: 1.3.6.1.4.1.789.1.6.2.1.11
+    type: gauge
+    help: In the case when rapid raid recovery, disk copy, reconstruction/adding a
+      spare, verification or scrubbing is in progress, the percent of such copy, reconstruction,
+      verification or scrubbing that has been completed on the referenced disk drive.
+      - 1.3.6.1.4.1.789.1.6.2.1.11
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVVol
+    oid: 1.3.6.1.4.1.789.1.6.2.1.12
+    type: gauge
+    help: A number that identifies the aggregate that this entry belongs to - 1.3.6.1.4.1.789.1.6.2.1.12
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVGroup
+    oid: 1.3.6.1.4.1.789.1.6.2.1.13
+    type: gauge
+    help: A number that identifies the RAID group within the given aggregate that
+      this entry belongs to - 1.3.6.1.4.1.789.1.6.2.1.13
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskNumber
+    oid: 1.3.6.1.4.1.789.1.6.2.1.14
+    type: gauge
+    help: The number of disks within this RAID group. - 1.3.6.1.4.1.789.1.6.2.1.14
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVGroupNumber
+    oid: 1.3.6.1.4.1.789.1.6.2.1.15
+    type: gauge
+    help: The number of RAID groups within this aggregate. - 1.3.6.1.4.1.789.1.6.2.1.15
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskPort
+    oid: 1.3.6.1.4.1.789.1.6.2.1.16
+    type: gauge
+    help: A number that indicates which port of the disk is being used by the primary
+      path to the disk - 1.3.6.1.4.1.789.1.6.2.1.16
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVSecondaryDiskName
+    oid: 1.3.6.1.4.1.789.1.6.2.1.17
+    type: DisplayString
+    help: The name identifying the secondary path to the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.17
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVSecondaryDiskPort
+    oid: 1.3.6.1.4.1.789.1.6.2.1.18
+    type: gauge
+    help: A number that indicates which port of the disk is being used by the secondary
+      path to the disk - 1.3.6.1.4.1.789.1.6.2.1.18
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVShelf
+    oid: 1.3.6.1.4.1.789.1.6.2.1.19
+    type: gauge
+    help: Number identifying the shelf where the disk is located. - 1.3.6.1.4.1.789.1.6.2.1.19
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVBay
+    oid: 1.3.6.1.4.1.789.1.6.2.1.20
+    type: gauge
+    help: Number identifying the disk bay within the shelf where the disk is located.
+      - 1.3.6.1.4.1.789.1.6.2.1.20
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVPlex
+    oid: 1.3.6.1.4.1.789.1.6.2.1.21
+    type: gauge
+    help: A number that identifies the plex within the given aggregate that this entry
+      belongs to - 1.3.6.1.4.1.789.1.6.2.1.21
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVPlexGroup
+    oid: 1.3.6.1.4.1.789.1.6.2.1.22
+    type: gauge
+    help: A number that identifies the RAID group within the given plex that this
+      entry belongs to - 1.3.6.1.4.1.789.1.6.2.1.22
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVPlexNumber
+    oid: 1.3.6.1.4.1.789.1.6.2.1.23
+    type: gauge
+    help: The number of plexes within this aggregate - 1.3.6.1.4.1.789.1.6.2.1.23
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVPlexName
+    oid: 1.3.6.1.4.1.789.1.6.2.1.24
+    type: DisplayString
+    help: A name that identifies the plex that this entry belongs to - 1.3.6.1.4.1.789.1.6.2.1.24
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVSectorSize
+    oid: 1.3.6.1.4.1.789.1.6.2.1.25
+    type: gauge
+    help: A number that specifies bytes per sector for this entry - 1.3.6.1.4.1.789.1.6.2.1.25
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskSerialNumber
+    oid: 1.3.6.1.4.1.789.1.6.2.1.26
+    type: DisplayString
+    help: Serial number of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.26
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskVendor
+    oid: 1.3.6.1.4.1.789.1.6.2.1.27
+    type: DisplayString
+    help: The vendor of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.27
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskModel
+    oid: 1.3.6.1.4.1.789.1.6.2.1.28
+    type: DisplayString
+    help: Model string of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.28
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskFirmwareRevision
+    oid: 1.3.6.1.4.1.789.1.6.2.1.29
+    type: DisplayString
+    help: Firmware revision number of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.29
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskRPM
+    oid: 1.3.6.1.4.1.789.1.6.2.1.30
+    type: DisplayString
+    help: RPM of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.2.1.30
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskType
+    oid: 1.3.6.1.4.1.789.1.6.2.1.31
+    type: DisplayString
+    help: Interface type of the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.31
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskPool
+    oid: 1.3.6.1.4.1.789.1.6.2.1.32
+    type: DisplayString
+    help: A name that identifies the disk pool that this entry belongs to. - 1.3.6.1.4.1.789.1.6.2.1.32
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskCopyDestDiskName
+    oid: 1.3.6.1.4.1.789.1.6.2.1.33
+    type: DisplayString
+    help: When raidVStatus value is prefailed, this string identifies the name of
+      the disk which is the copy target of the referenced prefailed disk. - 1.3.6.1.4.1.789.1.6.2.1.33
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVDiskUID
+    oid: 1.3.6.1.4.1.789.1.6.2.1.34
+    type: DisplayString
+    help: Unique identifier for the disk - 1.3.6.1.4.1.789.1.6.2.1.34
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidV64UsedBlocks
+    oid: 1.3.6.1.4.1.789.1.6.2.1.35
+    type: counter
+    help: The number of Blocks currently in use on the referenced disk drive - 1.3.6.1.4.1.789.1.6.2.1.35
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidV64TotalBlocks
+    oid: 1.3.6.1.4.1.789.1.6.2.1.36
+    type: counter
+    help: The number of Blocks physically available on the referenced disk drive -
+      1.3.6.1.4.1.789.1.6.2.1.36
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: raidVCarrierID
+    oid: 1.3.6.1.4.1.789.1.6.2.1.37
+    type: DisplayString
+    help: Unique identifier of the disk carrier. - 1.3.6.1.4.1.789.1.6.2.1.37
+    indexes:
+    - labelname: raidVVol
+      type: gauge
+    - labelname: raidVGroup
+      type: gauge
+    - labelname: raidVIndex
+      type: gauge
+  - name: spareIndex
+    oid: 1.3.6.1.4.1.789.1.6.3.1.1
+    type: gauge
+    help: A number that identifies this entry for the referenced disk drive in the
+      list of spare disk drives. - 1.3.6.1.4.1.789.1.6.3.1.1
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskName
+    oid: 1.3.6.1.4.1.789.1.6.3.1.2
+    type: DisplayString
+    help: The name identifying the referenced spare disk drive. - 1.3.6.1.4.1.789.1.6.3.1.2
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareStatus
+    oid: 1.3.6.1.4.1.789.1.6.3.1.3
+    type: gauge
+    help: The status of the referenced spare disk drive. - 1.3.6.1.4.1.789.1.6.3.1.3
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskId
+    oid: 1.3.6.1.4.1.789.1.6.3.1.4
+    type: gauge
+    help: The disk identifier for the referenced spare disk drive - 1.3.6.1.4.1.789.1.6.3.1.4
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareScsiAdapter
+    oid: 1.3.6.1.4.1.789.1.6.3.1.5
+    type: DisplayString
+    help: The identifier of the SCSI adapter for the referenced spare disk drive -
+      1.3.6.1.4.1.789.1.6.3.1.5
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareScsiId
+    oid: 1.3.6.1.4.1.789.1.6.3.1.6
+    type: gauge
+    help: The identifier for the referenced spare disk drive on the referenced SCSI
+      adapter - 1.3.6.1.4.1.789.1.6.3.1.6
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareTotalMb
+    oid: 1.3.6.1.4.1.789.1.6.3.1.7
+    type: gauge
+    help: The number of MBytes physically available on the referenced spare disk drive.
+      - 1.3.6.1.4.1.789.1.6.3.1.7
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareTotalBlocks
+    oid: 1.3.6.1.4.1.789.1.6.3.1.8
+    type: gauge
+    help: The number of Blocks physically available on the referenced spare disk drive
+      - 1.3.6.1.4.1.789.1.6.3.1.8
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskPort
+    oid: 1.3.6.1.4.1.789.1.6.3.1.9
+    type: gauge
+    help: A number that indicates which port of the disk is being used by the primary
+      path to the disk - 1.3.6.1.4.1.789.1.6.3.1.9
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareSecondaryDiskName
+    oid: 1.3.6.1.4.1.789.1.6.3.1.10
+    type: DisplayString
+    help: The name identifying the secondary path to the referenced disk drive - 1.3.6.1.4.1.789.1.6.3.1.10
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareSecondaryDiskPort
+    oid: 1.3.6.1.4.1.789.1.6.3.1.11
+    type: gauge
+    help: A number that indicates which port of the disk is being used by the secondary
+      path to the disk - 1.3.6.1.4.1.789.1.6.3.1.11
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareShelf
+    oid: 1.3.6.1.4.1.789.1.6.3.1.12
+    type: gauge
+    help: Number identifying the shelf where the disk is located. - 1.3.6.1.4.1.789.1.6.3.1.12
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareBay
+    oid: 1.3.6.1.4.1.789.1.6.3.1.13
+    type: gauge
+    help: Number identifying the disk bay within the shelf where the disk is located.
+      - 1.3.6.1.4.1.789.1.6.3.1.13
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: sparePool
+    oid: 1.3.6.1.4.1.789.1.6.3.1.14
+    type: DisplayString
+    help: A name that identifies the disk pool that this entry belongs to. - 1.3.6.1.4.1.789.1.6.3.1.14
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareSectorSize
+    oid: 1.3.6.1.4.1.789.1.6.3.1.15
+    type: gauge
+    help: A number that specifies bytes per sector for this entry - 1.3.6.1.4.1.789.1.6.3.1.15
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskSerialNumber
+    oid: 1.3.6.1.4.1.789.1.6.3.1.16
+    type: DisplayString
+    help: Serial number of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.3.1.16
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskVendor
+    oid: 1.3.6.1.4.1.789.1.6.3.1.17
+    type: DisplayString
+    help: The vendor of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.3.1.17
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskModel
+    oid: 1.3.6.1.4.1.789.1.6.3.1.18
+    type: DisplayString
+    help: Model string of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.3.1.18
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskFirmwareRevision
+    oid: 1.3.6.1.4.1.789.1.6.3.1.19
+    type: DisplayString
+    help: Firmware revision number of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.3.1.19
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskRPM
+    oid: 1.3.6.1.4.1.789.1.6.3.1.20
+    type: DisplayString
+    help: RPM of the referenced disk drive. - 1.3.6.1.4.1.789.1.6.3.1.20
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskType
+    oid: 1.3.6.1.4.1.789.1.6.3.1.21
+    type: DisplayString
+    help: Interface type of the referenced disk drive - 1.3.6.1.4.1.789.1.6.3.1.21
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareDiskUID
+    oid: 1.3.6.1.4.1.789.1.6.3.1.22
+    type: DisplayString
+    help: External unique identifier for the disk - 1.3.6.1.4.1.789.1.6.3.1.22
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spare64TotalBlocks
+    oid: 1.3.6.1.4.1.789.1.6.3.1.23
+    type: counter
+    help: The number of Blocks physically available on the referenced spare disk drive
+      - 1.3.6.1.4.1.789.1.6.3.1.23
+    indexes:
+    - labelname: spareIndex
+      type: gauge
+  - name: spareCarrierID
+    oid: 1.3.6.1.4.1.789.1.6.3.1.24
+    type: DisplayString
+    help: Unique identifier of the disk carrier. - 1.3.6.1.4.1.789.1.6.3.1.24
+    indexes:
+    - labelname: spareIndex
+      type: gauge

@@ -1,0 +1,11 @@
+modules:
+  netapp:
+    walk:
+      - enclTable
+      - raidVTable
+      - spareTable
+      - 1.3.6.1.4.1.789.1.2.4 # environment
+    overrides:
+    lookups:
+      - old_index: enclIndex
+        new_index: enclNodeName
