@@ -1,0 +1,141 @@
+ibm_imm:
+  walk:
+  - 1.3.6.1.4.1.2.3.51.3.1.3.2
+  metrics:
+  - name: fanIndex
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.1
+    type: gauge
+    help: This column is used to identify a particular fan. - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.1
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanDescr
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+    type: DisplayString
+    help: A description of the fan measurement channel. - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanSpeed
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.3
+    type: DisplayString
+    help: Fan speed expressed in percent(%) of maximum RPM - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.3
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+    regex_extracts:
+      Online:
+      - value: "0"
+        regex: ^(?:Offline)$
+      Percent:
+      - value: $1
+        regex: ^(?:(\d+)%.*)$
+  - name: fanNonRecovLimitHigh
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.4
+    type: gauge
+    help: The high non-recoverable limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.4
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanCritLimitHigh
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.5
+    type: gauge
+    help: The high critical limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.5
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanNonCritLimitHigh
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.6
+    type: gauge
+    help: The high non-critical limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.6
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanNonRecovLimitLow
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.7
+    type: gauge
+    help: The low non-recoverable limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.7
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanCritLimitLow
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.8
+    type: gauge
+    help: The low critical limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.8
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanNonCritLimitLow
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.9
+    type: gauge
+    help: The low non-critical limit for the measured fan - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.9
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
+  - name: fanHealthStatus
+    oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.10
+    type: DisplayString
+    help: A description of the fan component status. - 1.3.6.1.4.1.2.3.51.3.1.3.2.1.10
+    indexes:
+    - labelname: fanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - fanIndex
+      labelname: fanDescr
+      oid: 1.3.6.1.4.1.2.3.51.3.1.3.2.1.2
+      type: DisplayString
