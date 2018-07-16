@@ -1,0 +1,130 @@
+host_resources:
+  walk:
+  - 1.3.6.1.2.1.25.1
+  - 1.3.6.1.2.1.25.2.3
+  - 1.3.6.1.2.1.25.3.3
+  metrics:
+  - name: hrSystemUptime
+    oid: 1.3.6.1.2.1.25.1.1
+    type: gauge
+    help: The amount of time since this host was last initialized - 1.3.6.1.2.1.25.1.1
+  - name: hrSystemDate
+    oid: 1.3.6.1.2.1.25.1.2
+    type: OctetString
+    help: The host's notion of the local date and time of day. - 1.3.6.1.2.1.25.1.2
+  - name: hrSystemInitialLoadDevice
+    oid: 1.3.6.1.2.1.25.1.3
+    type: gauge
+    help: The index of the hrDeviceEntry for the device from which this host is configured
+      to load its initial operating system configuration (i.e., which operating system
+      code and/or boot parameters) - 1.3.6.1.2.1.25.1.3
+  - name: hrSystemInitialLoadParameters
+    oid: 1.3.6.1.2.1.25.1.4
+    type: OctetString
+    help: This object contains the parameters (e.g - 1.3.6.1.2.1.25.1.4
+  - name: hrSystemNumUsers
+    oid: 1.3.6.1.2.1.25.1.5
+    type: gauge
+    help: The number of user sessions for which this host is storing state information
+      - 1.3.6.1.2.1.25.1.5
+  - name: hrSystemProcesses
+    oid: 1.3.6.1.2.1.25.1.6
+    type: gauge
+    help: The number of process contexts currently loaded or running on this system.
+      - 1.3.6.1.2.1.25.1.6
+  - name: hrSystemMaxProcesses
+    oid: 1.3.6.1.2.1.25.1.7
+    type: gauge
+    help: The maximum number of process contexts this system can support - 1.3.6.1.2.1.25.1.7
+  - name: hrStorageIndex
+    oid: 1.3.6.1.2.1.25.2.3.1.1
+    type: gauge
+    help: A unique value for each logical storage area contained by the host. - 1.3.6.1.2.1.25.2.3.1.1
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageDescr
+    oid: 1.3.6.1.2.1.25.2.3.1.3
+    type: DisplayString
+    help: A description of the type and instance of the storage described by this
+      entry. - 1.3.6.1.2.1.25.2.3.1.3
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageAllocationUnits
+    oid: 1.3.6.1.2.1.25.2.3.1.4
+    type: gauge
+    help: The size, in bytes, of the data objects allocated from this pool - 1.3.6.1.2.1.25.2.3.1.4
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageSize
+    oid: 1.3.6.1.2.1.25.2.3.1.5
+    type: gauge
+    help: The size of the storage represented by this entry, in units of hrStorageAllocationUnits
+      - 1.3.6.1.2.1.25.2.3.1.5
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageUsed
+    oid: 1.3.6.1.2.1.25.2.3.1.6
+    type: gauge
+    help: The amount of the storage represented by this entry that is allocated, in
+      units of hrStorageAllocationUnits. - 1.3.6.1.2.1.25.2.3.1.6
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageAllocationFailures
+    oid: 1.3.6.1.2.1.25.2.3.1.7
+    type: counter
+    help: The number of requests for storage represented by this entry that could
+      not be honored due to not enough storage - 1.3.6.1.2.1.25.2.3.1.7
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrProcessorLoad
+    oid: 1.3.6.1.2.1.25.3.3.1.2
+    type: gauge
+    help: The average, over the last minute, of the percentage of time that this processor
+      was not idle - 1.3.6.1.2.1.25.3.3.1.2
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  auth:
+    community: xxxx

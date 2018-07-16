@@ -1,0 +1,11 @@
+modules:
+  host_resources:
+    auth:
+      community: xxxx
+    walk:
+      - hrSystem
+      - hrStorageTable
+      - hrProcessorTable
+    lookups:
+      - old_index: hrStorageIndex
+        new_index: hrStorageDescr
