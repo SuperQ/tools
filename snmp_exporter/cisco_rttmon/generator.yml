@@ -1,0 +1,11 @@
+modules:
+  cisco_rttmon:
+    walk:
+      - rttMonLatestRttOperCompletionTime
+      - rttMonEchoAdminTargetAddress
+    lookups:
+      - old_index: rttMonCtrlAdminIndex
+        new_index: rttMonEchoAdminTargetAddress
+    overrides:
+      rttMonEchoAdminTargetAddress:
+        ignore: true
