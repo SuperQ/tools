@@ -1,0 +1,9 @@
+# UPS-MIB
+modules:
+  ups:
+    walk:
+      - upsBattery
+      - upsInput
+      - upsOutput
+      - upsBypass
+      - upsAlarmsPresent
