@@ -1,8 +1,8 @@
 diff --git a/generator/tree.go b/generator/tree.go
-index 5e381bf..85e7bac 100644
+index 3785e9f..e7bee34 100644
 --- a/generator/tree.go
 +++ b/generator/tree.go
-@@ -329,14 +329,12 @@ func generateConfigModule(cfg *ModuleConfig, node *Node, nameToNode map[string]*
+@@ -335,14 +335,12 @@ func generateConfigModule(cfg *ModuleConfig, node *Node, nameToNode map[string]*
  						log.Fatalf("Unknown index '%s'", lookup.NewIndex)
  					}
  					indexNode := nameToNode[lookup.NewIndex]
