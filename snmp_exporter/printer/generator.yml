@@ -1,0 +1,6 @@
+modules:
+  printer:
+    walk:
+    - system
+    - prtGeneralTable
+    - prtMediaPathTable

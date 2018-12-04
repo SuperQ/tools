@@ -1,0 +1,261 @@
+printer:
+  walk:
+  - 1.3.6.1.2.1.43.13.4
+  - 1.3.6.1.2.1.43.5.1
+  - 1.3.6.1.4.1.318.1.3
+  metrics:
+  - name: prtMediaPathIndex
+    oid: 1.3.6.1.2.1.43.13.4.1.1
+    type: gauge
+    help: A unique value used by the printer to identify this media path - 1.3.6.1.2.1.43.13.4.1.1
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMaxSpeedPrintUnit
+    oid: 1.3.6.1.2.1.43.13.4.1.2
+    type: gauge
+    help: The unit of measure used in specifying the speed of all media paths in the
+      printer. - 1.3.6.1.2.1.43.13.4.1.2
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMediaSizeUnit
+    oid: 1.3.6.1.2.1.43.13.4.1.3
+    type: gauge
+    help: The units of measure of media size for use in calculating and relaying dimensional
+      values for all media paths in the printer. - 1.3.6.1.2.1.43.13.4.1.3
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMaxSpeed
+    oid: 1.3.6.1.2.1.43.13.4.1.4
+    type: gauge
+    help: The maximum printing speed of this media path expressed in prtMediaPathMaxSpeedUnit's
+      - 1.3.6.1.2.1.43.13.4.1.4
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMaxMediaFeedDir
+    oid: 1.3.6.1.2.1.43.13.4.1.5
+    type: gauge
+    help: The maximum physical media size in the feed direction of this media path
+      expressed in units of measure specified by PrtMediaPathMediaSizeUnit - 1.3.6.1.2.1.43.13.4.1.5
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMaxMediaXFeedDir
+    oid: 1.3.6.1.2.1.43.13.4.1.6
+    type: gauge
+    help: The maximum physical media size across the feed direction of this media
+      path expressed in units of measure specified by prtMediaPathMediaSizeUnit -
+      1.3.6.1.2.1.43.13.4.1.6
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMinMediaFeedDir
+    oid: 1.3.6.1.2.1.43.13.4.1.7
+    type: gauge
+    help: The minimum physical media size in the feed direction of this media path
+      expressed in units of measure specified by prtMediaPathMediaSizeUnit - 1.3.6.1.2.1.43.13.4.1.7
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathMinMediaXFeedDir
+    oid: 1.3.6.1.2.1.43.13.4.1.8
+    type: gauge
+    help: The minimum physical media size across the feed direction of this media
+      path expressed in units of measure specified by prtMediaPathMediaSizeUnit -
+      1.3.6.1.2.1.43.13.4.1.8
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathType
+    oid: 1.3.6.1.2.1.43.13.4.1.9
+    type: gauge
+    help: The type of the media path for this media path. - 1.3.6.1.2.1.43.13.4.1.9
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathDescription
+    oid: 1.3.6.1.2.1.43.13.4.1.10
+    type: OctetString
+    help: The manufacturer-provided description of this media path in the localization
+      specified by prtGeneralCurrentLocalization. - 1.3.6.1.2.1.43.13.4.1.10
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtMediaPathStatus
+    oid: 1.3.6.1.2.1.43.13.4.1.11
+    type: gauge
+    help: The current status of this media path. - 1.3.6.1.2.1.43.13.4.1.11
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+    - labelname: prtMediaPathIndex
+      type: gauge
+  - name: prtGeneralConfigChanges
+    oid: 1.3.6.1.2.1.43.5.1.1.1
+    type: counter
+    help: Counts configuration changes within the printer - 1.3.6.1.2.1.43.5.1.1.1
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralCurrentLocalization
+    oid: 1.3.6.1.2.1.43.5.1.1.2
+    type: gauge
+    help: The value of the prtLocalizationIndex corresponding to the current language,
+      country, and character set to be used for localized string values that are identified
+      as being dependent on the value of this object - 1.3.6.1.2.1.43.5.1.1.2
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralReset
+    oid: 1.3.6.1.2.1.43.5.1.1.3
+    type: gauge
+    help: Setting this value to 'powerCycleReset', 'resetToNVRAM', or 'resetToFactoryDefaults'
+      will result in the resetting of the printer - 1.3.6.1.2.1.43.5.1.1.3
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralCurrentOperator
+    oid: 1.3.6.1.2.1.43.5.1.1.4
+    type: OctetString
+    help: The name of the person who is responsible for operating this printer - 1.3.6.1.2.1.43.5.1.1.4
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralServicePerson
+    oid: 1.3.6.1.2.1.43.5.1.1.5
+    type: OctetString
+    help: The name of the person responsible for servicing this printer - 1.3.6.1.2.1.43.5.1.1.5
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtInputDefaultIndex
+    oid: 1.3.6.1.2.1.43.5.1.1.6
+    type: gauge
+    help: 'The value of prtInputIndex corresponding to the default input sub-unit:
+      that is, this object selects the default source of input media. - 1.3.6.1.2.1.43.5.1.1.6'
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtOutputDefaultIndex
+    oid: 1.3.6.1.2.1.43.5.1.1.7
+    type: gauge
+    help: The value of prtOutputIndex corresponding to the default output sub-unit;
+      that is, this object selects the default output destination. - 1.3.6.1.2.1.43.5.1.1.7
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtMarkerDefaultIndex
+    oid: 1.3.6.1.2.1.43.5.1.1.8
+    type: gauge
+    help: The value of prtMarkerIndex corresponding to the default marker sub-unit;
+      that is, this object selects the default marker. - 1.3.6.1.2.1.43.5.1.1.8
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtMediaPathDefaultIndex
+    oid: 1.3.6.1.2.1.43.5.1.1.9
+    type: gauge
+    help: The value of prtMediaPathIndex corresponding to the default media path;
+      that is, the selection of the default media path. - 1.3.6.1.2.1.43.5.1.1.9
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtConsoleLocalization
+    oid: 1.3.6.1.2.1.43.5.1.1.10
+    type: gauge
+    help: The value of the prtLocalizationIndex corresponding to the language, country,
+      and character set to be used for the console - 1.3.6.1.2.1.43.5.1.1.10
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtConsoleNumberOfDisplayLines
+    oid: 1.3.6.1.2.1.43.5.1.1.11
+    type: gauge
+    help: The number of lines on the printer's physical display - 1.3.6.1.2.1.43.5.1.1.11
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtConsoleNumberOfDisplayChars
+    oid: 1.3.6.1.2.1.43.5.1.1.12
+    type: gauge
+    help: The number of characters per line displayed on the physical display - 1.3.6.1.2.1.43.5.1.1.12
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtConsoleDisable
+    oid: 1.3.6.1.2.1.43.5.1.1.13
+    type: gauge
+    help: This value indicates how input is (or is not) accepted from the operator
+      console - 1.3.6.1.2.1.43.5.1.1.13
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtAuxiliarySheetStartupPage
+    oid: 1.3.6.1.2.1.43.5.1.1.14
+    type: gauge
+    help: Used to enable or disable printing a startup page - 1.3.6.1.2.1.43.5.1.1.14
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtAuxiliarySheetBannerPage
+    oid: 1.3.6.1.2.1.43.5.1.1.15
+    type: gauge
+    help: Used to enable or disable printing banner pages at the beginning of jobs
+      - 1.3.6.1.2.1.43.5.1.1.15
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralPrinterName
+    oid: 1.3.6.1.2.1.43.5.1.1.16
+    type: OctetString
+    help: An administrator-specified name for this printer - 1.3.6.1.2.1.43.5.1.1.16
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtGeneralSerialNumber
+    oid: 1.3.6.1.2.1.43.5.1.1.17
+    type: OctetString
+    help: A recorded serial number for this device that indexes some type device catalog
+      or inventory - 1.3.6.1.2.1.43.5.1.1.17
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtAlertCriticalEvents
+    oid: 1.3.6.1.2.1.43.5.1.1.18
+    type: counter
+    help: A running counter of the number of critical alert events that have been
+      recorded in the alert table - 1.3.6.1.2.1.43.5.1.1.18
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
+  - name: prtAlertAllEvents
+    oid: 1.3.6.1.2.1.43.5.1.1.19
+    type: counter
+    help: A running counter of the total number of alert event entries (critical and
+      non-critical) that have been recorded in the alert table - 1.3.6.1.2.1.43.5.1.1.19
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
