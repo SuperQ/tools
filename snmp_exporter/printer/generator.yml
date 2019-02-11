@@ -2,9 +2,26 @@ modules:
   printer:
     walk:
     - sysUpTime
+    - prtGeneralTable
+    - prtLocalizationTable
     - hrPrinterStatus
     - prtCoverStatus
     - prtMarkerSuppliesTable
+    overrides:
+      prtLocalizationLanguage:
+        type: DisplayString
+      prtLocalizationCountry:
+        type: DisplayString
+      prtGeneralCurrentOperator:
+        type: DisplayString
+      prtGeneralServicePerson:
+        type: DisplayString
+      prtGeneralPrinterName:
+        type: DisplayString
+      prtGeneralSerialNumber:
+        type: DisplayString
+      prtMarkerSuppliesDescription:
+        type: DisplayString
     lookups:
     - source_indexes: [ hrDeviceIndex, prtMarkerSuppliesIndex ]
       lookup: prtMarkerSuppliesType
