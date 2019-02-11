@@ -1,6 +1,11 @@
 modules:
   printer:
     walk:
-    - system
-    - prtGeneralTable
-    - prtMediaPathTable
+    - sysUpTime
+    - hrPrinterStatus
+    - prtCoverStatus
+    - prtMarkerSuppliesTable
+    lookups:
+    - source_indexes: [ hrDeviceIndex, prtMarkerSuppliesIndex ]
+      lookup: prtMarkerSuppliesType
+      keep_source_indexes: true
