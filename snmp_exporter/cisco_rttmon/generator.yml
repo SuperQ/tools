@@ -11,3 +11,5 @@ modules:
     overrides:
       rttMonLatestRttOperSense:
         type: EnumAsInfo
+      rttMonCtrlAdminRttType:
+        type: EnumAsInfo

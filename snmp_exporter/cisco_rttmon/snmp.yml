@@ -47,7 +47,7 @@ cisco_rttmon:
       type: DisplayString
   - name: rttMonCtrlAdminRttType
     oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.4
-    type: gauge
+    type: EnumAsInfo
     help: The type of RTT operation to be performed - 1.3.6.1.4.1.9.9.42.1.2.1.1.4
     indexes:
     - labelname: rttMonCtrlAdminIndex
