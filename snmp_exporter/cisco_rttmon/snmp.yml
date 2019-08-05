@@ -1,8 +1,212 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
 cisco_rttmon:
   walk:
-  - 1.3.6.1.4.1.9.9.42.1.2.10.1.1
+  - 1.3.6.1.4.1.9.9.42.1.2.1
+  - 1.3.6.1.4.1.9.9.42.1.2.10
   - 1.3.6.1.4.1.9.9.42.1.2.2.1.2
   metrics:
+  - name: rttMonCtrlAdminIndex
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.1
+    type: gauge
+    help: Uniquely identifies a row in the rttMonCtrlAdminTable - 1.3.6.1.4.1.9.9.42.1.2.1.1.1
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminOwner
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.2
+    type: OctetString
+    help: Identifies the entity that created this table row. - 1.3.6.1.4.1.9.9.42.1.2.1.1.2
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminTag
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+    type: DisplayString
+    help: A string which is used by a managing application to identify the RTT target
+      - 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminRttType
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.4
+    type: gauge
+    help: The type of RTT operation to be performed - 1.3.6.1.4.1.9.9.42.1.2.1.1.4
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+    enum_values:
+      1: echo
+      2: pathEcho
+      3: fileIO
+      4: script
+      5: udpEcho
+      6: tcpConnect
+      7: http
+      8: dns
+      9: jitter
+      10: dlsw
+      11: dhcp
+      12: ftp
+      13: voip
+      14: rtp
+      15: lspGroup
+      16: icmpjitter
+      17: lspPing
+      18: lspTrace
+      19: ethernetPing
+      20: ethernetJitter
+      21: lspPingPseudowire
+      22: video
+      23: y1731Delay
+      24: y1731Loss
+      25: mcastJitter
+      26: fabricPathEcho
+  - name: rttMonCtrlAdminThreshold
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.5
+    type: gauge
+    help: This object defines an administrative threshold limit - 1.3.6.1.4.1.9.9.42.1.2.1.1.5
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminFrequency
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.6
+    type: gauge
+    help: Specifies the duration between initiating each RTT operation - 1.3.6.1.4.1.9.9.42.1.2.1.1.6
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminTimeout
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.7
+    type: gauge
+    help: Specifies the duration to wait for a RTT operation completion - 1.3.6.1.4.1.9.9.42.1.2.1.1.7
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminVerifyData
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.8
+    type: gauge
+    help: When set to true, the resulting data in each RTT operation is compared with
+      the expected data - 1.3.6.1.4.1.9.9.42.1.2.1.1.8
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: rttMonCtrlAdminStatus
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.9
+    type: gauge
+    help: The status of the conceptual RTT control row - 1.3.6.1.4.1.9.9.42.1.2.1.1.9
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+    enum_values:
+      1: active
+      2: notInService
+      3: notReady
+      4: createAndGo
+      5: createAndWait
+      6: destroy
+  - name: rttMonCtrlAdminNvgen
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.10
+    type: gauge
+    help: When set to true, this entry will be shown in 'show running' command and
+      can be saved into Non-volatile memory. - 1.3.6.1.4.1.9.9.42.1.2.1.1.10
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: rttMonCtrlAdminGroupName
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.11
+    type: DisplayString
+    help: If the operation is created through auto measure group creation, then this
+      string will specify the group name to which this operation is associated. -
+      1.3.6.1.4.1.9.9.42.1.2.1.1.11
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonCtrlAdminLongTag
+    oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.12
+    type: DisplayString
+    help: This object provides additional information about the Probe and is inserted
+      into trap notifications, but has no other significance to the agent - 1.3.6.1.4.1.9.9.42.1.2.1.1.12
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
   - name: rttMonLatestRttOperCompletionTime
     oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.1
     type: gauge
@@ -14,6 +218,130 @@ cisco_rttmon:
     lookups:
     - labels:
       - rttMonCtrlAdminIndex
-      labelname: rttMonEchoAdminTargetAddress
-      oid: 1.3.6.1.4.1.9.9.42.1.2.2.1.2
-      type: OctetString
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonLatestRttOperSense
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    type: EnumAsInfo
+    help: A sense code for the completion status of the latest RTT operation. - 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+    enum_values:
+      0: other
+      1: ok
+      2: disconnected
+      3: overThreshold
+      4: timeout
+      5: busy
+      6: notConnected
+      7: dropped
+      8: sequenceError
+      9: verifyError
+      10: applicationSpecific
+      11: dnsServerTimeout
+      12: tcpConnectTimeout
+      13: httpTransactionTimeout
+      14: dnsQueryError
+      15: httpError
+      16: error
+      17: mplsLspEchoTxError
+      18: mplsLspUnreachable
+      19: mplsLspMalformedReq
+      20: mplsLspReachButNotFEC
+      21: enableOk
+      22: enableNoConnect
+      23: enableVersionFail
+      24: enableInternalError
+      25: enableAbort
+      26: enableFail
+      27: enableAuthFail
+      28: enableFormatError
+      29: enablePortInUse
+      30: statsRetrieveOk
+      31: statsRetrieveNoConnect
+      32: statsRetrieveVersionFail
+      33: statsRetrieveInternalError
+      34: statsRetrieveAbort
+      35: statsRetrieveFail
+      36: statsRetrieveAuthFail
+      37: statsRetrieveFormatError
+      38: statsRetrievePortInUse
+  - name: rttMonLatestRttOperApplSpecificSense
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.3
+    type: gauge
+    help: An application specific sense code for the completion status of the latest
+      RTT operation - 1.3.6.1.4.1.9.9.42.1.2.10.1.3
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonLatestRttOperSenseDescription
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.4
+    type: DisplayString
+    help: A sense description for the completion status of the latest RTT operation
+      when the rttMonLatestRttOperSense object is set to 'applicationSpecific'. -
+      1.3.6.1.4.1.9.9.42.1.2.10.1.4
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonLatestRttOperTime
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.5
+    type: gauge
+    help: The value of the agent system time at the time of the latest RTT operation.
+      - 1.3.6.1.4.1.9.9.42.1.2.10.1.5
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonLatestRttOperAddress
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.6
+    type: OctetString
+    help: When the RttMonRttType is 'echo', 'pathEcho', 'udpEcho', 'tcpConnect', 'dns'
+      and 'dlsw' this is a string which specifies the address of the target for this
+      RTT operation - 1.3.6.1.4.1.9.9.42.1.2.10.1.6
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
+  - name: rttMonEchoAdminTargetAddress
+    oid: 1.3.6.1.4.1.9.9.42.1.2.2.1.2
+    type: OctetString
+    help: A string which specifies the address of the target. - 1.3.6.1.4.1.9.9.42.1.2.2.1.2
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    lookups:
+    - labels:
+      - rttMonCtrlAdminIndex
+      labelname: rttMonCtrlAdminTag
+      oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.3
+      type: DisplayString
