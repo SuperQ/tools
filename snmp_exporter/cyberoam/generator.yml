@@ -1,0 +1,59 @@
+modules:
+  cyberoam:
+    walk:
+      - cyberoam
+    overrides:
+      haMode:
+        type: EnumAsStateSet
+      pop3Service:
+        type: EnumAsStateSet
+      imap4Service:
+        type: EnumAsStateSet
+      smtpService:
+        type: EnumAsStateSet
+      ftpService:
+        type: EnumAsStateSet
+      httpService:
+        type: EnumAsStateSet
+      avService:
+        type: EnumAsStateSet
+      asService:
+        type: EnumAsStateSet
+      dnsService:
+        type: EnumAsStateSet
+      haService:
+        type: EnumAsStateSet
+      idpService:
+        type: EnumAsStateSet
+      apacheService:
+        type: EnumAsStateSet
+      ntpService:
+        type: EnumAsStateSet
+      tomcatService:
+        type: EnumAsStateSet
+      sslvpnService:
+        type: EnumAsStateSet
+      DataBaseService:
+        type: EnumAsStateSet
+      networkService:
+        type: EnumAsStateSet
+      garnerService:
+        type: EnumAsStateSet
+      droutingService:
+        type: EnumAsStateSet
+      sshdService:
+        type: EnumAsStateSet
+      dgdService:
+        type: EnumAsStateSet
+      appRegStatus:
+        type: EnumAsInfo
+      supportSubStatus:
+        type: EnumAsInfo
+      avSubStatus:
+        type: EnumAsInfo
+      asSubStatus:
+        type: EnumAsInfo
+      idpSubStatus:
+        type: EnumAsInfo
+      webcatSubStatus:
+        type: EnumAsInfo
