@@ -1,0 +1,9 @@
+---
+modules:
+  ent:
+    walk:
+    - entPhysicalName
+    - entSensorType
+    overrides:
+      entSensorType:
+        type: EnumAsInfo

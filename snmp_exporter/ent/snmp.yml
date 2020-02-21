@@ -1,0 +1,36 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+ent:
+  walk:
+  - 1.3.6.1.2.1.47.1.1.1.1.7
+  - 1.3.6.1.4.1.9.9.91.1.1.1.1.1
+  metrics:
+  - name: entPhysicalName
+    oid: 1.3.6.1.2.1.47.1.1.1.1.7
+    type: DisplayString
+    help: The textual name of the physical entity - 1.3.6.1.2.1.47.1.1.1.1.7
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+  - name: entSensorType
+    oid: 1.3.6.1.4.1.9.9.91.1.1.1.1.1
+    type: EnumAsInfo
+    help: This variable indicates the type of data reported by the entSensorValue
+      - 1.3.6.1.4.1.9.9.91.1.1.1.1.1
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: unknown
+      3: voltsAC
+      4: voltsDC
+      5: amperes
+      6: watts
+      7: hertz
+      8: celsius
+      9: percentRH
+      10: rpm
+      11: cmm
+      12: truthvalue
+      13: specialEnum
+      14: dBm
