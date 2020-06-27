@@ -1,0 +1,66 @@
+modules:
+  sentry4:
+    walk:
+    - st4UnitMonitorTable
+    - st4InputCordMonitorTable
+    - st4LineMonitorTable
+    - st4PhaseMonitorTable
+    - st4OcpMonitorTable
+    - st4BranchMonitorTable
+    - st4OutletMonitorTable
+    - st4TempSensorMonitorTable
+    - st4HumidSensorMonitorTable
+    - st4WaterSensorMonitorTable
+    - st4CcSensorMonitorTable
+    - st4AdcSensorMonitorTable
+    - st4FanSensorMonitorTable
+    overrides:
+      st4HumidSensorStatus:
+        type: EnumAsInfo
+      st4WaterSensorStatus:
+        type: EnumAsInfo
+      st4CcSensorStatus:
+        type: EnumAsInfo
+      st4AdcSensorStatus:
+        type: EnumAsInfo
+      st4FanSensorStatus:
+        type: EnumAsInfo
+      st4UnitStatus:
+        type: EnumAsInfo
+      st4InputCordStatus:
+        type: EnumAsInfo
+      st4InputCordActivePowerStatus:
+        type: EnumAsInfo
+      st4InputCordApparentPowerStatus:
+        type: EnumAsInfo
+      st4InputCordPowerFactorStatus:
+        type: EnumAsInfo
+      st4InputCordOutOfBalanceStatus:
+        type: EnumAsInfo
+      st4LineStatus:
+        type: EnumAsInfo
+      st4LineCurrentStatus:
+        type: EnumAsInfo
+      st4PhaseStatus:
+        type: EnumAsInfo
+      st4PhaseVoltageStatus:
+        type: EnumAsInfo
+      st4PhasePowerFactorStatus:
+        type: EnumAsInfo
+      st4OcpStatus:
+        type: EnumAsInfo
+      st4BranchStatus:
+        type: EnumAsInfo
+      st4BranchCurrentStatus:
+        type: EnumAsInfo
+      st4OutletStatus:
+        type: EnumAsInfo
+      st4OutletCurrentStatus:
+        type: EnumAsInfo
+      st4OutletActivePowerStatus:
+        type: EnumAsInfo
+      st4OutletPowerFactorStatus:
+        type: EnumAsInfo
+      st4TempSensorStatus:
+        type: EnumAsInfo
+
