@@ -1,0 +1,14 @@
+---
+modules:
+  ap-sip:
+    walk:
+    - apSipMethodStatsTable
+    #lookups:
+    #- source_indexes:
+    #  - apSipMethodStatsIndex
+    #  - apSipMethodStatsTransType
+    #  - apSipMethodStatsEventCode
+    #  lookup: apSipMethodStatsIndex
+    overrides:
+      apSipMethodStatsIndex:
+        type: EnumAsInfo
