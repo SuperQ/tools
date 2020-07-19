@@ -1,0 +1,10 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+avtech:
+  get:
+  - 1.3.6.1.4.1.20916.1.8.1.1.1.1.0
+  metrics:
+  - name: internal_tempf
+    oid: 1.3.6.1.4.1.20916.1.8.1.1.1.1
+    type: gauge
+    help: The internal temperature reading in Fahrenheit. - 1.3.6.1.4.1.20916.1.8.1.1.1.1
+  version: 1
