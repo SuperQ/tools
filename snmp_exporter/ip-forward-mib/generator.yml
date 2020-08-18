@@ -1,0 +1,7 @@
+modules:
+  ip_forward_mib:
+    walk:
+    - inetCidrRouteStatus
+    overrides:
+      inetCidrRouteStatus:
+        type: EnumAsStateSet
