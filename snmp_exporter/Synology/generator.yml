@@ -1,0 +1,14 @@
+modules:
+  synology:
+    walk:
+      - raidTable
+    lookups:
+      - source_indexes: [raidIndex]
+        lookup: raidName
+    overrides:
+      raidName:
+        type: DisplayString
+      raidFreeSize:
+        type: gauge
+      raidTotalSize:
+        type: gauge
