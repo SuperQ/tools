@@ -1,0 +1,136 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+hp_icf_chassis:
+  walk:
+  - 1.3.6.1.4.1.11.2.14.11.1.2.8.1
+  metrics:
+  - name: hpSystemAirSensor
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.1
+    type: gauge
+    help: This is the index for this table.This object describes chassis attached
+      temperature sensor - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.1
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+  - name: hpSystemAirName
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+    type: DisplayString
+    help: This object describes name of the system which is chassis attached temperature
+      sensor number - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+  - name: hpSystemAirCurrentTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.3
+    type: DisplayString
+    help: This object gives current temperature of the system - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.3
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+    regex_extracts:
+      Celcius:
+      - value: $1
+        regex: ^(?:(\d+)C)$
+  - name: hpSystemAirMaxTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.4
+    type: OctetString
+    help: This object gives Maximum temperature of the chassis. - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.4
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+  - name: hpSystemAirMinTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.5
+    type: DisplayString
+    help: This object gives Minimum temperature of the chassis. - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.5
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+    regex_extracts:
+      Celcius:
+      - value: $1
+        regex: ^(?:(\d+)C)$
+  - name: hpSystemAirOverTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.6
+    type: gauge
+    help: This object gives Over temperature of the system - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.6
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+    enum_values:
+      1: "yes"
+      2: "no"
+  - name: hpSystemAirThresholdTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.7
+    type: OctetString
+    help: This object gives Threshold temperature of the system - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.7
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+  - name: hpSystemAirAvgTemp
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.8
+    type: OctetString
+    help: This object gives Average temperature of the system - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.8
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
+  - name: hpSystemAirEntPhysicalIndex
+    oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.9
+    type: gauge
+    help: This gives the entPhysicalIndex of the temperature sensor as in the entPhysicalTable
+      (rfc2737). - 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.9
+    indexes:
+    - labelname: hpSystemAirSensor
+      type: gauge
+    lookups:
+    - labels:
+      - hpSystemAirSensor
+      labelname: hpSystemAirName
+      oid: 1.3.6.1.4.1.11.2.14.11.1.2.8.1.1.2
+      type: DisplayString
