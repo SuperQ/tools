@@ -1,3 +1,4 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
 ruckus_zonedirector:
   walk:
   - 1.3.6.1.4.1.25053.1.2.1.1.1.1
@@ -11,7 +12,7 @@ ruckus_zonedirector:
     help: System name - 1.3.6.1.4.1.25053.1.2.1.1.1.1.1
   - name: ruckusZDSystemIPAddr
     oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.2
-    type: IpAddr
+    type: InetAddressIPv4
     help: IP Address - 1.3.6.1.4.1.25053.1.2.1.1.1.1.2
   - name: ruckusZDSystemMacAddr
     oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.3
@@ -50,10 +51,17 @@ ruckus_zonedirector:
     type: gauge
     help: 'current zd system status: if enable smart redundancy, the status is master
       or standby, if disable smart redundancy,the status is noredundancy - 1.3.6.1.4.1.25053.1.2.1.1.1.1.30'
+    enum_values:
+      1: master
+      2: standby
+      3: noredundancy
   - name: ruckusZDSystemPeerConnectedStatus
     oid: 1.3.6.1.4.1.25053.1.2.1.1.1.1.31
     type: gauge
     help: peer zd connected status - 1.3.6.1.4.1.25053.1.2.1.1.1.1.31
+    enum_values:
+      1: connected
+      2: disconnected
   - name: ruckusZDWLANIndex
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.200
     type: gauge
@@ -96,6 +104,9 @@ ruckus_zonedirector:
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANSSIDBcastDisable
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.6
     type: gauge
@@ -103,6 +114,9 @@ ruckus_zonedirector:
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANVlanID
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.7
     type: gauge
@@ -131,6 +145,9 @@ ruckus_zonedirector:
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANNumVAP
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.11
     type: gauge
@@ -170,6 +187,14 @@ ruckus_zonedirector:
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.16
     type: counter
     help: Transmitted bytes. - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.16
+    indexes:
+    - labelname: ruckusZDWLANIndex
+      type: gauge
+  - name: ruckusZDWLANAssocNumSta
+    oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.20
+    type: gauge
+    help: Number of associate client devices, include authorize and unauthorize. -
+      1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.20
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
@@ -284,14 +309,14 @@ ruckus_zonedirector:
   - name: ruckusZDWLANRxByteRate
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.41
     type: gauge
-    help: Received rate byte/s in last 5 minutes . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.41
+    help: Received rate Kbyte/s in last 90 seconds . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.41
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
   - name: ruckusZDWLANTxByteRate
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.42
     type: gauge
-    help: Transmitted rate byte/s in last 5 minutes . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.42
+    help: Transmitted rate Kbyte/s in last 90 seconds . - 1.3.6.1.4.1.25053.1.2.2.1.1.1.1.1.42
     indexes:
     - labelname: ruckusZDWLANIndex
       type: gauge
@@ -396,6 +421,12 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      0: disconnected
+      1: connected
+      2: approvalPending
+      3: upgradingFirmware
+      4: provisioning
   - name: ruckusZDWLANAPModel
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.4
     type: DisplayString
@@ -438,7 +469,7 @@ ruckus_zonedirector:
       fixed_size: 6
   - name: ruckusZDWLANAPIPAddr
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.10
-    type: IpAddr
+    type: InetAddressIPv4
     help: IP address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.10
     indexes:
     - labelname: ruckusZDWLANAPMacAddr
@@ -485,6 +516,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      0: layer2
+      1: layer3
   - name: ruckusZDWLANAPMeshEnable
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.18
     type: gauge
@@ -493,6 +527,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPMeshHops
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.19
     type: gauge
@@ -509,6 +546,11 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      0: unknown
+      1: root
+      2: mesh
+      3: forming
   - name: ruckusZDWLANAPLANStatsRXByte
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.21
     type: counter
@@ -605,6 +647,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAP11bCapable
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.36
     type: gauge
@@ -613,6 +658,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAP11gCapable
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.37
     type: gauge
@@ -621,6 +669,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPMultiModeAccessStatus
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.38
     type: gauge
@@ -629,6 +680,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      0: "false"
+      1: "true"
   - name: ruckusZDWLANAPEthStateChange
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.39
     type: counter
@@ -645,6 +699,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPUpgrade
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.42
     type: gauge
@@ -653,6 +710,9 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPFirstJoinTime
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.43
     type: DisplayString
@@ -781,6 +841,10 @@ ruckus_zonedirector:
     - labelname: ruckusZDWLANAPMacAddr
       type: PhysAddress48
       fixed_size: 6
+    enum_values:
+      1: indoor
+      2: indoor-distribute
+      3: outdoor
   - name: ruckusZDWLANAPStaTxBytes
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.61
     type: counter
@@ -799,7 +863,7 @@ ruckus_zonedirector:
       fixed_size: 6
   - name: ruckusZDWLANAPNetmask
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.100
-    type: IpAddr
+    type: InetAddressIPv4
     help: Netmask address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.100
     indexes:
     - labelname: ruckusZDWLANAPMacAddr
@@ -807,7 +871,7 @@ ruckus_zonedirector:
       fixed_size: 6
   - name: ruckusZDWLANAPGateway
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.101
-    type: IpAddr
+    type: InetAddressIPv4
     help: Gateway address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.101
     indexes:
     - labelname: ruckusZDWLANAPMacAddr
@@ -815,7 +879,7 @@ ruckus_zonedirector:
       fixed_size: 6
   - name: ruckusZDWLANAPDNS1
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.105
-    type: IpAddr
+    type: InetAddressIPv4
     help: Primary DNS address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.105
     indexes:
     - labelname: ruckusZDWLANAPMacAddr
@@ -823,7 +887,7 @@ ruckus_zonedirector:
       fixed_size: 6
   - name: ruckusZDWLANAPDNS2
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.106
-    type: IpAddr
+    type: InetAddressIPv4
     help: Sencond DNS address. - 1.3.6.1.4.1.25053.1.2.2.1.1.2.1.1.106
     indexes:
     - labelname: ruckusZDWLANAPMacAddr
@@ -883,6 +947,12 @@ ruckus_zonedirector:
       fixed_size: 6
     - labelname: ruckusZDWLANAPRadioStatsRadioIndex
       type: gauge
+    enum_values:
+      0: radio11bg
+      1: radio11a
+      2: radio11ng
+      3: radio11na
+      4: radio11ac
   - name: ruckusZDWLANAPRadioStatsChannel
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.4
     type: gauge
@@ -903,6 +973,11 @@ ruckus_zonedirector:
       fixed_size: 6
     - labelname: ruckusZDWLANAPRadioStatsRadioIndex
       type: gauge
+    enum_values:
+      0: full
+      1: half
+      2: quarter
+      3: eighth
   - name: ruckusZDWLANAPRadioStatsMeshEnable
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.6
     type: gauge
@@ -913,6 +988,9 @@ ruckus_zonedirector:
       fixed_size: 6
     - labelname: ruckusZDWLANAPRadioStatsRadioIndex
       type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPRadioStatsNumVAP
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.7
     type: gauge
@@ -1033,6 +1111,9 @@ ruckus_zonedirector:
       fixed_size: 6
     - labelname: ruckusZDWLANAPRadioStatsRadioIndex
       type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
   - name: ruckusZDWLANAPRadioStatsMaxSta
     oid: 1.3.6.1.4.1.25053.1.2.2.1.1.2.2.1.19
     type: gauge
