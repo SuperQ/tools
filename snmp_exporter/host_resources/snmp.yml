@@ -1,3 +1,4 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
 host_resources:
   walk:
   - 1.3.6.1.2.1.25.1
@@ -10,7 +11,7 @@ host_resources:
     help: The amount of time since this host was last initialized - 1.3.6.1.2.1.25.1.1
   - name: hrSystemDate
     oid: 1.3.6.1.2.1.25.1.2
-    type: OctetString
+    type: DateAndTime
     help: The host's notion of the local date and time of day. - 1.3.6.1.2.1.25.1.2
   - name: hrSystemInitialLoadDevice
     oid: 1.3.6.1.2.1.25.1.3
@@ -40,6 +41,19 @@ host_resources:
     oid: 1.3.6.1.2.1.25.2.3.1.1
     type: gauge
     help: A unique value for each logical storage area contained by the host. - 1.3.6.1.2.1.25.2.3.1.1
+    indexes:
+    - labelname: hrStorageIndex
+      type: gauge
+    lookups:
+    - labels:
+      - hrStorageIndex
+      labelname: hrStorageDescr
+      oid: 1.3.6.1.2.1.25.2.3.1.3
+      type: DisplayString
+  - name: hrStorageType
+    oid: 1.3.6.1.2.1.25.2.3.1.2
+    type: OctetString
+    help: The type of storage represented by this entry. - 1.3.6.1.2.1.25.2.3.1.2
     indexes:
     - labelname: hrStorageIndex
       type: gauge
@@ -118,6 +132,13 @@ host_resources:
       labelname: hrStorageDescr
       oid: 1.3.6.1.2.1.25.2.3.1.3
       type: DisplayString
+  - name: hrProcessorFrwID
+    oid: 1.3.6.1.2.1.25.3.3.1.1
+    type: OctetString
+    help: The product ID of the firmware associated with the processor. - 1.3.6.1.2.1.25.3.3.1.1
+    indexes:
+    - labelname: hrDeviceIndex
+      type: gauge
   - name: hrProcessorLoad
     oid: 1.3.6.1.2.1.25.3.3.1.2
     type: gauge

@@ -7,5 +7,6 @@ modules:
       - hrStorageTable
       - hrProcessorTable
     lookups:
-      - old_index: hrStorageIndex
-        new_index: hrStorageDescr
+      - source_indexes:
+        - hrStorageIndex
+        lookup: hrStorageDescr
