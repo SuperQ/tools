@@ -1,0 +1,28 @@
+scrape_configs:
+  - job_name: 'snmp'
+    static_configs:
+      - targets:
+        - target-1;if_mib
+        - target-1;other_mib
+        - target-2;if_mib
+        - target-2;third_mib
+        - target-3;if_mib
+    metrics_path: /snmp
+    relabel_configs:
+      # Use the first half of the target name for the target/instance.
+      - source_labels: [__address__]
+        regex: '(.*);(.*)'
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      # Use the second half of the target name for the module.
+      - source_labels: [__address__]
+        regex: '(.*);(.*)'
+        replacement: '$2'
+        target_label: __param_module
+      - source_labels: [__param_module]
+        target_label: module
+      # The SNMP exporter's real hostname:port.
+      - target_label: __address__
+        replacement: 127.0.0.1:9116
+
