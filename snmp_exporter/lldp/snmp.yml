@@ -1,0 +1,224 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+lldp:
+  walk:
+  - 1.0.8802.1.1.2.1.3.7
+  - 1.0.8802.1.1.2.1.4.1
+  metrics:
+  - name: lldpLocPortNum
+    oid: 1.0.8802.1.1.2.1.3.7.1.1
+    type: gauge
+    help: The index value used to identify the port component (contained in the local
+      chassis with the LLDP agent) associated with this entry - 1.0.8802.1.1.2.1.3.7.1.1
+    indexes:
+    - labelname: lldpLocPortNum
+      type: OctetString
+  - name: lldpLocPortIdSubtype
+    oid: 1.0.8802.1.1.2.1.3.7.1.2
+    type: gauge
+    help: The type of port identifier encoding used in the associated 'lldpLocPortId'
+      object. - 1.0.8802.1.1.2.1.3.7.1.2
+    indexes:
+    - labelname: lldpLocPortNum
+      type: OctetString
+    enum_values:
+      1: interfaceAlias
+      2: portComponent
+      3: macAddress
+      4: networkAddress
+      5: interfaceName
+      6: agentCircuitId
+      7: local
+  - name: lldpLocPortId
+    oid: 1.0.8802.1.1.2.1.3.7.1.3
+    type: LldpPortId
+    help: The string value used to identify the port component associated with a given
+      port in the local system. - 1.0.8802.1.1.2.1.3.7.1.3
+    indexes:
+    - labelname: lldpLocPortNum
+      type: OctetString
+  - name: lldpLocPortDesc
+    oid: 1.0.8802.1.1.2.1.3.7.1.4
+    type: DisplayString
+    help: The string value used to identify the 802 LAN station's port description
+      associated with the local system - 1.0.8802.1.1.2.1.3.7.1.4
+    indexes:
+    - labelname: lldpLocPortNum
+      type: OctetString
+  - name: lldpRemTimeMark
+    oid: 1.0.8802.1.1.2.1.4.1.1.1
+    type: gauge
+    help: A TimeFilter for this entry - 1.0.8802.1.1.2.1.4.1.1.1
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemLocalPortNum
+    oid: 1.0.8802.1.1.2.1.4.1.1.2
+    type: gauge
+    help: The index value used to identify the port component (contained in the local
+      chassis with the LLDP agent) associated with this entry - 1.0.8802.1.1.2.1.4.1.1.2
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemIndex
+    oid: 1.0.8802.1.1.2.1.4.1.1.3
+    type: gauge
+    help: This object represents an arbitrary local integer value used by this agent
+      to identify a particular connection instance, unique only for the indicated
+      remote system - 1.0.8802.1.1.2.1.4.1.1.3
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemChassisIdSubtype
+    oid: 1.0.8802.1.1.2.1.4.1.1.4
+    type: gauge
+    help: The type of encoding used to identify the chassis associated with the remote
+      system. - 1.0.8802.1.1.2.1.4.1.1.4
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+    enum_values:
+      1: chassisComponent
+      2: interfaceAlias
+      3: portComponent
+      4: macAddress
+      5: networkAddress
+      6: interfaceName
+      7: local
+  - name: lldpRemChassisId
+    oid: 1.0.8802.1.1.2.1.4.1.1.5
+    type: OctetString
+    help: The string value used to identify the chassis component associated with
+      the remote system. - 1.0.8802.1.1.2.1.4.1.1.5
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemPortIdSubtype
+    oid: 1.0.8802.1.1.2.1.4.1.1.6
+    type: gauge
+    help: The type of port identifier encoding used in the associated 'lldpRemPortId'
+      object. - 1.0.8802.1.1.2.1.4.1.1.6
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+    enum_values:
+      1: interfaceAlias
+      2: portComponent
+      3: macAddress
+      4: networkAddress
+      5: interfaceName
+      6: agentCircuitId
+      7: local
+  - name: lldpRemPortId
+    oid: 1.0.8802.1.1.2.1.4.1.1.7
+    type: LldpPortId
+    help: The string value used to identify the port component associated with the
+      remote system. - 1.0.8802.1.1.2.1.4.1.1.7
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemPortDesc
+    oid: 1.0.8802.1.1.2.1.4.1.1.8
+    type: DisplayString
+    help: The string value used to identify the description of the given port associated
+      with the remote system. - 1.0.8802.1.1.2.1.4.1.1.8
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemSysName
+    oid: 1.0.8802.1.1.2.1.4.1.1.9
+    type: DisplayString
+    help: The string value used to identify the system name of the remote system.
+      - 1.0.8802.1.1.2.1.4.1.1.9
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemSysDesc
+    oid: 1.0.8802.1.1.2.1.4.1.1.10
+    type: DisplayString
+    help: The string value used to identify the system description of the remote system.
+      - 1.0.8802.1.1.2.1.4.1.1.10
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+  - name: lldpRemSysCapSupported
+    oid: 1.0.8802.1.1.2.1.4.1.1.11
+    type: Bits
+    help: The bitmap value used to identify which system capabilities are supported
+      on the remote system. - 1.0.8802.1.1.2.1.4.1.1.11
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+    enum_values:
+      0: other
+      1: repeater
+      2: bridge
+      3: wlanAccessPoint
+      4: router
+      5: telephone
+      6: docsisCableDevice
+      7: stationOnly
+  - name: lldpRemSysCapEnabled
+    oid: 1.0.8802.1.1.2.1.4.1.1.12
+    type: Bits
+    help: The bitmap value used to identify which system capabilities are enabled
+      on the remote system. - 1.0.8802.1.1.2.1.4.1.1.12
+    indexes:
+    - labelname: lldpRemTimeMark
+      type: gauge
+    - labelname: lldpRemLocalPortNum
+      type: OctetString
+    - labelname: lldpRemIndex
+      type: gauge
+    enum_values:
+      0: other
+      1: repeater
+      2: bridge
+      3: wlanAccessPoint
+      4: router
+      5: telephone
+      6: docsisCableDevice
+      7: stationOnly

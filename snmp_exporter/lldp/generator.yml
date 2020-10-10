@@ -1,0 +1,7 @@
+modules:
+  lldp:
+    walk:
+    - lldpLocPortTable
+    - lldpRemTable
+    overrides:
+    lookups:
