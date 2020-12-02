@@ -1,0 +1,11 @@
+---
+modules:
+  junos_bgp:
+    walk:
+    - jnxBgpM2PeerLocalAddr
+    lookups:
+    - source_indexes:
+      - jnxBgpM2PeerRoutingInstance
+      - jnxBgpM2PeerLocalAddr
+      - jnxBgpM2PeerRemoteAddr
+      lookup: jnxBgpM2PeerIndex
