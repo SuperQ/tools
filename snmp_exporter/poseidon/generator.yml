@@ -1,0 +1,19 @@
+---
+modules:
+  poseidon2:
+    walk:
+    - inpTable
+    - outTable
+    - sensTable
+    lookups:
+    - source_indexes: [inpIndex]
+      lookup: inpName
+    - source_indexes: [outIndex]
+      lookup: outName
+    overrides:
+      outType:
+        type: EnumAsInfo
+      sensState:
+        type: EnumAsStateSet
+      sensUnit:
+        type: EnumAsInfo

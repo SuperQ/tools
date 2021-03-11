@@ -1,0 +1,243 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+poseidon2:
+  walk:
+  - 1.3.6.1.4.1.21796.3.3.1
+  - 1.3.6.1.4.1.21796.3.3.2
+  - 1.3.6.1.4.1.21796.3.3.3
+  metrics:
+  - name: inpIndex
+    oid: 1.3.6.1.4.1.21796.3.3.1.1.1
+    type: gauge
+    help: The binary input index. - 1.3.6.1.4.1.21796.3.3.1.1.1
+    indexes:
+    - labelname: inpIndex
+      type: gauge
+    lookups:
+    - labels:
+      - inpIndex
+      labelname: inpName
+      oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+      type: OctetString
+  - name: inpValue
+    oid: 1.3.6.1.4.1.21796.3.3.1.1.2
+    type: gauge
+    help: The binary input value. - 1.3.6.1.4.1.21796.3.3.1.1.2
+    indexes:
+    - labelname: inpIndex
+      type: gauge
+    lookups:
+    - labels:
+      - inpIndex
+      labelname: inpName
+      oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+      type: OctetString
+    enum_values:
+      0: "off"
+      1: "on"
+  - name: inpName
+    oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+    type: OctetString
+    help: The binary input name. - 1.3.6.1.4.1.21796.3.3.1.1.3
+    indexes:
+    - labelname: inpIndex
+      type: gauge
+    lookups:
+    - labels:
+      - inpIndex
+      labelname: inpName
+      oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+      type: OctetString
+  - name: inpAlarmSetup
+    oid: 1.3.6.1.4.1.21796.3.3.1.1.4
+    type: gauge
+    help: You can enable alarm for this binary input - 1.3.6.1.4.1.21796.3.3.1.1.4
+    indexes:
+    - labelname: inpIndex
+      type: gauge
+    lookups:
+    - labels:
+      - inpIndex
+      labelname: inpName
+      oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+      type: OctetString
+    enum_values:
+      0: inactive
+      1: activeOff
+      2: activeOn
+  - name: inpAlarmState
+    oid: 1.3.6.1.4.1.21796.3.3.1.1.5
+    type: gauge
+    help: The binary input alarm state. - 1.3.6.1.4.1.21796.3.3.1.1.5
+    indexes:
+    - labelname: inpIndex
+      type: gauge
+    lookups:
+    - labels:
+      - inpIndex
+      labelname: inpName
+      oid: 1.3.6.1.4.1.21796.3.3.1.1.3
+      type: OctetString
+    enum_values:
+      0: normal
+      1: alarm
+  - name: outIndex
+    oid: 1.3.6.1.4.1.21796.3.3.2.1.1
+    type: gauge
+    help: The binary output index. - 1.3.6.1.4.1.21796.3.3.2.1.1
+    indexes:
+    - labelname: outIndex
+      type: gauge
+    lookups:
+    - labels:
+      - outIndex
+      labelname: outName
+      oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+      type: OctetString
+  - name: outValue
+    oid: 1.3.6.1.4.1.21796.3.3.2.1.2
+    type: gauge
+    help: The binary output value - 1.3.6.1.4.1.21796.3.3.2.1.2
+    indexes:
+    - labelname: outIndex
+      type: gauge
+    lookups:
+    - labels:
+      - outIndex
+      labelname: outName
+      oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+      type: OctetString
+    enum_values:
+      0: "off"
+      1: "on"
+  - name: outName
+    oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+    type: OctetString
+    help: The binary output name. - 1.3.6.1.4.1.21796.3.3.2.1.3
+    indexes:
+    - labelname: outIndex
+      type: gauge
+    lookups:
+    - labels:
+      - outIndex
+      labelname: outName
+      oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+      type: OctetString
+  - name: outType
+    oid: 1.3.6.1.4.1.21796.3.3.2.1.4
+    type: EnumAsInfo
+    help: The binary output type - 1.3.6.1.4.1.21796.3.3.2.1.4
+    indexes:
+    - labelname: outIndex
+      type: gauge
+    lookups:
+    - labels:
+      - outIndex
+      labelname: outName
+      oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+      type: OctetString
+    enum_values:
+      0: onOff
+      1: rts
+      2: dtr
+  - name: outMode
+    oid: 1.3.6.1.4.1.21796.3.3.2.1.5
+    type: gauge
+    help: The binary output mode - 1.3.6.1.4.1.21796.3.3.2.1.5
+    indexes:
+    - labelname: outIndex
+      type: gauge
+    lookups:
+    - labels:
+      - outIndex
+      labelname: outName
+      oid: 1.3.6.1.4.1.21796.3.3.2.1.3
+      type: OctetString
+    enum_values:
+      0: manual
+      1: autoAlarm
+      2: autoTriggerEq
+      3: autoTriggerHi
+      4: autoTriggerLo
+  - name: sensIndex
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.1
+    type: gauge
+    help: The sensor index. - 1.3.6.1.4.1.21796.3.3.3.1.1
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensName
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.2
+    type: OctetString
+    help: The sensor name. - 1.3.6.1.4.1.21796.3.3.3.1.2
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensState
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.4
+    type: EnumAsStateSet
+    help: The sensor state. - 1.3.6.1.4.1.21796.3.3.3.1.4
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+    enum_values:
+      0: invalid
+      1: normal
+      2: alarmstate
+      3: alarm
+  - name: sensString
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.5
+    type: OctetString
+    help: The string representation of sensor value. - 1.3.6.1.4.1.21796.3.3.3.1.5
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensValue
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.6
+    type: gauge
+    help: The integer (decimal * 10) representation of sensor value. - 1.3.6.1.4.1.21796.3.3.3.1.6
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensValueRaw
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.7
+    type: gauge
+    help: The original raw value of sensor (it differs for each sensor type, especially
+      1-Wire sensors have different precisions). - 1.3.6.1.4.1.21796.3.3.3.1.7
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensID
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.8
+    type: gauge
+    help: The sensor ID. - 1.3.6.1.4.1.21796.3.3.3.1.8
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+  - name: sensUnit
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.9
+    type: EnumAsInfo
+    help: The sensor unit. - 1.3.6.1.4.1.21796.3.3.3.1.9
+    indexes:
+    - labelname: sensIndex
+      type: gauge
+    enum_values:
+      0: celsius
+      1: fahrenheit
+      2: kelvin
+      3: percent
+      4: volt
+      5: miliAmper
+      6: noUnit
+      7: pulse
+      8: switch
+      9: dewPoint
+      10: absoluteHumidity
+      11: pressure
+      12: universal
+  - name: sensUnitString
+    oid: 1.3.6.1.4.1.21796.3.3.3.1.10
+    type: OctetString
+    help: The string representation of sensor unit. - 1.3.6.1.4.1.21796.3.3.3.1.10
+    indexes:
+    - labelname: sensIndex
+      type: gauge
