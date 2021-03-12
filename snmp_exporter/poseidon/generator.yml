@@ -10,6 +10,8 @@ modules:
       lookup: inpName
     - source_indexes: [outIndex]
       lookup: outName
+    - source_indexes: [sensIndex]
+      lookup: sensName
     overrides:
       outType:
         type: EnumAsInfo
