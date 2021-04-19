@@ -1,28 +1,40 @@
+# Printer: RFC 3805
+#
+# https://tools.ietf.org/html/rfc3805
+# https://www.iana.org/assignments/ianaprinter-mib/ianaprinter-mib.xhtml
 modules:
-  printer:
+  printer_mib:
     walk:
     - sysUpTime
     - prtGeneralTable
     - prtLocalizationTable
     - hrPrinterStatus
     - prtCoverStatus
+    - prtMarkerTable
     - prtMarkerSuppliesTable
+    - hrPrinterStatus
+    - prtGeneralReset
+    - prtConsoleDisable
+    - prtGeneralPrinterName
+    - prtGeneralSerialNumber
+    - prtAlertCriticalEvents
+    - prtAlertAllEvents
+    - prtCoverStatus
+    lookups:
+      - source_indexes: [hrDeviceIndex, prtMarkerSuppliesIndex]
+        lookup: prtMarkerSuppliesType
     overrides:
-      prtLocalizationLanguage:
-        type: DisplayString
-      prtLocalizationCountry:
-        type: DisplayString
-      prtGeneralCurrentOperator:
-        type: DisplayString
-      prtGeneralServicePerson:
-        type: DisplayString
+      hrPrinterStatus:
+        type: EnumAsStateSet
+      prtGeneralReset:
+        type: EnumAsStateSet
+      prtConsoleDisable:
+        type: EnumAsStateSet
       prtGeneralPrinterName:
         type: DisplayString
       prtGeneralSerialNumber:
         type: DisplayString
+      prtCoverStatus:
+        type: EnumAsStateSet
       prtMarkerSuppliesDescription:
         type: DisplayString
-    lookups:
-    - source_indexes: [ hrDeviceIndex, prtMarkerSuppliesIndex ]
-      lookup: prtMarkerSuppliesType
-      keep_source_indexes: true
