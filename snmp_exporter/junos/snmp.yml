@@ -290,3 +290,703 @@ if_mib_junos_errors:
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
       type: DisplayString
+junos_lag:
+  walk:
+  - 1.2.840.10006.300.43
+  - 1.3.6.1.4.1.2636.3.53.1
+  metrics:
+  - name: dot3adAggIndex
+    oid: 1.2.840.10006.300.43.1.1.1.1.1
+    type: gauge
+    help: The unique identifier allocated to this Aggregator by the local System -
+      1.2.840.10006.300.43.1.1.1.1.1
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggMACAddress
+    oid: 1.2.840.10006.300.43.1.1.1.1.2
+    type: PhysAddress48
+    help: A 6-octet read-only value carrying the individual MAC address assigned to
+      the Aggregator. - 1.2.840.10006.300.43.1.1.1.1.2
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggActorSystemPriority
+    oid: 1.2.840.10006.300.43.1.1.1.1.3
+    type: gauge
+    help: A 2-octet read-write value indicating the priority value associated with
+      the Actors System ID. - 1.2.840.10006.300.43.1.1.1.1.3
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggActorSystemID
+    oid: 1.2.840.10006.300.43.1.1.1.1.4
+    type: PhysAddress48
+    help: A 6-octet read-write MAC address value used as a unique identifier for the
+      System that contains this Aggregator - 1.2.840.10006.300.43.1.1.1.1.4
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggAggregateOrIndividual
+    oid: 1.2.840.10006.300.43.1.1.1.1.5
+    type: gauge
+    help: A read-only Boolean value indicating whether the Aggregator represents an
+      Aggregate (TRUE) or an Individual link (FALSE). - 1.2.840.10006.300.43.1.1.1.1.5
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: dot3adAggActorAdminKey
+    oid: 1.2.840.10006.300.43.1.1.1.1.6
+    type: gauge
+    help: The current administrative value of the Key for the Aggregator - 1.2.840.10006.300.43.1.1.1.1.6
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggActorOperKey
+    oid: 1.2.840.10006.300.43.1.1.1.1.7
+    type: gauge
+    help: The current operational value of the Key for the Aggregator - 1.2.840.10006.300.43.1.1.1.1.7
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggPartnerSystemID
+    oid: 1.2.840.10006.300.43.1.1.1.1.8
+    type: PhysAddress48
+    help: A 6-octet read-only MAC address value consisting of the unique identifier
+      for the current protocol Partner of this Aggregator - 1.2.840.10006.300.43.1.1.1.1.8
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggPartnerSystemPriority
+    oid: 1.2.840.10006.300.43.1.1.1.1.9
+    type: gauge
+    help: A 2-octet read-only value that indicates the priority value associated with
+      the Partners System ID - 1.2.840.10006.300.43.1.1.1.1.9
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggPartnerOperKey
+    oid: 1.2.840.10006.300.43.1.1.1.1.10
+    type: gauge
+    help: The current operational value of the Key for the Aggregators current protocol
+      Partner - 1.2.840.10006.300.43.1.1.1.1.10
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggCollectorMaxDelay
+    oid: 1.2.840.10006.300.43.1.1.1.1.11
+    type: gauge
+    help: The value of this 16-bit read-write attribute defines the maximum delay,
+      in tens of microseconds, that may be imposed by the Frame Collector between
+      receiving a frame from an Aggregator Parser, and either delivering the frame
+      to its MAC Client or discarding the frame (see 43.2.3.1.1 [Part 3]). - 1.2.840.10006.300.43.1.1.1.1.11
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggPortListPorts
+    oid: 1.2.840.10006.300.43.1.1.2.1.1
+    type: OctetString
+    help: The complete set of ports currently associated with this Aggregator - 1.2.840.10006.300.43.1.1.2.1.1
+    indexes:
+    - labelname: dot3adAggIndex
+      type: gauge
+  - name: dot3adAggPortIndex
+    oid: 1.2.840.10006.300.43.1.2.1.1.1
+    type: gauge
+    help: The ifIndex of the port - 1.2.840.10006.300.43.1.2.1.1.1
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorSystemPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.2
+    type: gauge
+    help: A 2-octet read-write value used to define the priority value associated
+      with the Actors System ID. - 1.2.840.10006.300.43.1.2.1.1.2
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorSystemID
+    oid: 1.2.840.10006.300.43.1.2.1.1.3
+    type: PhysAddress48
+    help: A 6-octet read-only MAC address value that defines the value of the System
+      ID for the System that contains this Aggregation Port. - 1.2.840.10006.300.43.1.2.1.1.3
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorAdminKey
+    oid: 1.2.840.10006.300.43.1.2.1.1.4
+    type: gauge
+    help: The current administrative value of the Key for the Aggregation Port - 1.2.840.10006.300.43.1.2.1.1.4
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorOperKey
+    oid: 1.2.840.10006.300.43.1.2.1.1.5
+    type: gauge
+    help: The current operational value of the Key for the Aggregation Port - 1.2.840.10006.300.43.1.2.1.1.5
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerAdminSystemPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.6
+    type: gauge
+    help: A 2-octet read-write value used to define the administrative value of priority
+      associated with the Partners System ID - 1.2.840.10006.300.43.1.2.1.1.6
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerOperSystemPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.7
+    type: gauge
+    help: A 2-octet read-only value indicating the operational value of priority associated
+      with the Partners System ID - 1.2.840.10006.300.43.1.2.1.1.7
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerAdminSystemID
+    oid: 1.2.840.10006.300.43.1.2.1.1.8
+    type: PhysAddress48
+    help: A 6-octet read-write MACAddress value representing the administrative value
+      of the Aggregation Ports protocol Partners System ID - 1.2.840.10006.300.43.1.2.1.1.8
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerOperSystemID
+    oid: 1.2.840.10006.300.43.1.2.1.1.9
+    type: PhysAddress48
+    help: A 6-octet read-only MACAddress value representing the current value of the
+      Aggregation Ports protocol Partners System ID - 1.2.840.10006.300.43.1.2.1.1.9
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerAdminKey
+    oid: 1.2.840.10006.300.43.1.2.1.1.10
+    type: gauge
+    help: The current administrative value of the Key for the protocol Partner - 1.2.840.10006.300.43.1.2.1.1.10
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerOperKey
+    oid: 1.2.840.10006.300.43.1.2.1.1.11
+    type: gauge
+    help: The current operational value of the Key for the protocol Partner - 1.2.840.10006.300.43.1.2.1.1.11
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortSelectedAggID
+    oid: 1.2.840.10006.300.43.1.2.1.1.12
+    type: gauge
+    help: The identifier value of the Aggregator that this Aggregation Port has currently
+      selected - 1.2.840.10006.300.43.1.2.1.1.12
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortAttachedAggID
+    oid: 1.2.840.10006.300.43.1.2.1.1.13
+    type: gauge
+    help: The identifier value of the Aggregator that this Aggregation Port is currently
+      attached to - 1.2.840.10006.300.43.1.2.1.1.13
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorPort
+    oid: 1.2.840.10006.300.43.1.2.1.1.14
+    type: gauge
+    help: The port number locally assigned to the Aggregation Port - 1.2.840.10006.300.43.1.2.1.1.14
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorPortPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.15
+    type: gauge
+    help: The priority value assigned to this Aggregation Port - 1.2.840.10006.300.43.1.2.1.1.15
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerAdminPort
+    oid: 1.2.840.10006.300.43.1.2.1.1.16
+    type: gauge
+    help: The current administrative value of the port number for the protocol Partner
+      - 1.2.840.10006.300.43.1.2.1.1.16
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerOperPort
+    oid: 1.2.840.10006.300.43.1.2.1.1.17
+    type: gauge
+    help: The operational port number assigned to this Aggregation Port by the Aggregation
+      Ports protocol Partner - 1.2.840.10006.300.43.1.2.1.1.17
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerAdminPortPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.18
+    type: gauge
+    help: The current administrative value of the port priority for the protocol Partner
+      - 1.2.840.10006.300.43.1.2.1.1.18
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortPartnerOperPortPriority
+    oid: 1.2.840.10006.300.43.1.2.1.1.19
+    type: gauge
+    help: The priority value assigned to this Aggregation Port by the Partner - 1.2.840.10006.300.43.1.2.1.1.19
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortActorAdminState
+    oid: 1.2.840.10006.300.43.1.2.1.1.20
+    type: EnumAsStateSet
+    help: A string of 8 bits, corresponding to the administrative values of Actor_State
+      (43.4.2 [Part 3]) as transmitted by the Actor in LACPDUs - 1.2.840.10006.300.43.1.2.1.1.20
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      0: lacpActivity
+      1: lacpTimeout
+      2: aggregation
+      3: synchronization
+      4: collecting
+      5: distributing
+      6: defaulted
+      7: expired
+  - name: dot3adAggPortActorOperState
+    oid: 1.2.840.10006.300.43.1.2.1.1.21
+    type: EnumAsStateSet
+    help: A string of 8 bits, corresponding to the current operational values of Actor_State
+      as transmitted by the Actor in LACPDUs - 1.2.840.10006.300.43.1.2.1.1.21
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      0: lacpActivity
+      1: lacpTimeout
+      2: aggregation
+      3: synchronization
+      4: collecting
+      5: distributing
+      6: defaulted
+      7: expired
+  - name: dot3adAggPortPartnerAdminState
+    oid: 1.2.840.10006.300.43.1.2.1.1.22
+    type: EnumAsStateSet
+    help: A string of 8 bits, corresponding to the current administrative value of
+      Actor_State for the protocol Partner - 1.2.840.10006.300.43.1.2.1.1.22
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      0: lacpActivity
+      1: lacpTimeout
+      2: aggregation
+      3: synchronization
+      4: collecting
+      5: distributing
+      6: defaulted
+      7: expired
+  - name: dot3adAggPortPartnerOperState
+    oid: 1.2.840.10006.300.43.1.2.1.1.23
+    type: EnumAsStateSet
+    help: A string of 8 bits, corresponding to the current values of Actor_State in
+      the most recently received LACPDU transmitted by the protocol Partner - 1.2.840.10006.300.43.1.2.1.1.23
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      0: lacpActivity
+      1: lacpTimeout
+      2: aggregation
+      3: synchronization
+      4: collecting
+      5: distributing
+      6: defaulted
+      7: expired
+  - name: dot3adAggPortAggregateOrIndividual
+    oid: 1.2.840.10006.300.43.1.2.1.1.24
+    type: gauge
+    help: A read-only Boolean value indicating whether the Aggregation Port is able
+      to Aggregate (TRUE) or is only able to operate as an Individual link (FALSE).
+      - 1.2.840.10006.300.43.1.2.1.1.24
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: dot3adAggPortStatsLACPDUsRx
+    oid: 1.2.840.10006.300.43.1.2.2.1.1
+    type: counter
+    help: The number of valid LACPDUs received on this Aggregation Port - 1.2.840.10006.300.43.1.2.2.1.1
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsMarkerPDUsRx
+    oid: 1.2.840.10006.300.43.1.2.2.1.2
+    type: counter
+    help: The number of valid Marker PDUs received on this Aggregation Port - 1.2.840.10006.300.43.1.2.2.1.2
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsMarkerResponsePDUsRx
+    oid: 1.2.840.10006.300.43.1.2.2.1.3
+    type: counter
+    help: The number of valid Marker Response PDUs received on this Aggregation Port
+      - 1.2.840.10006.300.43.1.2.2.1.3
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsUnknownRx
+    oid: 1.2.840.10006.300.43.1.2.2.1.4
+    type: counter
+    help: 'The number of frames received that either: - carry the Slow Protocols Ethernet
+      Type value (43B.4 [Part 3]), but contain an unknown PDU, or: - are addressed
+      to the Slow Protocols group MAC Address (43B.4), but do not carry the Slow Protocols
+      Ethernet Type - 1.2.840.10006.300.43.1.2.2.1.4'
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsIllegalRx
+    oid: 1.2.840.10006.300.43.1.2.2.1.5
+    type: counter
+    help: The number of frames received that carry the Slow Protocols Ethernet Type
+      value (43B.4), but contain a badly formed PDU or an illegal value of Protocol
+      Subtype (43B.4 [Part 3]) - 1.2.840.10006.300.43.1.2.2.1.5
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsLACPDUsTx
+    oid: 1.2.840.10006.300.43.1.2.2.1.6
+    type: counter
+    help: The number of LACPDUs transmitted on this Aggregation Port - 1.2.840.10006.300.43.1.2.2.1.6
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsMarkerPDUsTx
+    oid: 1.2.840.10006.300.43.1.2.2.1.7
+    type: counter
+    help: The number of Marker PDUs transmitted on this Aggregation Port - 1.2.840.10006.300.43.1.2.2.1.7
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortStatsMarkerResponsePDUsTx
+    oid: 1.2.840.10006.300.43.1.2.2.1.8
+    type: counter
+    help: The number of Marker Response PDUs transmitted on this Aggregation Port
+      - 1.2.840.10006.300.43.1.2.2.1.8
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugRxState
+    oid: 1.2.840.10006.300.43.1.2.3.1.1
+    type: EnumAsStateSet
+    help: This attribute holds the value current if the Receive state machine for
+      the Aggregation Port is in the CURRENT state, expired if the Receive state machine
+      is in the EXPIRED state, defaulted if the Receive state machine is in the DEFAULTED
+      state, initialize if the Receive state machine is in the INITIALIZE state, lacpDisabled
+      if the Receive state machine is in the LACP_DISABLED state, or portDisabled
+      if the Receive state machine is in the PORT_DISABLED state - 1.2.840.10006.300.43.1.2.3.1.1
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      2: expired
+      3: defaulted
+      4: initialize
+      5: lacpDisabled
+      6: portDisabled
+  - name: dot3adAggPortDebugLastRxTime
+    oid: 1.2.840.10006.300.43.1.2.3.1.2
+    type: gauge
+    help: The value of aTimeSinceSystemReset (F.2.1) when the last LACPDU was received
+      by this Aggregation Port - 1.2.840.10006.300.43.1.2.3.1.2
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugMuxState
+    oid: 1.2.840.10006.300.43.1.2.3.1.3
+    type: gauge
+    help: This attribute holds the value detached if the Mux state machine (43.4.14
+      [Part 3]) for the Aggregation Port is in the DETACHED state, waiting if the
+      Mux state machine is in the WAITING state, attached if the Mux state machine
+      for the Aggregation Port is in the ATTACHED state, collecting if the Mux state
+      machine for the Aggregation Port is in the COLLECTING state, distributing if
+      the Mux state machine for the Aggregation Port is in the DISTRIBUTING state,
+      and collecting_distributing if the Mux state machine for the Aggregation Port
+      is in the COLLECTING_DISTRIBUTING state - 1.2.840.10006.300.43.1.2.3.1.3
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      1: detached
+      2: waiting
+      3: attached
+      4: collecting
+      5: distributing
+      6: collectingDistributing
+  - name: dot3adAggPortDebugMuxReason
+    oid: 1.2.840.10006.300.43.1.2.3.1.4
+    type: DisplayString
+    help: A human-readable text string indicating the reason for the most recent change
+      of Mux machine state - 1.2.840.10006.300.43.1.2.3.1.4
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugActorChurnState
+    oid: 1.2.840.10006.300.43.1.2.3.1.5
+    type: gauge
+    help: The state of the Actor Churn Detection machine (43.4.17 [Part 3]) for the
+      Aggregation Port - 1.2.840.10006.300.43.1.2.3.1.5
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      1: noChurn
+      2: churn
+      3: churnMonitor
+  - name: dot3adAggPortDebugPartnerChurnState
+    oid: 1.2.840.10006.300.43.1.2.3.1.6
+    type: gauge
+    help: The state of the Partner Churn Detection machine (43.4.17 [Part 3]) for
+      the Aggregation Port - 1.2.840.10006.300.43.1.2.3.1.6
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+    enum_values:
+      1: noChurn
+      2: churn
+      3: churnMonitor
+  - name: dot3adAggPortDebugActorChurnCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.7
+    type: counter
+    help: Count of the number of times the Actor Churn state machine has entered the
+      ACTOR_CHURN state - 1.2.840.10006.300.43.1.2.3.1.7
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugPartnerChurnCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.8
+    type: counter
+    help: Count of the number of times the Partner Churn state machine has entered
+      the PARTNER_CHURN state - 1.2.840.10006.300.43.1.2.3.1.8
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugActorSyncTransitionCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.9
+    type: counter
+    help: Count of the number of times the Actors Mux state machine (43.4.15 [Part
+      3]) has entered the IN_SYNC state - 1.2.840.10006.300.43.1.2.3.1.9
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugPartnerSyncTransitionCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.10
+    type: counter
+    help: Count of the number of times the Partners Mux state machine (43.4.15 [Part
+      3]) has entered the IN_SYNC state - 1.2.840.10006.300.43.1.2.3.1.10
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugActorChangeCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.11
+    type: counter
+    help: Count of the number of times the Actors perception of the LAG ID for this
+      Aggregation Port has changed - 1.2.840.10006.300.43.1.2.3.1.11
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adAggPortDebugPartnerChangeCount
+    oid: 1.2.840.10006.300.43.1.2.3.1.12
+    type: counter
+    help: Count of the number of times the Partners perception of the LAG ID (see
+      43.3.6.1 [Part 3]) for this Aggregation Port has changed - 1.2.840.10006.300.43.1.2.3.1.12
+    indexes:
+    - labelname: dot3adAggPortIndex
+      type: gauge
+  - name: dot3adTablesLastChanged
+    oid: 1.2.840.10006.300.43.1.3
+    type: gauge
+    help: This object indicates the time of the most recent change to the dot3adAggTable,
+      dot3adAggPortListTable, or dot3adAggPortTable. - 1.2.840.10006.300.43.1.3
+  - name: jnxDot1dStpPortRootProtectEnabled
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.1
+    type: gauge
+    help: A Boolean value set by management indicating whether Root protect functionality
+      is enabled on the port - 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.1
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: jnxDot1dStpPortRootProtectState
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.2
+    type: gauge
+    help: Indicates whether the port was prevented from being a root port - 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.2
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      0: no-error
+      1: root-prevented
+  - name: jnxDot1dStpPortLoopProtectEnabled
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.3
+    type: gauge
+    help: A Boolean value set by management indicating whether Loop protect functionality
+      is enabled on the port - 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: jnxDot1dStpPortLoopProtectState
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.4
+    type: gauge
+    help: Indicates whether a potential Loop was prevented on the port This parameter
+      will always return 'no-error (0)' if jnxDot1dStpPortLoopProtectEnabled is FALSE.
+      - 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.4
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      0: no-error
+      1: loop-prevented
+  - name: jnxL2cpBpduProtectPortEnabled
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.1
+    type: gauge
+    help: A Boolean value set by management indicating whether BPDU protect functionality
+      is enabled on the port - 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.1
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: jnxL2cpPortBpduError
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.2
+    type: gauge
+    help: Indicates whether a BPDU was received on the port - 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.2
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+    enum_values:
+      0: no-error
+      1: detected
+  - name: jnxL2cpBpduProtectDisableTimeout
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.2.2
+    type: gauge
+    help: Returns the value of time (in seconds) after which a port on which BPDU
+      error was detected will be re-enabled - 1.3.6.1.4.1.2636.3.53.1.1.2.2
+  - name: dot3adInterfaceName
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+    type: DisplayString
+    help: Physical port that is associated with Aggregation Port - 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+  - name: dot3adOperState
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.2
+    type: EnumAsStateSet
+    help: A string of 8 bits, corresponding to the current operational values of Actor_State
+      as transmitted by the Actor in LACPDUs - 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.2
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+    enum_values:
+      0: lacpActivity
+      1: lacpTimeout
+      2: aggregation
+      3: synchronization
+      4: collecting
+      5: distributing
+      6: defaulted
+      7: expired
+  - name: dot3adAggname
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.3
+    type: DisplayString
+    help: Aggregation Port where Physical port is associated with - 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.3
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+  - name: dot3adInterfaceTimeout
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.4
+    type: gauge
+    help: This object represents the time elapsed in seconds since lacp experienced
+      timeout - 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.4
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+  - name: jnxL2cpLoopDetectPortEnabled
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.5.1.1.1
+    type: gauge
+    help: A Boolean value set by management indicating whether Loop Detect functionality
+      is enabled on the port - 1.3.6.1.4.1.2636.3.53.1.1.5.1.1.1
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: jnxL2cpLoopDetectPduError
+    oid: 1.3.6.1.4.1.2636.3.53.1.1.5.1.1.2
+    type: gauge
+    help: Indicates whether a Loop Detect PDU was received on the port - 1.3.6.1.4.1.2636.3.53.1.1.5.1.1.2
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: dot3adInterfaceName
+      oid: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+      type: DisplayString
+    enum_values:
+      0: no-error
+      1: detected

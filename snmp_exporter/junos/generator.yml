@@ -59,6 +59,23 @@ modules:
       ifType:
         type: EnumAsInfo
 
-  #junos_other:
-  #  walk:
-  #  - jnxOperatingTable
+  junos_lag:
+    walk:
+    - lagMIB
+    - jnxL2cpFeaturesMIB
+    lookups:
+    - source_indexes: [ifIndex]
+      lookup: dot3adInterfaceName
+    overrides:
+      dot3adOperState:
+        type: EnumAsStateSet
+      dot3adAggPortActorAdminState:
+        type: EnumAsStateSet
+      dot3adAggPortActorOperState:
+        type: EnumAsStateSet
+      dot3adAggPortPartnerAdminState:
+        type: EnumAsStateSet
+      dot3adAggPortPartnerOperState:
+        type: EnumAsStateSet
+      dot3adAggPortDebugRxState:
+        type: EnumAsStateSet
