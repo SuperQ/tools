@@ -1,0 +1,238 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+guide_systems:
+  walk:
+  - 1.3.6.1.4.1.28507.67.1.3.1.2
+  - 1.3.6.1.4.1.28507.67.1.5.13
+  - 1.3.6.1.4.1.28507.67.1.5.6.2
+  - 1.3.6.1.4.1.28507.67.1.6.1
+  metrics:
+  - name: esb7214PortIndex
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.1
+    type: gauge
+    help: A unique value, greater than zero, for each Relay Port. - 1.3.6.1.4.1.28507.67.1.3.1.2.1.1
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PortName
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+    type: DisplayString
+    help: A textual string containing name of a Relay Port. - 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PortState
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.3
+    type: gauge
+    help: current state of a Relay Port - 1.3.6.1.4.1.28507.67.1.3.1.2.1.3
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+    enum_values:
+      0: "off"
+      1: "on"
+  - name: esb7214PortSwitchCount
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.4
+    type: gauge
+    help: The total number of switch actions ocurred on a Relay Port - 1.3.6.1.4.1.28507.67.1.3.1.2.1.4
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PortStartupMode
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.5
+    type: gauge
+    help: set Mode of startup sequence (off, on , remember last state) - 1.3.6.1.4.1.28507.67.1.3.1.2.1.5
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+    enum_values:
+      0: "off"
+      1: "on"
+      2: laststate
+  - name: esb7214PortStartupDelay
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.6
+    type: gauge
+    help: Delay in sec for startup action - 1.3.6.1.4.1.28507.67.1.3.1.2.1.6
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PortRepowerTime
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.7
+    type: gauge
+    help: Delay in sec for repower port after switching off - 1.3.6.1.4.1.28507.67.1.3.1.2.1.7
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PortResetDuration
+    oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.8
+    type: gauge
+    help: Delay in sec for turning Port on again after Reset action - 1.3.6.1.4.1.28507.67.1.3.1.2.1.8
+    indexes:
+    - labelname: esb7214PortIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214PortIndex
+      labelname: esb7214PortName
+      oid: 1.3.6.1.4.1.28507.67.1.3.1.2.1.2
+      type: DisplayString
+  - name: esb7214PwrSupplyIndex
+    oid: 1.3.6.1.4.1.28507.67.1.5.13.1.1
+    type: gauge
+    help: Index of Power Supply entries - 1.3.6.1.4.1.28507.67.1.5.13.1.1
+    indexes:
+    - labelname: esb7214PwrSupplyIndex
+      type: gauge
+  - name: esb7214PwrSupplyStatus
+    oid: 1.3.6.1.4.1.28507.67.1.5.13.1.2
+    type: gauge
+    help: shows status of the Power Supply 1 = fst, 2 = snd etc. - 1.3.6.1.4.1.28507.67.1.5.13.1.2
+    indexes:
+    - labelname: esb7214PwrSupplyIndex
+      type: gauge
+    enum_values:
+      0: down
+      1: up
+  - name: esb7214InputIndex
+    oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.1
+    type: gauge
+    help: ' - 1.3.6.1.4.1.28507.67.1.5.6.2.1.1'
+    indexes:
+    - labelname: esb7214InputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214InputIndex
+      labelname: esb7214InputName
+      oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.32
+      type: DisplayString
+  - name: esb7214Input
+    oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.2
+    type: gauge
+    help: Input state of device - 1.3.6.1.4.1.28507.67.1.5.6.2.1.2
+    indexes:
+    - labelname: esb7214InputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214InputIndex
+      labelname: esb7214InputName
+      oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.32
+      type: DisplayString
+    enum_values:
+      0: lo
+      1: hi
+  - name: esb7214InputName
+    oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.32
+    type: DisplayString
+    help: A textual string containing name of the Input - 1.3.6.1.4.1.28507.67.1.5.6.2.1.32
+    indexes:
+    - labelname: esb7214InputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - esb7214InputIndex
+      labelname: esb7214InputName
+      oid: 1.3.6.1.4.1.28507.67.1.5.6.2.1.32
+      type: DisplayString
+  - name: esb7214SensorIndex
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.1
+    type: gauge
+    help: ' - 1.3.6.1.4.1.28507.67.1.6.1.1.1'
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214TempSensor
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.2
+    type: gauge
+    help: actual temperature - 1.3.6.1.4.1.28507.67.1.6.1.1.2
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214HygroSensor
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.3
+    type: gauge
+    help: actual humidity - 1.3.6.1.4.1.28507.67.1.6.1.1.3
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214InputSensor
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.4
+    type: gauge
+    help: logical state of input sensor - 1.3.6.1.4.1.28507.67.1.6.1.1.4
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+    enum_values:
+      0: "off"
+      1: "on"
+  - name: esb7214AirPressure
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.5
+    type: gauge
+    help: actual air pressure - 1.3.6.1.4.1.28507.67.1.6.1.1.5
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214DewPoint
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.6
+    type: gauge
+    help: dew point for actual temperature and humidity - 1.3.6.1.4.1.28507.67.1.6.1.1.6
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214DewPointDiff
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.7
+    type: gauge
+    help: difference between dew point and actual temperature (Temp - DewPoint) -
+      1.3.6.1.4.1.28507.67.1.6.1.1.7
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge
+  - name: esb7214ExtSensorName
+    oid: 1.3.6.1.4.1.28507.67.1.6.1.1.32
+    type: DisplayString
+    help: A textual string containing name of a external Sensor - 1.3.6.1.4.1.28507.67.1.6.1.1.32
+    indexes:
+    - labelname: esb7214SensorIndex
+      type: gauge

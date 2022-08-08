@@ -1,0 +1,24 @@
+modules:
+  guide_systems:
+    walk:
+    - esb7214PwrSupplyTable
+    - esb7214portTable
+    - esb7214SensorTable
+    - esb7214InputTable
+    lookups:
+    - source_indexes:
+      - esb7214PortIndex
+      lookup: esb7214PortName
+    - source_indexes:
+      - esb7214InputIndex
+      lookup: esb7214InputName
+    - source_indexes:
+      - esb7214ExtSensorIndex
+      lookup: esb7214ExtSensorName
+    overrides:
+      esb7214PortName:
+        type: DisplayString
+      esb7214InputName:
+        type: DisplayString
+      esb7214ExtSensorName:
+        type: DisplayString
