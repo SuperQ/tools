@@ -1,0 +1,8 @@
+---
+modules:
+  junos_cpu:
+    walk:
+      - jnxOperatingCPU
+    lookups:
+      - source_indexes: [ jnxOperatingContentsIndex, jnxOperatingL1Index, jnxOperatingL2Index, jnxOperatingL3Index ]
+        lookup: jnxOperatingDescr
