@@ -1,0 +1,996 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+cisco_bgp:
+  walk:
+  - 1.3.6.1.2.1.15.3
+  - 1.3.6.1.4.1.9.9.187.1.2.5
+  - 1.3.6.1.4.1.9.9.187.1.2.8
+  metrics:
+  - name: bgpPeerIdentifier
+    oid: 1.3.6.1.2.1.15.3.1.1
+    type: InetAddressIPv4
+    help: The BGP Identifier of this entry's BGP peer - 1.3.6.1.2.1.15.3.1.1
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerState
+    oid: 1.3.6.1.2.1.15.3.1.2
+    type: EnumAsStateSet
+    help: The BGP peer connection state. - 1.3.6.1.2.1.15.3.1.2
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+    enum_values:
+      1: idle
+      2: connect
+      3: active
+      4: opensent
+      5: openconfirm
+      6: established
+  - name: bgpPeerAdminStatus
+    oid: 1.3.6.1.2.1.15.3.1.3
+    type: EnumAsStateSet
+    help: The desired state of the BGP connection - 1.3.6.1.2.1.15.3.1.3
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+    enum_values:
+      1: stop
+      2: start
+  - name: bgpPeerNegotiatedVersion
+    oid: 1.3.6.1.2.1.15.3.1.4
+    type: gauge
+    help: The negotiated version of BGP running between the two peers - 1.3.6.1.2.1.15.3.1.4
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerLocalAddr
+    oid: 1.3.6.1.2.1.15.3.1.5
+    type: InetAddressIPv4
+    help: The local IP address of this entry's BGP connection. - 1.3.6.1.2.1.15.3.1.5
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerLocalPort
+    oid: 1.3.6.1.2.1.15.3.1.6
+    type: gauge
+    help: The local port for the TCP connection between the BGP peers. - 1.3.6.1.2.1.15.3.1.6
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerRemoteAddr
+    oid: 1.3.6.1.2.1.15.3.1.7
+    type: InetAddressIPv4
+    help: The remote IP address of this entry's BGP peer. - 1.3.6.1.2.1.15.3.1.7
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerRemotePort
+    oid: 1.3.6.1.2.1.15.3.1.8
+    type: gauge
+    help: The remote port for the TCP connection between the BGP peers - 1.3.6.1.2.1.15.3.1.8
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerRemoteAs
+    oid: 1.3.6.1.2.1.15.3.1.9
+    type: gauge
+    help: The remote autonomous system number received in the BGP OPEN message. -
+      1.3.6.1.2.1.15.3.1.9
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerInUpdates
+    oid: 1.3.6.1.2.1.15.3.1.10
+    type: counter
+    help: The number of BGP UPDATE messages received on this connection. - 1.3.6.1.2.1.15.3.1.10
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerOutUpdates
+    oid: 1.3.6.1.2.1.15.3.1.11
+    type: counter
+    help: The number of BGP UPDATE messages transmitted on this connection. - 1.3.6.1.2.1.15.3.1.11
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerInTotalMessages
+    oid: 1.3.6.1.2.1.15.3.1.12
+    type: counter
+    help: The total number of messages received from the remote peer on this connection.
+      - 1.3.6.1.2.1.15.3.1.12
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerOutTotalMessages
+    oid: 1.3.6.1.2.1.15.3.1.13
+    type: counter
+    help: The total number of messages transmitted to the remote peer on this connection.
+      - 1.3.6.1.2.1.15.3.1.13
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerLastError
+    oid: 1.3.6.1.2.1.15.3.1.14
+    type: OctetString
+    help: The last error code and subcode seen by this peer on this connection - 1.3.6.1.2.1.15.3.1.14
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerFsmEstablishedTransitions
+    oid: 1.3.6.1.2.1.15.3.1.15
+    type: counter
+    help: The total number of times the BGP FSM transitioned into the established
+      state for this peer. - 1.3.6.1.2.1.15.3.1.15
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerFsmEstablishedTime
+    oid: 1.3.6.1.2.1.15.3.1.16
+    type: gauge
+    help: This timer indicates how long (in seconds) this peer has been in the established
+      state or how long since this peer was last in the established state - 1.3.6.1.2.1.15.3.1.16
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerConnectRetryInterval
+    oid: 1.3.6.1.2.1.15.3.1.17
+    type: gauge
+    help: Time interval (in seconds) for the ConnectRetry timer - 1.3.6.1.2.1.15.3.1.17
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerHoldTime
+    oid: 1.3.6.1.2.1.15.3.1.18
+    type: gauge
+    help: Time interval (in seconds) for the Hold Timer established with the peer
+      - 1.3.6.1.2.1.15.3.1.18
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerKeepAlive
+    oid: 1.3.6.1.2.1.15.3.1.19
+    type: gauge
+    help: Time interval (in seconds) for the KeepAlive timer established with the
+      peer - 1.3.6.1.2.1.15.3.1.19
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerHoldTimeConfigured
+    oid: 1.3.6.1.2.1.15.3.1.20
+    type: gauge
+    help: Time interval (in seconds) for the Hold Time configured for this BGP speaker
+      with this peer - 1.3.6.1.2.1.15.3.1.20
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerKeepAliveConfigured
+    oid: 1.3.6.1.2.1.15.3.1.21
+    type: gauge
+    help: Time interval (in seconds) for the KeepAlive timer configured for this BGP
+      speaker with this peer - 1.3.6.1.2.1.15.3.1.21
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerMinASOriginationInterval
+    oid: 1.3.6.1.2.1.15.3.1.22
+    type: gauge
+    help: Time interval (in seconds) for the MinASOriginationInterval timer - 1.3.6.1.2.1.15.3.1.22
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerMinRouteAdvertisementInterval
+    oid: 1.3.6.1.2.1.15.3.1.23
+    type: gauge
+    help: Time interval (in seconds) for the MinRouteAdvertisementInterval timer -
+      1.3.6.1.2.1.15.3.1.23
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: bgpPeerInUpdateElapsedTime
+    oid: 1.3.6.1.2.1.15.3.1.24
+    type: gauge
+    help: Elapsed time (in seconds) since the last BGP UPDATE message was received
+      from the peer - 1.3.6.1.2.1.15.3.1.24
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    lookups:
+    - labels:
+      - bgpPeerRemoteAddr
+      labelname: bgpPeerRemoteAs
+      oid: 1.3.6.1.2.1.15.3.1.9
+      type: gauge
+  - name: cbgpPeer2Type
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.1
+    type: gauge
+    help: Represents the type of Peer address stored in cbgpPeer2Entry. - 1.3.6.1.4.1.9.9.187.1.2.5.1.1
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+    enum_values:
+      0: unknown
+      1: ipv4
+      2: ipv6
+      3: ipv4z
+      4: ipv6z
+      16: dns
+  - name: cbgpPeer2RemoteAddr
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.2
+    type: InetAddress
+    help: The remote IP address of this entry's BGP peer. - 1.3.6.1.4.1.9.9.187.1.2.5.1.2
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2State
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.3
+    type: gauge
+    help: The BGP peer connection state. - 1.3.6.1.4.1.9.9.187.1.2.5.1.3
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+    enum_values:
+      1: idle
+      2: connect
+      3: active
+      4: opensent
+      5: openconfirm
+      6: established
+  - name: cbgpPeer2AdminStatus
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.4
+    type: gauge
+    help: The desired state of the BGP connection - 1.3.6.1.4.1.9.9.187.1.2.5.1.4
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+    enum_values:
+      1: stop
+      2: start
+  - name: cbgpPeer2NegotiatedVersion
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.5
+    type: gauge
+    help: The negotiated version of BGP running between the two peers - 1.3.6.1.4.1.9.9.187.1.2.5.1.5
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LocalAddr
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.6
+    type: OctetString
+    help: The local IP address of this entry's BGP connection. - 1.3.6.1.4.1.9.9.187.1.2.5.1.6
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LocalPort
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.7
+    type: gauge
+    help: The local port for the TCP connection between the BGP peers. - 1.3.6.1.4.1.9.9.187.1.2.5.1.7
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LocalAs
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.8
+    type: gauge
+    help: The local AS number for this session. - 1.3.6.1.4.1.9.9.187.1.2.5.1.8
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LocalIdentifier
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.9
+    type: InetAddressIPv4
+    help: The BGP Identifier of this entry's BGP peer. - 1.3.6.1.4.1.9.9.187.1.2.5.1.9
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2RemotePort
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.10
+    type: gauge
+    help: The remote port for the TCP connection between the BGP peers - 1.3.6.1.4.1.9.9.187.1.2.5.1.10
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2RemoteAs
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+    type: gauge
+    help: The remote autonomous system number received in the BGP OPEN message. -
+      1.3.6.1.4.1.9.9.187.1.2.5.1.11
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2RemoteIdentifier
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.12
+    type: InetAddressIPv4
+    help: The BGP Identifier of this entry's BGP peer - 1.3.6.1.4.1.9.9.187.1.2.5.1.12
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2InUpdates
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.13
+    type: counter
+    help: The number of BGP UPDATE messages received on this connection. - 1.3.6.1.4.1.9.9.187.1.2.5.1.13
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2OutUpdates
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.14
+    type: counter
+    help: The number of BGP UPDATE messages transmitted on this connection. - 1.3.6.1.4.1.9.9.187.1.2.5.1.14
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2InTotalMessages
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.15
+    type: counter
+    help: The total number of messages received from the remote peer on this connection.
+      - 1.3.6.1.4.1.9.9.187.1.2.5.1.15
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2OutTotalMessages
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.16
+    type: counter
+    help: The total number of messages transmitted to the remote peer on this connection.
+      - 1.3.6.1.4.1.9.9.187.1.2.5.1.16
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LastError
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.17
+    type: OctetString
+    help: The last error code and subcode seen by this peer on this connection - 1.3.6.1.4.1.9.9.187.1.2.5.1.17
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2FsmEstablishedTransitions
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.18
+    type: counter
+    help: The total number of times the BGP FSM transitioned into the established
+      state for this peer. - 1.3.6.1.4.1.9.9.187.1.2.5.1.18
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2FsmEstablishedTime
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.19
+    type: gauge
+    help: This timer indicates how long (in seconds) this peer has been in the established
+      state or how long since this peer was last in the established state - 1.3.6.1.4.1.9.9.187.1.2.5.1.19
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2ConnectRetryInterval
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.20
+    type: gauge
+    help: Time interval (in seconds) for the ConnectRetry timer - 1.3.6.1.4.1.9.9.187.1.2.5.1.20
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2HoldTime
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.21
+    type: gauge
+    help: Time interval (in seconds) for the Hold Timer established with the peer
+      - 1.3.6.1.4.1.9.9.187.1.2.5.1.21
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2KeepAlive
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.22
+    type: gauge
+    help: Time interval (in seconds) for the KeepAlive timer established with the
+      peer - 1.3.6.1.4.1.9.9.187.1.2.5.1.22
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2HoldTimeConfigured
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.23
+    type: gauge
+    help: Time interval (in seconds) for the Hold Time configured for this BGP speaker
+      with this peer - 1.3.6.1.4.1.9.9.187.1.2.5.1.23
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2KeepAliveConfigured
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.24
+    type: gauge
+    help: Time interval (in seconds) for the KeepAlive timer configured for this BGP
+      speaker with this peer - 1.3.6.1.4.1.9.9.187.1.2.5.1.24
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2MinASOriginationInterval
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.25
+    type: gauge
+    help: Time interval (in seconds) for the MinASOriginationInterval timer - 1.3.6.1.4.1.9.9.187.1.2.5.1.25
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2MinRouteAdvertisementInterval
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.26
+    type: gauge
+    help: Time interval (in seconds) for the MinRouteAdvertisementInterval timer -
+      1.3.6.1.4.1.9.9.187.1.2.5.1.26
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2InUpdateElapsedTime
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.27
+    type: gauge
+    help: Elapsed time (in seconds) since the last BGP UPDATE message was received
+      from the peer - 1.3.6.1.4.1.9.9.187.1.2.5.1.27
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2LastErrorTxt
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.28
+    type: DisplayString
+    help: Implementation specific error description for bgpPeerLastErrorReceived.
+      - 1.3.6.1.4.1.9.9.187.1.2.5.1.28
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2PrevState
+    oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.29
+    type: gauge
+    help: The BGP peer connection previous state. - 1.3.6.1.4.1.9.9.187.1.2.5.1.29
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+    enum_values:
+      0: none
+      1: idle
+      2: connect
+      3: active
+      4: opensent
+      5: openconfirm
+      6: established
+  - name: cbgpPeer2AcceptedPrefixes
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.1
+    type: counter
+    help: Number of accepted route prefixes on this connection, which belong to an
+      address family. - 1.3.6.1.4.1.9.9.187.1.2.8.1.1
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2DeniedPrefixes
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.2
+    type: gauge
+    help: This counter is incremented when a route prefix, which belongs to an address
+      family, received on this connection is denied - 1.3.6.1.4.1.9.9.187.1.2.8.1.2
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2PrefixAdminLimit
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.3
+    type: gauge
+    help: Max number of route prefixes accepted for an address family on this connection.
+      - 1.3.6.1.4.1.9.9.187.1.2.8.1.3
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2PrefixThreshold
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.4
+    type: gauge
+    help: Prefix threshold value (%) for an address family on this connection at which
+      warning message stating the prefix count is crossed the threshold or corresponding
+      SNMP notification is generated. - 1.3.6.1.4.1.9.9.187.1.2.8.1.4
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2PrefixClearThreshold
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.5
+    type: gauge
+    help: Prefix threshold value (%) for an address family on this connection at which
+      SNMP clear notification is generated if prefix threshold notification is already
+      generated. - 1.3.6.1.4.1.9.9.187.1.2.8.1.5
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2AdvertisedPrefixes
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.6
+    type: gauge
+    help: This counter is incremented when a route prefix, which belongs to an address
+      family is advertised on this connection - 1.3.6.1.4.1.9.9.187.1.2.8.1.6
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2SuppressedPrefixes
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.7
+    type: gauge
+    help: This counter is incremented when a route prefix, which belongs to an address
+      family is suppressed from being sent on this connection - 1.3.6.1.4.1.9.9.187.1.2.8.1.7
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge
+  - name: cbgpPeer2WithdrawnPrefixes
+    oid: 1.3.6.1.4.1.9.9.187.1.2.8.1.8
+    type: gauge
+    help: This counter is incremented when a route prefix, which belongs to an address
+      family, is withdrawn on this connection - 1.3.6.1.4.1.9.9.187.1.2.8.1.8
+    indexes:
+    - labelname: cbgpPeer2RemoteAddr
+      type: InetAddress
+    - labelname: cbgpPeer2AddrFamilyAfi
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - labelname: cbgpPeer2AddrFamilySafi
+      type: gauge
+      enum_values:
+        1: unicast
+        2: multicast
+        3: unicastAndMulticast
+        128: vpn
+    lookups:
+    - labels:
+      - cbgpPeer2RemoteAddr
+      labelname: cbgpPeer2RemoteAs
+      oid: 1.3.6.1.4.1.9.9.187.1.2.5.1.11
+      type: gauge

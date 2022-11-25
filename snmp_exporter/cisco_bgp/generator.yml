@@ -1,0 +1,16 @@
+modules:
+  cisco_bgp:
+    walk:
+    - bgpPeerTable
+    - cbgpPeer2Table
+    - cbgpPeer2AddrFamilyPrefixTable
+    lookups:
+    - source_indexes: [cbgpPeer2RemoteAddr]
+      lookup: cbgpPeer2RemoteAs
+    - source_indexes: [bgpPeerRemoteAddr]
+      lookup: bgpPeerRemoteAs
+    overrides:
+      bgpPeerState:
+        type: EnumAsStateSet
+      bgpPeerAdminStatus:
+        type: EnumAsStateSet
