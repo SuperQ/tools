@@ -1,0 +1,121 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+cisco_fru:
+  walk:
+  - 1.3.6.1.2.1.47.1.1.1.1.7
+  - 1.3.6.1.4.1.9.9.117.1.1.1
+  metrics:
+  - name: cefcPowerRedundancyMode
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.1
+    type: gauge
+    help: The administratively desired power supply redundancy mode. - 1.3.6.1.4.1.9.9.117.1.1.1.1.1
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+    enum_values:
+      1: notsupported
+      2: redundant
+      3: combined
+      4: nonRedundant
+      5: psRedundant
+      6: inPwrSrcRedundant
+      7: psRedundantSingleInput
+  - name: cefcPowerUnits
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.2
+    type: DisplayString
+    help: The units of primary supply to interpret cefcTotalAvailableCurrent and cefcTotalDrawnCurrent
+      as power - 1.3.6.1.4.1.9.9.117.1.1.1.1.2
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+  - name: cefcTotalAvailableCurrent
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.3
+    type: gauge
+    help: Total current available for FRU usage. - 1.3.6.1.4.1.9.9.117.1.1.1.1.3
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+  - name: cefcTotalDrawnCurrent
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.4
+    type: gauge
+    help: Total current drawn by powered-on FRUs. - 1.3.6.1.4.1.9.9.117.1.1.1.1.4
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+  - name: cefcPowerRedundancyOperMode
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.5
+    type: gauge
+    help: The power supply redundancy operational mode. - 1.3.6.1.4.1.9.9.117.1.1.1.1.5
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+    enum_values:
+      1: notsupported
+      2: redundant
+      3: combined
+      4: nonRedundant
+      5: psRedundant
+      6: inPwrSrcRedundant
+      7: psRedundantSingleInput
+  - name: cefcPowerNonRedundantReason
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.6
+    type: gauge
+    help: This object has the value of notApplicable(1) when cefcPowerRedundancyOperMode
+      of the instance does not have the value of nonRedundant(4) - 1.3.6.1.4.1.9.9.117.1.1.1.1.6
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString
+    enum_values:
+      1: notApplicable
+      2: unknown
+      3: singleSupply
+      4: mismatchedSupplies
+      5: supplyError
+  - name: cefcTotalDrawnInlineCurrent
+    oid: 1.3.6.1.4.1.9.9.117.1.1.1.1.7
+    type: gauge
+    help: Total inline current drawn for inline operation. - 1.3.6.1.4.1.9.9.117.1.1.1.1.7
+    indexes:
+    - labelname: entPhysicalIndex
+      type: gauge
+    lookups:
+    - labels:
+      - entPhysicalIndex
+      labelname: entPhysicalName
+      oid: 1.3.6.1.2.1.47.1.1.1.1.7
+      type: DisplayString

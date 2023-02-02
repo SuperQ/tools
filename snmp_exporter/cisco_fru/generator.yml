@@ -1,0 +1,7 @@
+modules:
+  cisco_fru:
+    walk:
+    - cefcFRUPowerSupplyGroupTable
+    lookups:
+    - source_indexes: [entPhysicalIndex]
+      lookup: entPhysicalName
