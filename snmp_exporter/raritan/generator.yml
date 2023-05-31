@@ -1,0 +1,4 @@
+modules:
+  raritan:
+    walk:
+    - measurementsOutletSensorValue
