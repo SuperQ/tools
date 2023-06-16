@@ -11,4 +11,4 @@ netgear:
     regex_extracts:
       5s:
       - value: $1
-        regex: ^(?:.*5 Secs \( ([0-9\.]+)%\).*)$
+        regex: ^(?:.*5 Secs \(.*([0-9\.]+)%\).*)$
