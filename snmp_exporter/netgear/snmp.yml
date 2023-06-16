@@ -1,0 +1,14 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+netgear:
+  get:
+  - 1.3.6.1.4.1.4526.10.1.1.4.9.0
+  metrics:
+  - name: agentSwitchCpuProcessTotalUtilization
+    oid: 1.3.6.1.4.1.4526.10.1.1.4.9
+    type: DisplayString
+    help: Total CPU utilization over a period of 5, 60, 300 seconds, and the Rising
+      threshold period also in seconds, if configured. - 1.3.6.1.4.1.4526.10.1.1.4.9
+    regex_extracts:
+      5s:
+      - value: $1
+        regex: ^(?:.*5 Secs \( ([0-9\.]+)%\).*)$

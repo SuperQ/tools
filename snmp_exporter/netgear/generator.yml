@@ -1,0 +1,11 @@
+modules:
+  netgear:
+    walk:
+    - agentSwitchCpuProcessTotalUtilization
+    overrides:
+      agentSwitchCpuProcessTotalUtilization:
+        regex_extracts:
+          ignore: true
+          5s:
+            - regex: '.*5 Secs \(.*([0-9\.]+)%\).*'
+              value: '$1'
