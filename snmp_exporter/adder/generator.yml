@@ -1,35 +1,65 @@
 modules:
-  adder:
+  adder_infinity_status:
     walk:
-      - infinityTable
+      - deviceStatus
+      - deviceLock
+      - deviceEth1Status
+      - deviceEth2Status
     lookups:
       - source_indexes:
         - deviceIndex
         lookup: deviceName
     overrides:
+      deviceName:
+        type: DisplayString
       deviceEth1Status:
         type: EnumAsStateSet
       deviceEth2Status:
         type: EnumAsStateSet
+  adder_infinity_info:
+    walk:
+      - deviceIdentifier
+    lookups:
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceType
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceFirmware
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceName
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceIP1
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceMAC1
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceIP2
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceMAC2
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceSerialNum
+    overrides:
+      deviceType:
+        type: DisplayString
       deviceFirmware:
-        type: DisplayString
-      deviceIP1:
-        type: DisplayString
-      deviceIP2:
-        type: DisplayString
-      deviceIdentifier:
-        type: DisplayString
-      deviceLock:
-        type: EnumAsInfo
-      deviceMAC1:
-        type: DisplayString
-      deviceMAC2:
         type: DisplayString
       deviceName:
         type: DisplayString
-      deviceSerialNum:
+      deviceIdentifier:
         type: DisplayString
-      deviceStatus:
-        type: EnumAsInfo
-      deviceType:
+      deviceIP1:
+        type: DisplayString
+      deviceMAC1:
+        type: DisplayString
+      deviceIP2:
+        type: DisplayString
+      deviceMAC2:
+        type: DisplayString
+      deviceSerialNum:
         type: DisplayString
