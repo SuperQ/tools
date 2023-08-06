@@ -1,0 +1,215 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+adder:
+  walk:
+  - 1.3.6.1.4.1.25119.1.1
+  metrics:
+  - name: deviceIndex
+    oid: 1.3.6.1.4.1.25119.1.1.1.1
+    type: gauge
+    help: d_id from the 'device' tuple - 1.3.6.1.4.1.25119.1.1.1.1
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceType
+    oid: 1.3.6.1.4.1.25119.1.1.1.2
+    type: DisplayString
+    help: Type of device - 1.3.6.1.4.1.25119.1.1.1.2
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceFirmware
+    oid: 1.3.6.1.4.1.25119.1.1.1.3
+    type: DisplayString
+    help: Firmware version of device - 1.3.6.1.4.1.25119.1.1.1.3
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceName
+    oid: 1.3.6.1.4.1.25119.1.1.1.4
+    type: DisplayString
+    help: User-assigned name of device - 1.3.6.1.4.1.25119.1.1.1.4
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceIdentifier
+    oid: 1.3.6.1.4.1.25119.1.1.1.5
+    type: DisplayString
+    help: Unique Identifier of device - 1.3.6.1.4.1.25119.1.1.1.5
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceIP1
+    oid: 1.3.6.1.4.1.25119.1.1.1.6
+    type: DisplayString
+    help: IP address of interface eth1 - 1.3.6.1.4.1.25119.1.1.1.6
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceMAC1
+    oid: 1.3.6.1.4.1.25119.1.1.1.7
+    type: DisplayString
+    help: MAC address of interface eth1 - 1.3.6.1.4.1.25119.1.1.1.7
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceIP2
+    oid: 1.3.6.1.4.1.25119.1.1.1.8
+    type: DisplayString
+    help: IP address of interface eth2 - 1.3.6.1.4.1.25119.1.1.1.8
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceMAC2
+    oid: 1.3.6.1.4.1.25119.1.1.1.9
+    type: DisplayString
+    help: MAC address of interface eth2 - 1.3.6.1.4.1.25119.1.1.1.9
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceSerialNum
+    oid: 1.3.6.1.4.1.25119.1.1.1.10
+    type: DisplayString
+    help: Serial number of device - 1.3.6.1.4.1.25119.1.1.1.10
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+  - name: deviceStatus
+    oid: 1.3.6.1.4.1.25119.1.1.1.20
+    type: EnumAsInfo
+    help: General status of device - 1.3.6.1.4.1.25119.1.1.1.20
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+    enum_values:
+      1: offline
+      2: online
+      3: rebooting
+      4: resetting
+      5: upgrading
+      6: unconfigured
+      7: backup
+      8: unknown
+  - name: deviceLock
+    oid: 1.3.6.1.4.1.25119.1.1.1.21
+    type: EnumAsInfo
+    help: Lock mode of device - 1.3.6.1.4.1.25119.1.1.1.21
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+    enum_values:
+      1: none
+      2: videoOnly
+      3: shared
+      4: exclusive
+      5: private
+      6: unknown
+  - name: deviceEth1Status
+    oid: 1.3.6.1.4.1.25119.1.1.1.30
+    type: EnumAsStateSet
+    help: Status of eth1 interface - 1.3.6.1.4.1.25119.1.1.1.30
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+    enum_values:
+      1: offline
+      2: online
+      3: unconfigured
+      4: absent
+      5: unknown
+  - name: deviceEth2Status
+    oid: 1.3.6.1.4.1.25119.1.1.1.40
+    type: EnumAsStateSet
+    help: Status of eth2 interface - 1.3.6.1.4.1.25119.1.1.1.40
+    indexes:
+    - labelname: deviceIndex
+      type: gauge
+    lookups:
+    - labels:
+      - deviceIndex
+      labelname: deviceName
+      oid: 1.3.6.1.4.1.25119.1.1.1.4
+      type: DisplayString
+    enum_values:
+      1: offline
+      2: online
+      3: unconfigured
+      4: absent
+      5: unknown

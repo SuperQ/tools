@@ -1,0 +1,35 @@
+modules:
+  adder:
+    walk:
+      - infinityTable
+    lookups:
+      - source_indexes:
+        - deviceIndex
+        lookup: deviceName
+    overrides:
+      deviceEth1Status:
+        type: EnumAsStateSet
+      deviceEth2Status:
+        type: EnumAsStateSet
+      deviceFirmware:
+        type: DisplayString
+      deviceIP1:
+        type: DisplayString
+      deviceIP2:
+        type: DisplayString
+      deviceIdentifier:
+        type: DisplayString
+      deviceLock:
+        type: EnumAsInfo
+      deviceMAC1:
+        type: DisplayString
+      deviceMAC2:
+        type: DisplayString
+      deviceName:
+        type: DisplayString
+      deviceSerialNum:
+        type: DisplayString
+      deviceStatus:
+        type: EnumAsInfo
+      deviceType:
+        type: DisplayString
