@@ -1,0 +1,499 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  host-resources-mib:
+    walk:
+    - 1.3.6.1.2.1.25.2.3.1.5
+    - 1.3.6.1.2.1.25.2.3.1.6
+    - 1.3.6.1.2.1.25.3.3.1.2
+    get:
+    - 1.3.6.1.2.1.25.1.1.0
+    - 1.3.6.1.2.1.25.1.6.0
+    - 1.3.6.1.2.1.25.1.7.0
+    - 1.3.6.1.2.1.25.2.2.0
+    metrics:
+    - name: hrSystemUptime
+      oid: 1.3.6.1.2.1.25.1.1
+      type: gauge
+      help: The amount of time since this host was last initialized - 1.3.6.1.2.1.25.1.1
+    - name: hrSystemProcesses
+      oid: 1.3.6.1.2.1.25.1.6
+      type: gauge
+      help: The number of process contexts currently loaded or running on this system.
+        - 1.3.6.1.2.1.25.1.6
+    - name: hrSystemMaxProcesses
+      oid: 1.3.6.1.2.1.25.1.7
+      type: gauge
+      help: The maximum number of process contexts this system can support - 1.3.6.1.2.1.25.1.7
+    - name: hrMemorySize
+      oid: 1.3.6.1.2.1.25.2.2
+      type: gauge
+      help: The amount of physical read-write main memory, typically RAM, contained
+        by the host. - 1.3.6.1.2.1.25.2.2
+    - name: hrStorageSize
+      oid: 1.3.6.1.2.1.25.2.3.1.5
+      type: gauge
+      help: The size of the storage represented by this entry, in units of hrStorageAllocationUnits
+        - 1.3.6.1.2.1.25.2.3.1.5
+      indexes:
+      - labelname: hrStorageIndex
+        type: gauge
+    - name: hrStorageUsed
+      oid: 1.3.6.1.2.1.25.2.3.1.6
+      type: gauge
+      help: The amount of the storage represented by this entry that is allocated,
+        in units of hrStorageAllocationUnits. - 1.3.6.1.2.1.25.2.3.1.6
+      indexes:
+      - labelname: hrStorageIndex
+        type: gauge
+    - name: hrProcessorLoad
+      oid: 1.3.6.1.2.1.25.3.3.1.2
+      type: gauge
+      help: The average, over the last minute, of the percentage of time that this
+        processor was not idle - 1.3.6.1.2.1.25.3.3.1.2
+      indexes:
+      - labelname: hrDeviceIndex
+        type: gauge
+  tcp-mib:
+    get:
+    - 1.3.6.1.2.1.6.4.0
+    - 1.3.6.1.2.1.6.5.0
+    - 1.3.6.1.2.1.6.6.0
+    - 1.3.6.1.2.1.6.8.0
+    - 1.3.6.1.2.1.6.9.0
+    metrics:
+    - name: tcpMaxConn
+      oid: 1.3.6.1.2.1.6.4
+      type: gauge
+      help: The limit on the total number of TCP connections the entity can support
+        - 1.3.6.1.2.1.6.4
+    - name: tcpActiveOpens
+      oid: 1.3.6.1.2.1.6.5
+      type: counter
+      help: The number of times that TCP connections have made a direct transition
+        to the SYN-SENT state from the CLOSED state - 1.3.6.1.2.1.6.5
+    - name: tcpPassiveOpens
+      oid: 1.3.6.1.2.1.6.6
+      type: counter
+      help: The number of times TCP connections have made a direct transition to the
+        SYN-RCVD state from the LISTEN state - 1.3.6.1.2.1.6.6
+    - name: tcpEstabResets
+      oid: 1.3.6.1.2.1.6.8
+      type: counter
+      help: The number of times that TCP connections have made a direct transition
+        to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state
+        - 1.3.6.1.2.1.6.8
+    - name: tcpCurrEstab
+      oid: 1.3.6.1.2.1.6.9
+      type: gauge
+      help: The number of TCP connections for which the current state is either ESTABLISHED
+        or CLOSE-WAIT. - 1.3.6.1.2.1.6.9
+  truenas-mib:
+    walk:
+    - 1.3.6.1.4.1.50536.1.1.1
+    - 1.3.6.1.4.1.50536.1.2.1
+    - 1.3.6.1.4.1.50536.3
+    get:
+    - 1.3.6.1.4.1.50536.1.3.1.0
+    - 1.3.6.1.4.1.50536.1.3.2.0
+    - 1.3.6.1.4.1.50536.1.3.3.0
+    - 1.3.6.1.4.1.50536.1.3.4.0
+    - 1.3.6.1.4.1.50536.1.3.5.0
+    - 1.3.6.1.4.1.50536.1.3.6.0
+    - 1.3.6.1.4.1.50536.1.4.1.0
+    - 1.3.6.1.4.1.50536.1.4.2.0
+    - 1.3.6.1.4.1.50536.1.4.3.0
+    - 1.3.6.1.4.1.50536.1.4.4.0
+    - 1.3.6.1.4.1.50536.1.4.5.0
+    metrics:
+    - name: zpoolIndex
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.1
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.1.1.1.1'
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolName
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+      type: DisplayString
+      help: The name of the zpool - 1.3.6.1.4.1.50536.1.1.1.1.2
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolHealth
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.3
+      type: DisplayString
+      help: The health of the zpool - 1.3.6.1.4.1.50536.1.1.1.1.3
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolReadOps
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.4
+      type: counter
+      help: The number of read I/O operations sent to the pool or device, including
+        metadata requests (averaged since system booted). - 1.3.6.1.4.1.50536.1.1.1.1.4
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolWriteOps
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.5
+      type: counter
+      help: The number of write I/O operations sent to the pool or device (averaged
+        since system booted). - 1.3.6.1.4.1.50536.1.1.1.1.5
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolReadBytes
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.6
+      type: counter
+      help: The bandwidth of all read operations (including metadata), expressed as
+        units per second (averaged since system booted) - 1.3.6.1.4.1.50536.1.1.1.1.6
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolWriteBytes
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.7
+      type: counter
+      help: The bandwidth of all write operations, expressed as units per second (averaged
+        since system booted). - 1.3.6.1.4.1.50536.1.1.1.1.7
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolReadOps1sec
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.8
+      type: counter
+      help: The number of read I/O operations sent to the pool or device, including
+        metadata requests (over 1 second interval). - 1.3.6.1.4.1.50536.1.1.1.1.8
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolWriteOps1sec
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.9
+      type: counter
+      help: The number of write I/O operations sent to the pool or device (over 1
+        second interval). - 1.3.6.1.4.1.50536.1.1.1.1.9
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolReadBytes1sec
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.10
+      type: counter
+      help: The bandwidth of all read operations (including metadata), expressed as
+        units per second (over 1 second interval) - 1.3.6.1.4.1.50536.1.1.1.1.10
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zpoolWriteBytes1sec
+      oid: 1.3.6.1.4.1.50536.1.1.1.1.11
+      type: counter
+      help: The bandwidth of all write operations, expressed as units per second (over
+        1 second interval). - 1.3.6.1.4.1.50536.1.1.1.1.11
+      indexes:
+      - labelname: zpoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zpoolIndex
+        labelname: zpoolName
+        oid: 1.3.6.1.4.1.50536.1.1.1.1.2
+        type: DisplayString
+    - name: zvolIndex
+      oid: 1.3.6.1.4.1.50536.1.2.1.1.1
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.2.1.1.1'
+      indexes:
+      - labelname: zvolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zvolIndex
+        labelname: zvolDescr
+        oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+        type: DisplayString
+    - name: zvolDescr
+      oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+      type: DisplayString
+      help: The name of the zvol - 1.3.6.1.4.1.50536.1.2.1.1.2
+      indexes:
+      - labelname: zvolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zvolIndex
+        labelname: zvolDescr
+        oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+        type: DisplayString
+    - name: zvolUsedBytes
+      oid: 1.3.6.1.4.1.50536.1.2.1.1.3
+      type: counter
+      help: The zfs used property value - 1.3.6.1.4.1.50536.1.2.1.1.3
+      indexes:
+      - labelname: zvolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zvolIndex
+        labelname: zvolDescr
+        oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+        type: DisplayString
+    - name: zvolAvailableBytes
+      oid: 1.3.6.1.4.1.50536.1.2.1.1.4
+      type: counter
+      help: The zfs available property value - 1.3.6.1.4.1.50536.1.2.1.1.4
+      indexes:
+      - labelname: zvolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zvolIndex
+        labelname: zvolDescr
+        oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+        type: DisplayString
+    - name: zvolReferencedBytes
+      oid: 1.3.6.1.4.1.50536.1.2.1.1.5
+      type: counter
+      help: The zfs referenced property value - 1.3.6.1.4.1.50536.1.2.1.1.5
+      indexes:
+      - labelname: zvolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - zvolIndex
+        labelname: zvolDescr
+        oid: 1.3.6.1.4.1.50536.1.2.1.1.2
+        type: DisplayString
+    - name: zfsArcSize
+      oid: 1.3.6.1.4.1.50536.1.3.1
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.1'
+    - name: zfsArcMeta
+      oid: 1.3.6.1.4.1.50536.1.3.2
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.2'
+    - name: zfsArcData
+      oid: 1.3.6.1.4.1.50536.1.3.3
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.3'
+    - name: zfsArcHits
+      oid: 1.3.6.1.4.1.50536.1.3.4
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.4'
+    - name: zfsArcMisses
+      oid: 1.3.6.1.4.1.50536.1.3.5
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.5'
+    - name: zfsArcC
+      oid: 1.3.6.1.4.1.50536.1.3.6
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.3.6'
+    - name: zfsL2ArcHits
+      oid: 1.3.6.1.4.1.50536.1.4.1
+      type: counter
+      help: ' - 1.3.6.1.4.1.50536.1.4.1'
+    - name: zfsL2ArcMisses
+      oid: 1.3.6.1.4.1.50536.1.4.2
+      type: counter
+      help: ' - 1.3.6.1.4.1.50536.1.4.2'
+    - name: zfsL2ArcRead
+      oid: 1.3.6.1.4.1.50536.1.4.3
+      type: counter
+      help: ' - 1.3.6.1.4.1.50536.1.4.3'
+    - name: zfsL2ArcWrite
+      oid: 1.3.6.1.4.1.50536.1.4.4
+      type: counter
+      help: ' - 1.3.6.1.4.1.50536.1.4.4'
+    - name: zfsL2ArcSize
+      oid: 1.3.6.1.4.1.50536.1.4.5
+      type: gauge
+      help: ' - 1.3.6.1.4.1.50536.1.4.5'
+    - name: hddTempIndex
+      oid: 1.3.6.1.4.1.50536.3.1.1
+      type: gauge
+      help: Reference index for each observed HDD. - 1.3.6.1.4.1.50536.3.1.1
+      indexes:
+      - labelname: hddTempIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hddTempIndex
+        labelname: hddTempDevice
+        oid: 1.3.6.1.4.1.50536.3.1.2
+        type: DisplayString
+    - name: hddTempDevice
+      oid: 1.3.6.1.4.1.50536.3.1.2
+      type: DisplayString
+      help: The name of the HDD we are reading temperature from. - 1.3.6.1.4.1.50536.3.1.2
+      indexes:
+      - labelname: hddTempIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hddTempIndex
+        labelname: hddTempDevice
+        oid: 1.3.6.1.4.1.50536.3.1.2
+        type: DisplayString
+    - name: hddTempValue
+      oid: 1.3.6.1.4.1.50536.3.1.3
+      type: gauge
+      help: The temperature of this HDD in mC. - 1.3.6.1.4.1.50536.3.1.3
+      indexes:
+      - labelname: hddTempIndex
+        type: gauge
+      lookups:
+      - labels:
+        - hddTempIndex
+        labelname: hddTempDevice
+        oid: 1.3.6.1.4.1.50536.3.1.2
+        type: DisplayString
+  ucd-snmp-mib:
+    walk:
+    - 1.3.6.1.4.1.2021.10.1
+    get:
+    - 1.3.6.1.4.1.2021.11.11.0
+    - 1.3.6.1.4.1.2021.11.53.0
+    - 1.3.6.1.4.1.2021.4.11.0
+    - 1.3.6.1.4.1.2021.4.5.0
+    - 1.3.6.1.4.1.2021.4.6.0
+    metrics:
+    - name: laIndex
+      oid: 1.3.6.1.4.1.2021.10.1.1
+      type: gauge
+      help: reference index/row number for each observed loadave. - 1.3.6.1.4.1.2021.10.1.1
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laNames
+      oid: 1.3.6.1.4.1.2021.10.1.2
+      type: DisplayString
+      help: The list of loadave names we're watching. - 1.3.6.1.4.1.2021.10.1.2
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laLoad
+      oid: 1.3.6.1.4.1.2021.10.1.3
+      type: DisplayString
+      help: The 1,5 and 15 minute load averages (one per row). - 1.3.6.1.4.1.2021.10.1.3
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laConfig
+      oid: 1.3.6.1.4.1.2021.10.1.4
+      type: DisplayString
+      help: The watch point for load-averages to signal an error - 1.3.6.1.4.1.2021.10.1.4
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laLoadInt
+      oid: 1.3.6.1.4.1.2021.10.1.5
+      type: gauge
+      help: The 1,5 and 15 minute load averages as an integer - 1.3.6.1.4.1.2021.10.1.5
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laLoadFloat
+      oid: 1.3.6.1.4.1.2021.10.1.6
+      type: Float
+      help: The 1,5 and 15 minute load averages as an opaquely wrapped floating point
+        number. - 1.3.6.1.4.1.2021.10.1.6
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: laErrorFlag
+      oid: 1.3.6.1.4.1.2021.10.1.100
+      type: gauge
+      help: A Error flag to indicate the load-average has crossed its threshold value
+        defined in the snmpd.conf file - 1.3.6.1.4.1.2021.10.1.100
+      indexes:
+      - labelname: laIndex
+        type: gauge
+      enum_values:
+        0: noError
+        1: error
+    - name: laErrMessage
+      oid: 1.3.6.1.4.1.2021.10.1.101
+      type: DisplayString
+      help: An error message describing the load-average and its surpased watch-point
+        value. - 1.3.6.1.4.1.2021.10.1.101
+      indexes:
+      - labelname: laIndex
+        type: gauge
+    - name: ssCpuIdle
+      oid: 1.3.6.1.4.1.2021.11.11
+      type: gauge
+      help: The percentage of processor time spent idle, calculated over the last
+        minute - 1.3.6.1.4.1.2021.11.11
+    - name: ssCpuRawIdle
+      oid: 1.3.6.1.4.1.2021.11.53
+      type: counter
+      help: The number of 'ticks' (typically 1/100s) spent idle - 1.3.6.1.4.1.2021.11.53
+    - name: memTotalFree
+      oid: 1.3.6.1.4.1.2021.4.11
+      type: gauge
+      help: The total amount of memory free or available for use on this host - 1.3.6.1.4.1.2021.4.11
+    - name: memTotalReal
+      oid: 1.3.6.1.4.1.2021.4.5
+      type: gauge
+      help: The total amount of real/physical memory installed on this host. - 1.3.6.1.4.1.2021.4.5
+    - name: memAvailReal
+      oid: 1.3.6.1.4.1.2021.4.6
+      type: gauge
+      help: The amount of real/physical memory currently unused or available. - 1.3.6.1.4.1.2021.4.6

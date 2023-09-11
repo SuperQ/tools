@@ -24,20 +24,19 @@ modules:
     - tcpPassiveOpens
     - tcpEstabResets
     - tcpCurrEstab
-  freenas-mib:
+  # https://github.com/truenas/middleware/blob/master/src/freenas/usr/local/share/snmp/mibs/TRUENAS-MIB.txt
+  truenas-mib:
     walk:
     - zpoolTable
     - zvolTable
+    - hddTempTable
 
-    - datasetDescr #.1 = STRING: boot-pool/ROOT
-    - datasetAllocationUnits
-    - datasetSize #.1 = INTEGER: 24251018
-    - datasetUsed #.1 = INTEGER: 365180
-    - datasetAvailable #.1 = INTEGER: 23885838
-
-    # Unknown what MIB this belongs to.
-    # - hddTempDevice # string da0 da1 ada0 nvd0
-    # - hddTempValue # 41000
+    # Removed in https://github.com/truenas/middleware/pull/10291
+    # - datasetDescr #.1 = STRING: boot-pool/ROOT
+    # - datasetAllocationUnits
+    # - datasetSize #.1 = INTEGER: 24251018
+    # - datasetUsed #.1 = INTEGER: 365180
+    # - datasetAvailable #.1 = INTEGER: 23885838
 
     - zfsArcSize #.0 = Gauge32: 26288777
     - zfsArcMeta #.0 = Gauge32: 638834
@@ -45,7 +44,8 @@ modules:
     - zfsArcHits #.0 = Gauge32: 2127255356
     - zfsArcMisses #.0 = Gauge32: 24503533
     - zfsArcC #.0 = Gauge32: 26335347
-    - zfsArcP #.0 = Gauge32: 24565288
+    # Removed in https://github.com/truenas/middleware/pull/11881
+    # - zfsArcP #.0 = Gauge32: 24565288
     # These can be calculated zfsArcHits and zfsArcMisses.
     # - zfsArcMissPercent #.0 = STRING: 0.22811610704906116
     # - zfsArcCacheHitRatio #.0 = STRING: 99.77
@@ -61,7 +61,7 @@ modules:
       - source_indexes: [zvolIndex]
         lookup: zvolDescr
       - source_indexes: [zpoolIndex]
-        lookup: zpoolDescr
+        lookup: zpoolName
       - source_indexes: [datasetIndex]
         lookup: datasetDescr 
       - source_indexes: [hddTempIndex]
