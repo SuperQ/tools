@@ -1,0 +1,9 @@
+modules:
+  brocade_sw_mib:
+    walk:
+      - swFCPortTable
+    lookups:
+      - source_indexes: [swFCPortIndex]
+        lookup: swFCPortName
+      - source_indexes: [swFCPortIndex]
+        lookup: swFCPortSpecifier

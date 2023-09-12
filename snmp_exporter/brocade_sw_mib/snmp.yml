@@ -1,0 +1,742 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  brocade_sw_mib:
+    walk:
+    - 1.3.6.1.4.1.1588.2.1.1.1.6.2
+    metrics:
+    - name: swFCPortIndex
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.1
+      type: gauge
+      help: This object identifies the switch port index - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.1
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortType
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.2
+      type: gauge
+      help: This object identifies the type of switch port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.2
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: stitch
+        2: flannel
+        3: loom
+        4: bloom
+        5: rdbloom
+        6: wormhole
+        7: other
+        8: unknown
+    - name: swFCPortPhyState
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.3
+      type: gauge
+      help: 'This object identifies the physical state of the port: noCard(1) no card
+        present in this switch slot; noTransceiver(2) no Transceiver module in this
+        port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.3'
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: noCard
+        2: noTransceiver
+        3: laserFault
+        4: noLight
+        5: noSync
+        6: inSync
+        7: portFault
+        8: diagFault
+        9: lockRef
+        10: validating
+        11: invalidModule
+        255: unknown
+    - name: swFCPortOpStatus
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.4
+      type: gauge
+      help: This object identifies the operational status of the port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.4
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        0: unknown
+        1: online
+        2: offline
+        3: testing
+        4: faulty
+    - name: swFCPortAdmStatus
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.5
+      type: gauge
+      help: The desired state of the port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.5
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: online
+        2: offline
+        3: testing
+        4: faulty
+    - name: swFCPortLinkState
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.6
+      type: gauge
+      help: This object indicates the link state of the port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.6
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: enabled
+        2: disabled
+        3: loopback
+    - name: swFCPortTxType
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.7
+      type: gauge
+      help: This object indicates the media transmitter type of the port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.7
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: lw
+        3: sw
+        4: ld
+        5: cu
+    - name: swFCPortTxWords
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.11
+      type: counter
+      help: This object counts the number of Fibre Channel words that the port has
+        transmitted. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.11
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxWords
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.12
+      type: counter
+      help: This object counts the number of Fibre Channel words that the port has
+        received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.12
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortTxFrames
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.13
+      type: counter
+      help: This object counts the number of (Fibre Channel) frames that the port
+        has transmitted. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.13
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxFrames
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.14
+      type: counter
+      help: This object counts the number of (Fibre Channel) frames that the port
+        has received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.14
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxC2Frames
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.15
+      type: counter
+      help: This object counts the number of Class 2 frames that the port has received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.15
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxC3Frames
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.16
+      type: counter
+      help: This object counts the number of Class 3 frames that the port has received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.16
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxLCs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.17
+      type: counter
+      help: This object counts the number of Link Control frames that the port has
+        received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.17
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxMcasts
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.18
+      type: counter
+      help: This object counts the number of Multicast frames that the port has received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.18
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortTooManyRdys
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.19
+      type: counter
+      help: This object counts the number of times when RDYs exceeds the frames received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.19
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortNoTxCredits
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.20
+      type: counter
+      help: This object counts the number of times when the transmit credit has reached
+        zero. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.20
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxEncInFrs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.21
+      type: counter
+      help: This object counts the number of encoding error or disparity error inside
+        frames received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.21
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxCrcs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.22
+      type: counter
+      help: This object counts the number of CRC errors detected for frames received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.22
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxTruncs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.23
+      type: counter
+      help: This object counts the number of truncated frames that the port has received.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.23
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxTooLongs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.24
+      type: counter
+      help: This object counts the number of received frames that are too long. -
+        1.3.6.1.4.1.1588.2.1.1.1.6.2.1.24
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxBadEofs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.25
+      type: counter
+      help: This object counts the number of received frames that have bad EOF delimiter.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.25
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxEncOutFrs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.26
+      type: counter
+      help: This object counts the number of encoding error or disparity error outside
+        frames received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.26
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortRxBadOs
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.27
+      type: counter
+      help: This object counts the number of invalid Ordered Sets received. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.27
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortC3Discards
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.28
+      type: counter
+      help: This object counts the number of Class 3 frames that the port has discarded.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.28
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortMcastTimedOuts
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.29
+      type: counter
+      help: This object counts the number of Multicast frames that has been timed
+        out. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.29
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortTxMcasts
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.30
+      type: counter
+      help: This object counts the number of Multicast frames that has been transmitted.
+        - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.30
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortLipIns
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.31
+      type: counter
+      help: This object counts the number of Loop Initializations that has been initiated
+        by loop devices attached. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.31
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortLipOuts
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.32
+      type: counter
+      help: This object counts the number of Loop Initializations that has been initiated
+        by the port. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.32
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortLipLastAlpa
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.33
+      type: OctetString
+      help: This object indicates the Physical Address (AL_PA) of the loop device
+        that initiated the last Loop Initialization. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.33
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortWwn
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.34
+      type: OctetString
+      help: The World_wide_Name of the Fibre Channel port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.34
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortSpeed
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.35
+      type: gauge
+      help: The desired baud rate for the port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.35
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: one-GB
+        2: two-GB
+        3: auto-Negotiate
+        4: four-GB
+        5: eight-GB
+        6: ten-GB
+        7: unknown
+    - name: swFCPortName
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+      type: DisplayString
+      help: A string indicates the name of the addressed port - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortSpecifier
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+      type: DisplayString
+      help: This string indicates the physical port number of the addressed port -
+        1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+    - name: swFCPortFlag
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.38
+      type: Bits
+      help: A bit map of port status flags which includes the information of port
+        type - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.38
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        0: physical
+        1: virtual
+    - name: swFCPortBrcdType
+      oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.39
+      type: gauge
+      help: The Brocade port type. - 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.39
+      indexes:
+      - labelname: swFCPortIndex
+        type: gauge
+      lookups:
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortName
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.36
+        type: DisplayString
+      - labels:
+        - swFCPortIndex
+        labelname: swFCPortSpecifier
+        oid: 1.3.6.1.4.1.1588.2.1.1.1.6.2.1.37
+        type: DisplayString
+      enum_values:
+        1: unknown
+        2: other
+        3: fl-port
+        4: f-port
+        5: e-port
+        6: g-port
+        7: ex-port
