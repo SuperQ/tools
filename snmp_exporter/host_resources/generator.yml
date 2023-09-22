@@ -1,7 +1,5 @@
 modules:
   host_resources:
-    auth:
-      community: xxxx
     walk:
       - hrSystem
       - hrStorageTable
