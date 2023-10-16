@@ -1,0 +1,12 @@
+modules:
+  cisco_mempool:
+    walk:
+    - cempMemPoolTable
+    lookups:
+    - source_indexes: [entPhysicalIndex, cempMemPoolIndex]
+      lookup: cempMemPoolName
+    overrides:
+      cempMemPoolType:
+        type: EnumAsInfo
+      cempMemPoolValid:
+        type: EnumAsStateSet

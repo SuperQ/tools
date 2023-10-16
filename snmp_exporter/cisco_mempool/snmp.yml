@@ -1,0 +1,283 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  cisco_mempool:
+    walk:
+    - 1.3.6.1.4.1.9.9.221.1.1.1
+    metrics:
+    - name: cempMemPoolIndex
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.1
+      type: gauge
+      help: Within each physical entity, the unique value greater than zero, used
+        to represent each memory pool - 1.3.6.1.4.1.9.9.221.1.1.1.1.1
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolType
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.2
+      type: EnumAsInfo
+      help: The type of memory pool for which this entry contains information. - 1.3.6.1.4.1.9.9.221.1.1.1.1.2
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+      enum_values:
+        1: other
+        2: processorMemory
+        3: ioMemory
+        4: pciMemory
+        5: fastMemory
+        6: multibusMemory
+        7: interruptStackMemory
+        8: processStackMemory
+        9: localExceptionMemory
+        10: virtualMemory
+        11: reservedMemory
+        12: imageMemory
+        13: asicMemory
+        14: nvram
+        15: mbuf
+        16: cluster
+        17: malloc
+    - name: cempMemPoolName
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+      type: DisplayString
+      help: A textual name assigned to the memory pool - 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolPlatformMemory
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.4
+      type: OctetString
+      help: An indication of the platform-specific memory pool type - 1.3.6.1.4.1.9.9.221.1.1.1.1.4
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolAlternate
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.5
+      type: gauge
+      help: Indicates whether or not this memory pool has an alternate pool configured
+        - 1.3.6.1.4.1.9.9.221.1.1.1.1.5
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolValid
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.6
+      type: EnumAsStateSet
+      help: Indicates whether or not cempMemPoolUsed, cempMemPoolFree, cempMemPoolLargestFree
+        and cempMemPoolLowestFree in this entry contain accurate data - 1.3.6.1.4.1.9.9.221.1.1.1.1.6
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: cempMemPoolUsed
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.7
+      type: gauge
+      help: Indicates the number of bytes from the memory pool that are currently
+        in use by applications on the physical entity. - 1.3.6.1.4.1.9.9.221.1.1.1.1.7
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolFree
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.8
+      type: gauge
+      help: Indicates the number of bytes from the memory pool that are currently
+        unused on the physical entity - 1.3.6.1.4.1.9.9.221.1.1.1.1.8
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolLargestFree
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.9
+      type: gauge
+      help: Indicates the largest number of contiguous bytes from the memory pool
+        that are currently unused on the physical entity. - 1.3.6.1.4.1.9.9.221.1.1.1.1.9
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolLowestFree
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.10
+      type: gauge
+      help: The lowest amount of available memory in the memory pool recorded at any
+        time during the operation of the system. - 1.3.6.1.4.1.9.9.221.1.1.1.1.10
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolUsedLowWaterMark
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.11
+      type: gauge
+      help: 'Indicates the lowest number of bytes from the memory pool that have been
+        used by applications on the physical entity since sysUpTime.Similarly,the
+        Used High Watermark indicates the largest number of bytes from the memory
+        pool that have been used by applications on the physical entity since sysUpTime.This
+        can be derived as follows: Used High Watermark = cempMemPoolUsed + cempMemPoolFree
+        - cempMemPoolLowestFree. - 1.3.6.1.4.1.9.9.221.1.1.1.1.11'
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolAllocHit
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.12
+      type: counter
+      help: Indicates the number of successful allocations from the memory pool -
+        1.3.6.1.4.1.9.9.221.1.1.1.1.12
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolAllocMiss
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.13
+      type: counter
+      help: Indicates the number of unsuccessful allocations from the memory pool
+        - 1.3.6.1.4.1.9.9.221.1.1.1.1.13
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolFreeHit
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.14
+      type: counter
+      help: Indicates the number of successful frees/ deallocations from the memory
+        pool - 1.3.6.1.4.1.9.9.221.1.1.1.1.14
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
+    - name: cempMemPoolFreeMiss
+      oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.15
+      type: counter
+      help: Indicates the number of unsuccessful attempts to free/deallocate memory
+        from the memory pool - 1.3.6.1.4.1.9.9.221.1.1.1.1.15
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      - labelname: cempMemPoolIndex
+        type: gauge
+      lookups:
+      - labels:
+        - entPhysicalIndex
+        - cempMemPoolIndex
+        labelname: cempMemPoolName
+        oid: 1.3.6.1.4.1.9.9.221.1.1.1.1.3
+        type: DisplayString
