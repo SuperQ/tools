@@ -1,0 +1,419 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  netbotz:
+    walk:
+    - 1.3.6.1.4.1.52674.500.4.1.1
+    - 1.3.6.1.4.1.52674.500.4.1.14
+    metrics:
+    - name: tempSensorValue
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.2
+      type: gauge
+      help: The temperature measured by the sensor in tenths of a degree Celsius.
+        - 1.3.6.1.4.1.52674.500.4.1.1.1.2
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+    - name: tempSensorErrorStatus
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.3
+      type: EnumAsStateSet
+      help: The error status of the sensor - 1.3.6.1.4.1.52674.500.4.1.1.1.3
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+      enum_values:
+        0: normal
+        1: info
+        2: warning
+        3: error
+        4: critical
+        5: failure
+    - name: tempSensorValueStr
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.7
+      type: DisplayString
+      help: The temperature reading, in degrees celsius, shown as a string (or empty
+        string if it is not plugged into a port). - 1.3.6.1.4.1.52674.500.4.1.1.1.7
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+    - name: tempSensorValueInt
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.8
+      type: gauge
+      help: The temperature measured by the sensor in degree Celsius. - 1.3.6.1.4.1.52674.500.4.1.1.1.8
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+    - name: tempSensorValueIntF
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.9
+      type: gauge
+      help: The temperature measured by the sensor in degree Farenheit. - 1.3.6.1.4.1.52674.500.4.1.1.1.9
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+    - name: tempSensorIndex
+      oid: 1.3.6.1.4.1.52674.500.4.1.1.1.10
+      type: counter
+      help: The index of the sensor. - 1.3.6.1.4.1.52674.500.4.1.1.1.10
+      indexes:
+      - labelname: tempSensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.1
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.4
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.5
+        type: DisplayString
+      - labels:
+        - tempSensorIndex
+        labelname: tempSensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.1.1.6
+        type: DisplayString
+    - name: batterySensorValue
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.2
+      type: gauge
+      help: The value measured by the sensor in tenths of the unit of measure. - 1.3.6.1.4.1.52674.500.4.1.14.1.2
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorErrorStatus
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.3
+      type: EnumAsStateSet
+      help: The operational status of the sensor - 1.3.6.1.4.1.52674.500.4.1.14.1.3
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+      enum_values:
+        0: normal
+        1: info
+        2: warning
+        3: error
+        4: critical
+        5: failure
+    - name: batterySensorValueStr
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.7
+      type: DisplayString
+      help: The sensor reading shown as a string (or empty string if it is not plugged
+        into a port). - 1.3.6.1.4.1.52674.500.4.1.14.1.7
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorValueInt
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.8
+      type: gauge
+      help: The value measured by the sensor in the unit of measure (1/10 of batterySensorValue)
+        - 1.3.6.1.4.1.52674.500.4.1.14.1.8
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorUnits
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.9
+      type: DisplayString
+      help: The unit of measure for the sensor value. - 1.3.6.1.4.1.52674.500.4.1.14.1.9
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorValueIntX1000
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.10
+      type: gauge
+      help: The value measured by the sensor in thousandths of the unit of measure
+        (100 times batterySensorValue) - 1.3.6.1.4.1.52674.500.4.1.14.1.10
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorValueIntX1000000
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.11
+      type: gauge
+      help: The value measured by the sensor in millionths of the unit of measure
+        (100000 times batterySensorValue) - 1.3.6.1.4.1.52674.500.4.1.14.1.11
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString
+    - name: batterySensorIndex
+      oid: 1.3.6.1.4.1.52674.500.4.1.14.1.12
+      type: counter
+      help: The index of the sensor. - 1.3.6.1.4.1.52674.500.4.1.14.1.12
+      indexes:
+      - labelname: batterySensorIndex
+        type: counter
+      lookups:
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.1
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorLabel
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.4
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorEncId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.5
+        type: DisplayString
+      - labels:
+        - batterySensorIndex
+        labelname: batterySensorPortId
+        oid: 1.3.6.1.4.1.52674.500.4.1.14.1.6
+        type: DisplayString

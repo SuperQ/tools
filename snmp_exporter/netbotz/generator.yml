@@ -1,0 +1,51 @@
+modules:
+  netbotz:
+    walk:
+    - batterySensorTable
+    - tempSensorTable
+    lookups:
+    - source_indexes:
+      - batterySensorIndex
+      lookup: batterySensorId
+    - source_indexes:
+      - batterySensorIndex
+      lookup: batterySensorLabel
+    - source_indexes:
+      - batterySensorIndex
+      lookup: batterySensorEncId
+    - source_indexes:
+      - batterySensorIndex
+      lookup: batterySensorPortId
+    - source_indexes:
+      - tempSensorIndex
+      lookup: tempSensorId
+    - source_indexes:
+      - tempSensorIndex
+      lookup: tempSensorLabel
+    - source_indexes:
+      - tempSensorIndex
+      lookup: tempSensorEncId
+    - source_indexes:
+      - tempSensorIndex
+      lookup: tempSensorPortId
+    overrides:
+      batterySensorErrorStatus:
+        type: EnumAsStateSet
+      tempSensorErrorStatus:
+        type: EnumAsStateSet
+      batterySensorId:
+        ignore: true
+      batterySensorLabel:
+        ignore: true
+      batterySensorEncId:
+        ignore: true
+      batterySensorPortId:
+        ignore: true
+      tempSensorId:
+        ignore: true
+      tempSensorLabel:
+        ignore: true
+      tempSensorEncId:
+        ignore: true
+      tempSensorPortId:
+        ignore: true
