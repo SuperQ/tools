@@ -1,0 +1,9 @@
+modules:
+  huawei_entity:
+    walk:
+      - hwEntityStateTable
+    overrides:
+      hwEntityAdminStatus:
+        type: EnumAsStateSet
+      hwEntityOperStatus:
+        type: EnumAsStateSet

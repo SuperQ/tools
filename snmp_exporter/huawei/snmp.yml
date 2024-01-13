@@ -1,0 +1,507 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  huawei_entity:
+    walk:
+    - 1.3.6.1.4.1.2011.5.25.31.1.1.1
+    metrics:
+    - name: hwEntityAdminStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.1
+      type: EnumAsStateSet
+      help: This object indicates the entity management status. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.1
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: locked
+        3: shuttingDown
+        4: unlocked
+        11: up
+        12: down
+        13: loopback
+    - name: hwEntityOperStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.2
+      type: EnumAsStateSet
+      help: This object indicates the entity operation status. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.2
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: disabled
+        3: enabled
+        4: offline
+        11: up
+        12: down
+        13: connect
+        15: protocolUp
+        16: linkUp
+        17: linkDown
+        18: present
+        19: absent
+    - name: hwEntityStandbyStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3
+      type: gauge
+      help: This object indicates the entity backup status. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: hotStandby
+        3: coldStandby
+        4: providingService
+    - name: hwEntityAlarmLight
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.4
+      type: Bits
+      help: This object indicates the entity alarm status, which is consistent with
+        the entity alarm indicator status. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.4
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        0: notSupported
+        1: underRepair
+        2: critical
+        3: major
+        4: minor
+        5: alarmOutstanding
+        6: warning
+        7: indeterminate
+    - name: hwEntityCpuUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
+      type: gauge
+      help: This object indicates the CPU usage of an entity - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCpuUsageThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.6
+      type: gauge
+      help: This object indicates the CPU usage threshold - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.6
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7
+      type: gauge
+      help: This object indicates the memory usage of an entity, that is, the percentage
+        of the memory that has been used. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemUsageThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.8
+      type: gauge
+      help: This object indicates the memory usage threshold - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.8
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemSize
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.9
+      type: gauge
+      help: This object indicates the memory size. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.9
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityUpTime
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.10
+      type: gauge
+      help: This object indicates the total duration when an entity is in the UP state.
+        - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.10
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTemperature
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11
+      type: gauge
+      help: This object indicates the entity temperature. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTemperatureThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.12
+      type: gauge
+      help: This object indicates the upper threshold of the entity temperature. -
+        1.3.6.1.4.1.2011.5.25.31.1.1.1.1.12
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityVoltage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.13
+      type: gauge
+      help: This object indicates the entity voltage. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.13
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityVoltageLowThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.14
+      type: gauge
+      help: This object indicates the minimum entity voltage threshold. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.14
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityVoltageHighThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.15
+      type: gauge
+      help: This object indicates the maximum entity voltage threshold. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.15
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTemperatureLowThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.16
+      type: gauge
+      help: This object indicates the lower entity temperature threshold. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.16
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityOpticalPower
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.17
+      type: gauge
+      help: This object indicates the optical module's optical power. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.17
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCurrent
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.18
+      type: gauge
+      help: This object indicates the entity current. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.18
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemSizeMega
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.19
+      type: gauge
+      help: This object indicates the size of the entity SDRAM. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.19
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityPortType
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.20
+      type: gauge
+      help: This object indicates the port type. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.20
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: copper
+        3: fiber100
+        4: fiber1000
+        5: fiber10000
+        6: opticalnotExist
+        7: optical
+    - name: hwEntityDuplex
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.21
+      type: gauge
+      help: This object indicates the duplex mode of a port. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.21
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: full
+        3: half
+    - name: hwEntityOpticalPowerRx
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.22
+      type: gauge
+      help: This object indicates the receive power of an optical module. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.22
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCpuUsageLowThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.23
+      type: gauge
+      help: This object indicates the CPU usage threshold of an entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.23
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityBoardPower
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.24
+      type: gauge
+      help: This object indicates the board power. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.24
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCpuFrequency
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.25
+      type: gauge
+      help: The frequency of the entity - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.25
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntitySupportFlexCard
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.26
+      type: gauge
+      help: This object indicates whether flexible plug-in cards are supported. -
+        1.3.6.1.4.1.2011.5.25.31.1.1.1.1.26
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: flexible
+        3: unflexible
+        4: dummy
+    - name: hwEntityBoardClass
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.27
+      type: gauge
+      help: This object indicates the board type. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.27
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: mpu
+        3: lpu
+        4: sfu
+        5: icu
+        6: ecu
+        7: fan
+        8: power
+        9: lcd
+        10: pmu
+        11: cmu
+    - name: hwNseOpmStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.28
+      type: gauge
+      help: OPM status - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.28
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCpuMaxUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.29
+      type: gauge
+      help: This object indicates the maximum CPU usage. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.29
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCPUType
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.30
+      type: DisplayString
+      help: This object indicates the CPU type. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.30
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemoryType
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.31
+      type: DisplayString
+      help: This object indicates the memory type. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.31
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityFlashSize
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.32
+      type: gauge
+      help: This object indicates the flash size of an entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.32
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityIfUpTimes
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.33
+      type: gauge
+      help: Times that the interface goes Up. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.33
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityIfDownTimes
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.34
+      type: gauge
+      help: Times that the interface goes Down. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.34
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityCPUAvgUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.35
+      type: gauge
+      help: This object indicates the average CPU usage. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.35
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemoryAvgUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.36
+      type: gauge
+      help: This object indicates the average memory usage. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.36
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemUsed
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.37
+      type: gauge
+      help: This object indicates the used memory size. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.37
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTotalFanNum
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.38
+      type: gauge
+      help: The total numbers of the fans in the chassis . - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.38
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityNomalFanNum
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.39
+      type: gauge
+      help: The Nomal numbers of the fans in the chassis . - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.39
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTotalPwrNum
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.40
+      type: gauge
+      help: The total numbers of the powers in the chassis . - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.40
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityNomalPwrNum
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.41
+      type: gauge
+      help: The nomal numbers of the powers in the chassis . - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.41
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityFaultLight
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.42
+      type: gauge
+      help: The repair status for this entity - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.42
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: normal
+        3: underRepair
+    - name: hwEntityBoardName
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.43
+      type: OctetString
+      help: The board name for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.43
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityBoardDescription
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.44
+      type: OctetString
+      help: The board description for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.44
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntity5MinCpuUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.45
+      type: gauge
+      help: Average CPU usage of the last five minutes for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.45
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityStartMode
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.46
+      type: gauge
+      help: This object indicates the board startup mode. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.46
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        1: notSupported
+        2: cold
+        3: warm
+        4: unknown
+    - name: hwEntitySplitAttribute
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.47
+      type: OctetString
+      help: The attribute for the split port. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.47
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityFaultLightKeepTime
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.48
+      type: gauge
+      help: Fault light twinkle keep time,the default is 45 seconds. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.48
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityPbufUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.49
+      type: gauge
+      help: The Pbuf usage for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.49
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityTMUsage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.50
+      type: gauge
+      help: The TM usage for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.50
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityHda1Usage
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.51
+      type: gauge
+      help: The Hda1 usage for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.51
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityHda1UsageThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.52
+      type: gauge
+      help: The hda1 usage Threshold for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.52
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityHda1UsageResumeThreshold
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.53
+      type: gauge
+      help: The hda1 usage resume threshold for this entity. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.53
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityModelName
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.60
+      type: OctetString
+      help: The model for this entity - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.60
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityIssueNumber
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.61
+      type: OctetString
+      help: The IssueNumber for this entity - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.61
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityDeviceStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.62
+      type: gauge
+      help: This object indicates the state of the device. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.62
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        0: notSupported
+        1: normal
+        2: abnormal
+    - name: hwEntityPicStatus
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.63
+      type: gauge
+      help: This object indicates the state of the pic. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.63
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+      enum_values:
+        0: notSupported
+        1: registered
+        2: online
+        3: unregistered
+        4: failed
+    - name: hwEntityMPUType
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.64
+      type: OctetString
+      help: This object indicates the MPU type. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.64
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
+    - name: hwEntityMemSizeExt
+      oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.65
+      type: gauge
+      help: This object indicates the memory size. - 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.65
+      indexes:
+      - labelname: entPhysicalIndex
+        type: gauge
