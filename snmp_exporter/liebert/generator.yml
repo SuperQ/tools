@@ -1,0 +1,13 @@
+modules:
+  # Modules for QNAP-NAS
+  liebert:
+    walk:
+      - lgpEnvTemperatureTableDegC
+    lookups:
+      - source_indexes: [lgpEnvTemperatureIdDegC]
+        lookup: lgpEnvTemperatureDescrDegC
+    overrides:
+      lgpEnvTemperatureDescrDegC:
+        type: DisplayString
+      lgpEnvTemperatureMeasurementTenthsDegC:
+        scale: 0.1

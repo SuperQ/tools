@@ -1,0 +1,292 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  liebert:
+    walk:
+    - 1.3.6.1.4.1.476.1.42.3.4.1.3.3
+    metrics:
+    - name: lgpEnvTemperatureIdDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.1
+      type: gauge
+      help: This OID is used as an index to identify a row in the table 'lgpEnvTemperatureTableDegC'.
+        - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.1
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureDescrDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+      type: DisplayString
+      help: A reference to a temperature description object - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureMeasurementDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.3
+      type: gauge
+      help: The measured temperature value. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.3
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureHighThresholdDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.4
+      type: gauge
+      help: The high temperature notification threshold - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.4
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureLowThresholdDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.5
+      type: gauge
+      help: The low temperature notification threshold - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.5
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureSetPointDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.6
+      type: gauge
+      help: The temperature setting for the well known 'lgpEnvTemperatureDescrDegC'
+        point - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.6
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureDailyHighDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.7
+      type: gauge
+      help: The daily high temperature measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.7
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureDailyLowDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.8
+      type: gauge
+      help: The daily low temperature measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.8
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyHighTimeHourDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.9
+      type: gauge
+      help: The hours digit of the time corresponding to the daily high temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.9
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyHighTimeMinuteDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.10
+      type: gauge
+      help: The minutes digit of the time corresponding to the daily high temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.10
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyHighTimeSecondDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.11
+      type: gauge
+      help: The seconds digit of the time corresponding to the daily high temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.11
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyLowTimeHourDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.12
+      type: gauge
+      help: The hours digit of the time corresponding to the daily low temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.12
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyLowTimeMinuteDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.13
+      type: gauge
+      help: The minutes digit of the time corresponding to the daily low temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.13
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempDailyLowTimeSecondDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.14
+      type: gauge
+      help: The seconds digit of the time corresponding to the daily low temperature
+        measurement. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.14
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureMeasurementTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.50
+      type: gauge
+      help: The measured temperature value. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.50
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+      scale: 0.1
+    - name: lgpEnvTemperatureHighThresholdTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.51
+      type: gauge
+      help: The high temperature notification threshold - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.51
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureLowThresholdTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.52
+      type: gauge
+      help: The low temperature notification threshold - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.52
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureSetPointTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.53
+      type: gauge
+      help: The temperature setting for the well known 'lgpEnvTemperatureDescrDegC'
+        point - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.53
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTemperatureDeadBandTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.60
+      type: gauge
+      help: The deadband region around the setpoint value (lgpEnvTemperatureSetPointTenthsDegC)
+        where no heating or cooling will occur. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.60
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempHeatingPropBandTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.61
+      type: gauge
+      help: The proportional region below the setpoint value (lgpEnvTemperatureSetPointTenthsDegC)
+        where heating will be proportionally controlled. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.61
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
+    - name: lgpEnvTempCoolingPropBandTenthsDegC
+      oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.62
+      type: gauge
+      help: The proportional region above the setpoint value (lgpEnvTemperatureSetPointTenthsDegC)
+        where cooling will be proportionally controlled. - 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.62
+      indexes:
+      - labelname: lgpEnvTemperatureIdDegC
+        type: gauge
+      lookups:
+      - labels:
+        - lgpEnvTemperatureIdDegC
+        labelname: lgpEnvTemperatureDescrDegC
+        oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.2
+        type: DisplayString
