@@ -1,5 +1,4 @@
 modules:
-  # Modules for QNAP-NAS
   liebert:
     walk:
       - lgpEnvTemperatureTableDegC
