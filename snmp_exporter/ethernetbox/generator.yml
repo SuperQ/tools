@@ -1,0 +1,10 @@
+---
+modules:
+  ethernetbox:
+    walk:
+    - version
+    - location
+    - sensorTable
+    lookups:
+    - source_indexes: [sensorindex]
+      lookup: name
