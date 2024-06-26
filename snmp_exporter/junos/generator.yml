@@ -79,3 +79,14 @@ modules:
         type: EnumAsStateSet
       dot3adAggPortDebugRxState:
         type: EnumAsStateSet
+
+  junos_ops:
+    walk:
+    - jnxOperatingTable
+    lookups:
+    - source_indexes:
+      - jnxOperatingContentsIndex
+      - jnxOperatingL1Index
+      - jnxOperatingL2Index
+      - jnxOperatingL3Index
+      lookup: jnxOperatingDescr
