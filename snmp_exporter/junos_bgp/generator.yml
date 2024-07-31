@@ -2,10 +2,16 @@
 modules:
   junos_bgp:
     walk:
-    - jnxBgpM2PeerLocalAddr
+      # - jnxBgpM2PeerTable
+      - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.7 #jnxBgpM2PrefixInPrefixes
+      - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.10 #jnxBgpM2PrefixOutPrefixes
+    overrides:
+      jnxBgpM2PeerLocalAddr:
+        type: InetAddressMissingSize
+      jnxBgpM2PeerRemoteAddr:
+        type: InetAddressMissingSize
     lookups:
-    - source_indexes:
-      - jnxBgpM2PeerRoutingInstance
-      - jnxBgpM2PeerLocalAddr
-      - jnxBgpM2PeerRemoteAddr
-      lookup: jnxBgpM2PeerIndex
+      - source_indexes: [ jnxBgpM2PeerIndex ]
+        lookup: jnxBgpM2PeerRemoteAddr
+      - source_indexes: [jnxBgpM2PeerIndex ]
+        lookup: jnxBgpM2PeerRemoteAs

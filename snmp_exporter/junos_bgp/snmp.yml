@@ -1,26 +1,69 @@
 # WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
-junos_bgp:
-  walk:
-  - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14
-  - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.6
-  - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.7
-  metrics:
-  - name: jnxBgpM2PeerLocalAddr
-    oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.7
-    type: InetAddress
-    help: The address of the local end of the peering session. - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.7
-    indexes:
-    - labelname: jnxBgpM2PeerRoutingInstance
+modules:
+  junos_bgp:
+    walk:
+    - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11
+    - 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13
+    - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.10
+    - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.7
+    metrics:
+    - name: jnxBgpM2PrefixOutPrefixes
+      oid: 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.10
       type: gauge
-    - labelname: jnxBgpM2PeerLocalAddr
-      type: InetAddress
-    - labelname: jnxBgpM2PeerRemoteAddr
-      type: InetAddress
-    lookups:
-    - labels:
-      - jnxBgpM2PeerRoutingInstance
-      - jnxBgpM2PeerLocalAddr
-      - jnxBgpM2PeerRemoteAddr
-      labelname: jnxBgpM2PeerIndex
-      oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14
+      help: The number of prefixes for a peer that are installed in that peers Adj-Ribs-Out.
+        - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.10
+      indexes:
+      - labelname: jnxBgpM2PeerIndex
+        type: gauge
+      - labelname: jnxBgpM2PrefixCountersAfi
+        type: gauge
+        enum_values:
+          0: unknown
+          1: ipv4
+          2: ipv6
+          3: ipv4z
+          4: ipv6z
+          16: dns
+      - labelname: jnxBgpM2PrefixCountersSafi
+        type: gauge
+      lookups:
+      - labels:
+        - jnxBgpM2PeerIndex
+        labelname: jnxBgpM2PeerRemoteAddr
+        oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11
+        type: InetAddressMissingSize
+      - labels:
+        - jnxBgpM2PeerIndex
+        labelname: jnxBgpM2PeerRemoteAs
+        oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13
+        type: gauge
+    - name: jnxBgpM2PrefixInPrefixes
+      oid: 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.7
       type: gauge
+      help: The number of prefixes received from a peer and are stored in the Adj-Ribs-In
+        for that peer. - 1.3.6.1.4.1.2636.5.1.1.2.6.2.1.7
+      indexes:
+      - labelname: jnxBgpM2PeerIndex
+        type: gauge
+      - labelname: jnxBgpM2PrefixCountersAfi
+        type: gauge
+        enum_values:
+          0: unknown
+          1: ipv4
+          2: ipv6
+          3: ipv4z
+          4: ipv6z
+          16: dns
+      - labelname: jnxBgpM2PrefixCountersSafi
+        type: gauge
+      lookups:
+      - labels:
+        - jnxBgpM2PeerIndex
+        labelname: jnxBgpM2PeerRemoteAddr
+        oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11
+        type: InetAddressMissingSize
+      - labels:
+        - jnxBgpM2PeerIndex
+        labelname: jnxBgpM2PeerRemoteAs
+        oid: 1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13
+        type: gauge
