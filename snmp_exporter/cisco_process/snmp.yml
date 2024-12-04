@@ -1,0 +1,218 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  cisco_process:
+    walk:
+    - 1.3.6.1.4.1.9.9.109.1.1.1
+    metrics:
+    - name: cpmCPUTotalIndex
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.1
+      type: gauge
+      help: An index that uniquely represents a CPU (or group of CPUs) whose CPU load
+        information is reported by a row in this table - 1.3.6.1.4.1.9.9.109.1.1.1.1.1
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotalPhysicalIndex
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.2
+      type: gauge
+      help: The entPhysicalIndex of the physical entity for which the CPU statistics
+        in this entry are maintained - 1.3.6.1.4.1.9.9.109.1.1.1.1.2
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal5sec
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.3
+      type: gauge
+      help: The overall CPU busy percentage in the last 5 second period - 1.3.6.1.4.1.9.9.109.1.1.1.1.3
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal1min
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.4
+      type: gauge
+      help: The overall CPU busy percentage in the last 1 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.4
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal5min
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+      type: gauge
+      help: The overall CPU busy percentage in the last 5 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal5secRev
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.6
+      type: gauge
+      help: The overall CPU busy percentage in the last 5 second period - 1.3.6.1.4.1.9.9.109.1.1.1.1.6
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal1minRev
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.7
+      type: gauge
+      help: The overall CPU busy percentage in the last 1 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.7
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotal5minRev
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.8
+      type: gauge
+      help: The overall CPU busy percentage in the last 5 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.8
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMonInterval
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.9
+      type: gauge
+      help: CPU usage monitoring interval - 1.3.6.1.4.1.9.9.109.1.1.1.1.9
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUTotalMonIntervalValue
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.10
+      type: gauge
+      help: The overall CPU busy percentage in the last cpmCPUMonInterval period -
+        1.3.6.1.4.1.9.9.109.1.1.1.1.10
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUInterruptMonIntervalValue
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.11
+      type: gauge
+      help: The overall CPU busy percentage in the interrupt context in the last cpmCPUMonInterval
+        period. - 1.3.6.1.4.1.9.9.109.1.1.1.1.11
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryUsed
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.12
+      type: gauge
+      help: The overall CPU wide system memory which is currently under use. - 1.3.6.1.4.1.9.9.109.1.1.1.1.12
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryFree
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.13
+      type: gauge
+      help: The overall CPU wide system memory which is currently free. - 1.3.6.1.4.1.9.9.109.1.1.1.1.13
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryKernelReserved
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.14
+      type: gauge
+      help: The overall CPU wide system memory which is reserved for kernel usage.
+        - 1.3.6.1.4.1.9.9.109.1.1.1.1.14
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryLowest
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.15
+      type: gauge
+      help: The lowest free memory that has been recorded since device has booted.
+        - 1.3.6.1.4.1.9.9.109.1.1.1.1.15
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryUsedOvrflw
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.16
+      type: gauge
+      help: This object represents the upper 32-bit of cpmCPUMemoryUsed - 1.3.6.1.4.1.9.9.109.1.1.1.1.16
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryHCUsed
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.17
+      type: counter
+      help: The overall CPU wide system memory which is currently under use - 1.3.6.1.4.1.9.9.109.1.1.1.1.17
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryFreeOvrflw
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.18
+      type: gauge
+      help: This object represents the upper 32-bit of cpmCPUMemoryFree - 1.3.6.1.4.1.9.9.109.1.1.1.1.18
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryHCFree
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.19
+      type: counter
+      help: The overall CPU wide system memory which is currently free - 1.3.6.1.4.1.9.9.109.1.1.1.1.19
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryKernelReservedOvrflw
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.20
+      type: gauge
+      help: This object represents the upper 32-bit of cpmCPUMemoryKernelReserved
+        - 1.3.6.1.4.1.9.9.109.1.1.1.1.20
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryHCKernelReserved
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.21
+      type: counter
+      help: The overall CPU wide system memory which is reserved for kernel usage
+        - 1.3.6.1.4.1.9.9.109.1.1.1.1.21
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryLowestOvrflw
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.22
+      type: gauge
+      help: This object represents the upper 32-bit of cpmCPUMemoryLowest - 1.3.6.1.4.1.9.9.109.1.1.1.1.22
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryHCLowest
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.23
+      type: counter
+      help: The lowest free memory that has been recorded since device has booted
+        - 1.3.6.1.4.1.9.9.109.1.1.1.1.23
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPULoadAvg1min
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.24
+      type: gauge
+      help: The overall CPU load Average in the last 1 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.24
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPULoadAvg5min
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.25
+      type: gauge
+      help: The overall CPU load Average in the last 5 minutes period - 1.3.6.1.4.1.9.9.109.1.1.1.1.25
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPULoadAvg15min
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.26
+      type: gauge
+      help: The overall CPU load Average in the last 15 minutes period - 1.3.6.1.4.1.9.9.109.1.1.1.1.26
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryCommitted
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.27
+      type: gauge
+      help: The overall CPU wide system memory which is currently Committed. - 1.3.6.1.4.1.9.9.109.1.1.1.1.27
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryCommittedOvrflw
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.28
+      type: gauge
+      help: This object represents the upper 32-bit of cpmCPUMemoryCommitted - 1.3.6.1.4.1.9.9.109.1.1.1.1.28
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge
+    - name: cpmCPUMemoryHCCommitted
+      oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.29
+      type: counter
+      help: The overall CPU wide system memory which is currently committed - 1.3.6.1.4.1.9.9.109.1.1.1.1.29
+      indexes:
+      - labelname: cpmCPUTotalIndex
+        type: gauge

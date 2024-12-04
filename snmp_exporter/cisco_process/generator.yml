@@ -1,0 +1,4 @@
+modules:
+  cisco_process:
+    walk:
+    - cpmCPUTotalTable
