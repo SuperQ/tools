@@ -1,0 +1,25 @@
+diff --git a/JUNIPER-JS-NAT-MIB b/JUNIPER-JS-NAT-MIB
+index 388e6fcbb..52978dd0b 100644
+--- a/JUNIPER-JS-NAT-MIB
++++ b/JUNIPER-JS-NAT-MIB
+@@ -339,7 +339,7 @@
+     JnxJsSrcNatStatsEntry ::= SEQUENCE
+     {
+         jnxJsNatSrcPoolName			DisplayString,
+-        jnxJsNatSrcXlatedAddrType	INTEGER,
++        jnxJsNatSrcXlatedAddrType	InetAddressType,
+         jnxJsNatSrcXlatedAddr		InetAddress,
+         jnxJsNatSrcPoolType         INTEGER,
+         jnxJsNatSrcNumPortInuse     INTEGER,
+@@ -362,10 +362,7 @@
+ 		::= { jnxJsSrcNatStatsEntry 1 }
+ 
+ 	jnxJsNatSrcXlatedAddrType OBJECT-TYPE
+-        SYNTAX        INTEGER {
+-                        ipv4      (1),
+-                        ipv6      (2)
+-                      }
++        SYNTAX        InetAddressType
+         MAX-ACCESS    read-only
+         STATUS        current
+         DESCRIPTION

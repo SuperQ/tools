@@ -1,0 +1,92 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  junos_js_nat:
+    walk:
+    - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4
+    metrics:
+    - name: jnxJsNatSrcXlatedAddrType
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.2
+      type: gauge
+      help: The type of dynamic source IP address allocated from the address pool
+        used in the NAT translation - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.2
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - name: jnxJsNatSrcXlatedAddr
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.3
+      type: InetAddress
+      help: The name of dynamic source IP address allocated from the address pool
+        used in the NAT translation - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.3
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+    - name: jnxJsNatSrcPoolType
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.4
+      type: gauge
+      help: Source NAT can do address translation with or without port address translation
+        (PAT) - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.4
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+      enum_values:
+        1: withPAT
+        2: withoutPAT
+        3: static
+    - name: jnxJsNatSrcNumPortInuse
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.5
+      type: gauge
+      help: The number of ports in use for this NAT address entry - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.5
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+    - name: jnxJsNatSrcNumSessions
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.6
+      type: gauge
+      help: The number of sessions are in use based on this NAT address entry - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.6
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+    - name: jnxJsNatSrcNumPortAvail
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.7
+      type: counter
+      help: The number of ports available with this pool. - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.7
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+    - name: jnxJsNatSrcNumAddressAvail
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.8
+      type: counter
+      help: The total number of addresses available in this pool. - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.8
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
+    - name: jnxJsNatSrcNumAddressInuse
+      oid: 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.9
+      type: counter
+      help: The number of addresses in use from this pool - 1.3.6.1.4.1.2636.3.39.1.7.1.1.4.1.9
+      indexes:
+      - labelname: jnxJsNatSrcPoolName
+        type: DisplayString
+      - labelname: jnxJsNatSrcXlatedAddr
+        type: InetAddress
