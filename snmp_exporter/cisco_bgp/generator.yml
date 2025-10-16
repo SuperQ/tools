@@ -1,9 +1,9 @@
 modules:
   cisco_bgp:
     walk:
-    - bgpPeerTable
-    - cbgpPeer2Table
-    - cbgpPeer2AddrFamilyPrefixTable
+    - CISCO-BGP4-MIB::cbgpPeerTable
+    - CISCO-BGP4-MIB::cbgpPeer2Table
+    - CISCO-BGP4-MIB::cbgpPeer2AddrFamilyPrefixTable
     lookups:
     - source_indexes: [cbgpPeer2RemoteAddr]
       lookup: cbgpPeer2RemoteAs
