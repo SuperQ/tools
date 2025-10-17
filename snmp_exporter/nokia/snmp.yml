@@ -1,0 +1,1475 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+modules:
+  nokia:
+    walk:
+    - 1.3.6.1.4.1.6527.3.1.2.4.2.2.1.6
+    metrics:
+    - name: svcDescription
+      oid: 1.3.6.1.4.1.6527.3.1.2.4.2.2.1.6
+      type: OctetString
+      help: The value of the object svcDescription specifiers an optional, generic
+        information about this service. - 1.3.6.1.4.1.6527.3.1.2.4.2.2.1.6
+      indexes:
+      - labelname: svcId
+        type: gauge
+  nokia_bgp:
+    walk:
+    - 1.3.6.1.4.1.6527.3.1.2.14.4.7
+    metrics:
+    - name: tBgpPeerNgInstanceIndex
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.1
+      type: gauge
+      help: tBgpPeerNgInstanceIndex is the bgp instance index for tBgpPeerNgTable.
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.1
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgAddressType
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.2
+      type: gauge
+      help: Index for tBgpPeerNgTable - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.2
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - name: tBgpPeerNgAddress
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.3
+      type: InetAddress
+      help: Index for tBgpPeerNgTable - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.3
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgPeerGroup
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.4
+      type: OctetString
+      help: The value of tBgpPeerNgPeerGroup specifies the name of the Peer group
+        for the Peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.4
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgRowStatus
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.5
+      type: gauge
+      help: The value of tBgpPeerNgRowStatus specifies the row status for this BGP
+        instance for the virtual router - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.5
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: active
+        2: notInService
+        3: notReady
+        4: createAndGo
+        5: createAndWait
+        6: destroy
+    - name: tBgpPeerNgShutdown
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.6
+      type: gauge
+      help: The value of tBgpPeerNgShutdown specifies if we advertise this peer or
+        not - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.6
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgDescription
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.7
+      type: DisplayString
+      help: The value of tBgpPeerNgDescription specifies a user provided description
+        string for this Peer Group - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.7
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgConnectRetry
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.8
+      type: gauge
+      help: The value of tBgpPeerNgConnectRetry specifies the value (in seconds) of
+        the BGP Connect Retry timer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.8
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgHoldTime
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.9
+      type: gauge
+      help: The value of tBgpPeerNgHoldTime specifies the value (in seconds) of the
+        BGP Hold Time. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.9
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgKeepAlive
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.10
+      type: gauge
+      help: The value of tBgpPeerNgKeepAlive specifies the value of the BGP Keepalive
+        timer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.10
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgMinASOrigination
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.11
+      type: gauge
+      help: The value of tBgpPeerNgMinASOrigination specifies the minimal interval
+        (in seconds) at which a given path attribute can be advertised to a peer -
+        1.3.6.1.4.1.6527.3.1.2.14.4.7.1.11
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgDampening
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.12
+      type: gauge
+      help: The value of tBgpPeerNgDampening specifies if route dampening is applied
+        to learned routes. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.12
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgLocalAddress
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.13
+      type: OctetString
+      help: The value of tBgpPeerNgLocalAddress specifies the local IP address the
+        peer group or Peer is to use as advertisement source address - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.13
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgLocalAddressType
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.14
+      type: gauge
+      help: The value of tBgpPeerNgLocalAddressType specifies the local IP address
+        type the peer-group or Peer is to use as advertisement source address - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.14
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+        3: ipv4z
+        4: ipv6z
+        16: dns
+    - name: tBgpPeerNgLocalAS
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.15
+      type: gauge
+      help: The value of tBgpPeerNgLocalAS specifies the autonomous system number
+        to be advertised for this peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.15
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgLocalPreference
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.16
+      type: gauge
+      help: The value of tBgpPeerNgLocalPreference specifies the default value for
+        the Local Preference attribute - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.16
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgLoopDetect
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.17
+      type: gauge
+      help: The value of tBgpPeerNgLoopDetect determines how the peer session should
+        deal with loop detection in the AS Path. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.17
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: drop
+        2: ignore
+        3: "off"
+        4: discardRoute
+    - name: tBgpPeerNgMinRouteAdvertisement
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.18
+      type: gauge
+      help: The value of tBgpPeerNgMinRouteAdvertisement specifies the minimum interval
+        at which a given path attribute is advertised to a peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.18
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgMaxPrefix
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.19
+      type: gauge
+      help: The value of tBgpPeerNgMaxPrefix specifies the maximum number of routes
+        that can be learned from this peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.19
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgMEDSource
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.20
+      type: gauge
+      help: The value of tBgpPeerNgMEDSource specifies the source of the Multi Exit
+        Discriminator (MED) value for peers in this group. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.20
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: igpCost
+        2: metricVal
+        3: noMedOut
+    - name: tBgpPeerNgMEDValue
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.21
+      type: gauge
+      help: The value of tBgpPeerNgMEDValue specifies the value of MED when tBgpPeerNgMEDSource
+        is 'metricVal' - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.21
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgMultihop
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.22
+      type: gauge
+      help: The value of tBgpPeerNgMultihop specifies the TTL used in IP packet header
+        for BGP advertisements - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.22
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgNextHopSelf
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.23
+      type: gauge
+      help: The value of tBgpPeerNgNextHopSelf specifies if routes advertised to EBGP
+        peers in this group have NEXTHOP path attribute set to this router's physical
+        interface - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.23
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgNoAggregatorID
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.24
+      type: gauge
+      help: The value of tBgpPeerNgNoAggregatorID specifies if different routers in
+        the same AS create aggregate routes containing different AS paths - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.24
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgPassive
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.25
+      type: gauge
+      help: The value of tBgpPeerNgPassive specifies if the peer will not attempt
+        to connect to the far end peer or just wait for the far end peer to connect.
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.25
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgPeerAS
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.26
+      type: gauge
+      help: The value of tBgpPeerNgPeerAS specifies the Autonomous System number for
+        the remote peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.26
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgPeerType
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.27
+      type: gauge
+      help: The value of tBgpPeerNgPeerType specifies the type of peer - noType(1),
+        internal(2) and external(3) - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.27
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: noType
+        2: internal
+        3: external
+    - name: tBgpPeerNgPreference
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.28
+      type: gauge
+      help: The value of tBgpPeerNgPreference specifies the route preference for routes
+        learned via the peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.28
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgRemovePrivateAS
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.29
+      type: gauge
+      help: The value of tBgpPeerNgRemovePrivateAS specifies if private AS numbers
+        should be stripped from the AS Path before advertising them to BGP peers.
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.29
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgLastChanged
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.30
+      type: gauge
+      help: The value tBgpPeerNgLastChanged indicates when an entry in tBgpPeerNgTable
+        was last changed. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.30
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgInheritance
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.31
+      type: counter
+      help: The value of tBgpPeerNgInheritance specifies if the peer entry in this
+        row, should inherit the operational value of an object, or use the administratively
+        set value - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.31
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgImportPolicy1
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.32
+      type: OctetString
+      help: The value of tBgpPeerNgImportPolicy1 specifies import policy number 1
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.32
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgImportPolicy2
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.33
+      type: OctetString
+      help: The value of tBgpPeerNgImportPolicy2 specifies import policy number 2
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.33
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgImportPolicy3
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.34
+      type: OctetString
+      help: The value of tBgpPeerNgImportPolicy3 specifies import policy number 3
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.34
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgImportPolicy4
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.35
+      type: OctetString
+      help: The value of tBgpPeerNgImportPolicy4 specifies import policy number 4
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.35
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgImportPolicy5
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.36
+      type: OctetString
+      help: The value of tBgpPeerNgImportPolicy5 specifies import policy number 5
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.36
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgExportPolicy1
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.37
+      type: OctetString
+      help: The value of tBgpPeerNgExportPolicy1 specifies export policy number 1
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.37
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgExportPolicy2
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.38
+      type: OctetString
+      help: The value of tBgpPeerNgExportPolicy2 specifies export policy number 2
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.38
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgExportPolicy3
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.39
+      type: OctetString
+      help: The value of tBgpPeerNgExportPolicy3 specifies export policy number 3
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.39
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgExportPolicy4
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.40
+      type: OctetString
+      help: The value of tBgpPeerNgExportPolicy4 specifies export policy number 4
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.40
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgExportPolicy5
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.41
+      type: OctetString
+      help: The value of tBgpPeerNgExportPolicy5 specifies export policy number 5
+        for peer level - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.41
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgOperStatus
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.42
+      type: gauge
+      help: The value of tBgpPeerNgOperStatus indicates the operational status of
+        this BGP Peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.42
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: unknown
+        2: inService
+        3: outOfService
+        4: transition
+        5: disabled
+    - name: tBgpPeerNgLocalASPrivate
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.43
+      type: gauge
+      help: The value of tBgpPeerNgLocalASPrivate specifies if the local autonomous
+        system number is hidden in paths learned from peering - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.43
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgMd5Auth
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.44
+      type: gauge
+      help: The value of tBgpPeerNgMd5Auth specifies if the authentication using MD5
+        message based digest protocol is enabled. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.44
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgMd5AuthKey
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.45
+      type: DisplayString
+      help: The value of tBgpPeerNgMd5AuthKey specifies the authentication key to
+        be used between BGP peers neighbors before establishing sessions - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.45
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgClusterId
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.46
+      type: InetAddressIPv4
+      help: This value of tBgpPeerNgClusterId specifies the cluster ID for a route
+        reflector server - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.46
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgDisableClientReflect
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.47
+      type: gauge
+      help: The value of tBgpPeerNgDisableClientReflect specifies if reflection of
+        routes by the route reflector to all client peers within its cluster is enabled
+        or disabled - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.47
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgGracefulRestart
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.48
+      type: gauge
+      help: The value of tBgpPeerNgGracefulRestart specifies whether or not graceful
+        restart capabilities are enabled on this instance of BGP - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.48
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgGRRestartTime
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.49
+      type: gauge
+      help: The value of tBgpPeerNgGRRestartTime specifies the maximum amount of time
+        in seconds that a graceful restart should take. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.49
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgGRStaleRoute
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.50
+      type: gauge
+      help: The value of tBgpPeerNgGRStaleRoute specifies the maximum amount of time
+        in seconds that stale routes should be maintained after a graceful restart
+        is initiated - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.50
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgGRAdminState
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.51
+      type: gauge
+      help: The value of tBgpPeerNgGRAdminState specifies the desired administrative
+        state of the graceful restart capabilities for this peer of the BGP protocol
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.51
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: noop
+        2: inService
+        3: outOfService
+    - name: tBgpPeerNgGROperState
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.52
+      type: gauge
+      help: The value of tBgpPeerNgGROperState indicates the operational status of
+        the graceful restart capabilities for this peer of the BGP protocol. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.52
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: unknown
+        2: inService
+        3: outOfService
+        4: transition
+    - name: tBgpPeerNgFamily
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.53
+      type: Bits
+      help: The value of tBgpPeerNgFamily specifies the types of routing information
+        to be distributed by the local side of this Peer of the BGP protocol - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.53
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: unused
+        1: ipv4
+        2: vpnIpv4
+        3: ipv6
+        4: mcastIpv4
+        5: vpnIpv6
+        6: l2vpn
+        7: mvpnIpv4
+        8: mdtSafi
+        9: mspw
+        10: flowIpv4
+        11: routeTarget
+        12: mcastVpnIpv4
+        13: mvpnIpv6
+        14: flowIpv6
+        15: evpn
+        16: mcastIpv6
+        17: labelIpv4
+        18: labelIpv6
+        19: bgpLs
+        20: mcastVpnIpv6
+        21: srplcyIpv4
+        22: srplcyIpv6
+        23: reserved23
+        24: reserved24
+    - name: tBgpPeerNgVpnRemoteFamily
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.54
+      type: Bits
+      help: The value of tBgpPeerNgVpnRemoteFamily indicates the types of routing
+        information to be distributed by the remote end of this Peer of the BGP protocol
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.54
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: unused
+        1: ipv4
+        2: vpnIpv4
+        3: ipv6
+        4: mcastIpv4
+        5: vpnIpv6
+        6: l2vpn
+        7: mvpnIpv4
+        8: mdtSafi
+        9: mspw
+        10: flowIpv4
+        11: routeTarget
+        12: mcastVpnIpv4
+        13: mvpnIpv6
+        14: flowIpv6
+        15: evpn
+        16: mcastIpv6
+        17: labelIpv4
+        18: labelIpv6
+        19: bgpLs
+        20: mcastVpnIpv6
+        21: srplcyIpv4
+        22: srplcyIpv6
+        23: reserved23
+        24: reserved24
+    - name: tBgpPeerNgVpnApplyImport
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.55
+      type: gauge
+      help: The value of tBgpPeerNgVpnApplyImport specifies if the BGP import route
+        policies are applied to VPN-IPv4 routes of this group - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.55
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgVpnApplyExport
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.56
+      type: gauge
+      help: The value of tBgpPeerNgVpnApplyExport specifies if the BGP export route
+        policies are applied to VPN-IPv4 routes of this group - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.56
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgVpnLocalCaps
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.57
+      type: Bits
+      help: The value of tBgpPeerNgVpnLocalCaps indicates the capabilities supported
+        on the local end of the BGP Peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.57
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: routeRefresh
+        1: mpBGP
+        2: orfExtendCommSend
+        3: orfExtendCommRecv
+        4: asn4Byte
+        5: extNHEncoding
+    - name: tBgpPeerNgVpnRemoteCaps
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.58
+      type: Bits
+      help: The value of tBgpPeerNgVpnRemoteCaps indicates the capabilities advertised
+        by the remote end of the BGP Peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.58
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        0: routeRefresh
+        1: mpBGP
+        2: orfExtendCommSend
+        3: orfExtendCommRecv
+        4: asn4Byte
+        5: extNHEncoding
+    - name: tBgpPeerNgConnState
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.59
+      type: gauge
+      help: The value of tBgpPeerNgConnState indicates the BGP peer connection state
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.59
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: idle
+        2: connect
+        3: active
+        4: opensent
+        5: openconfirm
+        6: established
+    - name: tBgpPeerNgASOverride
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.60
+      type: gauge
+      help: The value of tBgpPeerNgASOverride specifies if the service provider BGP
+        will override the customer AS number in the ASPATH with its own AS number
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.60
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgOrf
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.61
+      type: gauge
+      help: The value of tBgpPeerNgOrf specifies if outbound route filtering capability
+        is enabled or disabled for the BGP peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.61
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgExtCommsOrf
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.62
+      type: gauge
+      help: The value of tBgpPeerNgExtCommsOrf specifies if outbound route filtering
+        capability is based on extended communities for the BGP peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.62
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgExtCommsSendOrf
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.63
+      type: gauge
+      help: The value of tBgpPeerNgExtCommsSendOrf specifies if outbound route filter
+        advertisement to the neighbors in this BGP peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.63
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgExtCommsRecvOrf
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.64
+      type: gauge
+      help: The value of tBgpPeerNgExtCommsRecvOrf specifies if outbound route filter
+        for this BGP peer is accepted from the neighbors is enabled. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.64
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgLocalAS4Byte
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.65
+      type: gauge
+      help: The value of tBgpPeerNgLocalAS4Byte specifies the autonomous system number
+        to be advertised to this peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.65
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgPeerAS4Byte
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+      type: gauge
+      help: The value of tBgpPeerNgPeerAS4Byte specifies the autonomous system number
+        for the remote peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgDisable4ByteASN
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.67
+      type: gauge
+      help: The value of tBgpPeerNgDisable4ByteASN specifies whether or not 4-byte
+        ASN capability will be advertised by this peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.67
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgHoldTimeIsStrict
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.68
+      type: gauge
+      help: The value of tBgpPeerNgHoldTimeIsStrict specifies whether or not tBgpPeerNgHoldTime
+        has to be strictly enforced - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.68
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgL2vpnCiscoInterop
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.69
+      type: gauge
+      help: The value of tBgpPeerNgL2vpnCiscoInterop specifies whether BGP will provide
+        translation between non-compliant NLRI formats of Cisco - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.69
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgRemovePrivateASLmtd
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.70
+      type: gauge
+      help: The value of tBgpPeerNgRemovePrivateASLmtd specifies whether BGP will
+        remove the private AS numbers for this peer - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.70
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgMaxPrefixLogOnly
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.71
+      type: gauge
+      help: The value of tBgpPeerNgMaxPrefixLogOnly specifies whether BGP peering
+        will be disabled when tBgpPeerGroupMaxPrefix is exceeded - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.71
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgMaxPrefixThreshold
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.72
+      type: gauge
+      help: The value of tBgpPeerNgMaxPrefixThreshold specifies a percentage of tBgpPeerNgMaxPrefix
+        - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.72
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+    - name: tBgpPeerNgDisableCapNegotiation
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.73
+      type: gauge
+      help: The value of tBgpPeerNgDisableCapNegotiation specifies whether capability
+        negotiation is disabled for this peer. - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.73
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: "true"
+        2: "false"
+    - name: tBgpPeerNgCreationType
+      oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.74
+      type: gauge
+      help: The value of tBgpPeerNgCreationType specifies the way in which the peer
+        was created - 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.74
+      indexes:
+      - labelname: tBgpPeerNgInstanceIndex
+        type: gauge
+      - labelname: tBgpPeerNgAddress
+        type: InetAddress
+      lookups:
+      - labels:
+        - tBgpPeerNgInstanceIndex
+        - tBgpPeerNgAddress
+        labelname: tBgpPeerNgPeerAS4Byte
+        oid: 1.3.6.1.4.1.6527.3.1.2.14.4.7.1.66
+        type: gauge
+      enum_values:
+        1: static
+        2: dynamic

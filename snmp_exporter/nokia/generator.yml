@@ -1,0 +1,13 @@
+---
+modules:
+  nokia:
+    walk:
+    - TIMETRA-SERV-MIB::svcDescription
+  nokia_bgp:
+    walk:
+    - TIMETRA-BGP-MIB::tBgpPeerNgTable
+    lookups:
+    - source_indexes:
+      - tBgpPeerNgInstanceIndex
+      - tBgpPeerNgAddress
+      lookup: tBgpPeerNgPeerAS4Byte
