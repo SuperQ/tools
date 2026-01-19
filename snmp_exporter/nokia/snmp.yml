@@ -1473,3 +1473,32 @@ modules:
       enum_values:
         1: static
         2: dynamic
+  nokia_sub:
+    walk:
+    - 1.3.6.1.4.1.25461.2.1.2.3.11.1.1
+    - 1.3.6.1.4.1.25461.2.1.2.3.11.1.2
+    - 1.3.6.1.4.1.6527.3.1.2.33.1.104.1.60
+    metrics:
+    - name: tmnxSubMgmtPortSSubscribers
+      oid: 1.3.6.1.4.1.6527.3.1.2.33.1.104.1.60
+      type: counter
+      help: The value of tmnxSubMgmtPortSSubscribers indicates the number of current
+        subscribers on this port. - 1.3.6.1.4.1.6527.3.1.2.33.1.104.1.60
+      indexes:
+      - labelname: tmnxChassisIndex
+        type: gauge
+      - labelname: tmnxSubMgmtPortID
+        type: gauge
+      - labelname: ifIndex
+        type: gauge
+      lookups:
+      - labels:
+        - tmnxSubMgmtPortID
+        labelname: ifIndex
+        oid: 1.3.6.1.4.1.25461.2.1.2.3.11.1.1
+        type: gauge
+      - labels:
+        - ifIndex
+        labelname: ifDescr
+        oid: 1.3.6.1.4.1.25461.2.1.2.3.11.1.2
+        type: DisplayString

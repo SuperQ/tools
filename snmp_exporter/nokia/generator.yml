@@ -11,3 +11,13 @@ modules:
       - tBgpPeerNgInstanceIndex
       - tBgpPeerNgAddress
       lookup: tBgpPeerNgPeerAS4Byte
+  nokia_sub:
+    walk:
+    - tmnxSubMgmtPortSSubscribers
+    lookups:
+    - source_indexes:
+      - tmnxSubMgmtPortID
+      lookup: ifIndex
+    - source_indexes:
+      - ifIndex
+      lookup: ifDescr
